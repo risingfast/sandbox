@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+
+<!-- <HEAD> region for meta tags .................................................................................. -->
+
+<HTML lang="en">
+
+<HEAD>
+    <META charset="UTF-8">
+    <META name="viewport" content="width=device-width, initial-scale=1.0">
+    <META http-equiv="X-UA-Compatible" content="ie=edge">
+    <META name="description" content="Main index to risingfast website">
+    <META name="keywords" content="html, css, cgi">
+    <META name="generator" content="vim">
+    <META name="author" content="risingfast">
+    <TITLE>Collect Text</TITLE>
+    <LINK rel="stylesheet" type="text/css" href="index.css">
+    <LINK rel="shortcut icon" href="letterRF.png" type="image/png">
+</HEAD>
+
+<!-- Comments region ............................................................................................... -->
+<!--                                                                                                                 -->
+<!-- collectText.html -  grid layout to collect a line of text and save it to the server                             -->
+<!-- References:                                                                                                     -->
+<!--      https://www.youtube.com/watch?v=qTGbWfEEnKI                                                                -->
+<!--          Easily Structure your Layout with CSS Grid's 'grid-template-areas'                                     -->
+<!-- Templates:                                                                                                      -->
+<!--      d_template.html                                                                                            -->
+<!-- Started 04/01/2020                                                                                              -->
+<!-- Log:                                                                                                            -->
+<!--   23-Jul-2020 reformat and add a button to hide internals                                                       -->
+<!--   23-Jul-2020 add option to display texts collected from the file                                               -->
+<!--   29-Jul-2020 make the text input field required                                                                -->
+<!--   03-Sep-2020 add lant="en" to <HTML> tag and clean up comment lines                                            -->
+<!--   05-Sep-2020 add navbar links and reformat                                                                     -->
+<!--   11-Sep-2020 run through validator.w3.org                                                                      -->
+<!--   11-Oct-2020 center the heading navigatino links                                                               -->
+<!--   12-Oct-2020 change internals to summary/detail tags                                                           -->
+<!--   24-Oct-2020 center the body of the html in the browser                                                        -->
+<!--   30-Sep-2021 move to grid layout                                                                               -->
+<!--   10-Oct-2021 prefix functions with 'f'                                                                         -->
+<!--   17-Oct-2021 change fResetShow() to fClearPage()                                                               -->
+<!--   12-May-2022 add <ASIDE3> for corner image caption                                                             -->
+<!-- Enhancements:                                                                                                   -->
+<!--                                                                                                                 -->
+<!-- <BODY> region for all content including header and footer ..................................................... -->
+
+<BODY>
+    <DIV id="WRAPPER1">
+        <DIV id="WRAPPER2">
+            <HEADER id="HEADER1">
+                <BR>
+                <DIV id="HEADER1DIV">
+                     <H2>www.Risingfast.com</H2>
+                </DIV>
+            </HEADER>
+            <NAV id="NAV1">
+                    <H3 ID="NAV1H3">Links</H3>
+                <UL id="NAV1UL">
+                    <LI class="NAV1LI"><A class="active" href="http://www.risingfast.com">Home</A></LI>
+                    <LI class="NAV1LI"><A href="http://www.risingfast.com/d_ajaxFetch.html">Latest</A></LI>
+                    <LI class="NAV1LI"><A href="http://www.risingfast.com/d_template.html">Template</A></LI>
+                    <LI class="NAV1LI"><A href="http://www.risingfast.com/email.html">Email</A></LI>
+                    <LI class="NAV1LI"><A href="http://www.risingfast.com/about.html">About</A></LI>
+                </UL>
+            </NAV>
+
+<!-- <MAIN> region for main content and background image ........................................................... -->
+
+            <MAIN id="MAIN1">
+
+        <SECTION>
+            <DIV style="width:80%; margin: auto; max-width:800px; text-align:center;">
+                <H2>Collect Text</H2>
+                <P>
+                    Input a string of text and send it permanently to a file
+                </P>
+            </DIV>
+        </SECTION>
+
+<!-- form .......................................................................................................... -->
+
+        <DIV style="width:80%; margin: auto; max-width:800px; text-align:left;">
+                <DIV>
+                    Your input (80 chars max):<BR>
+                    <INPUT id="data" name="data" required size="60" maxlength="80" autofocus style="margin-top: 5px" onfocus="fEnableSend()">
+                    <button id="sendButton" style="float:right; margin: 5px 10px 0px 0px" onclick="fSaveText()">Send</button>
+                </DIV>
+                <DIV style="width:100%; margin-top: 10px">
+                    <TEXTAREA id="ResultArea" style="width:100%; margin: auto" rows="20"></TEXTAREA>
+                </DIV>
+                <DIV style="margin:10px 0px">
+                    <A href="javascript:fGetResults()">Show file contents</A>
+                </DIV>
+        </DIV>
+
+<!-- buttons to show and hide help and clear results ............................................................... -->
+
+                <DIV id="HELP">
+                    <BUTTON onclick="fShowHelp()">Help</BUTTON>
+                    <BUTTON onclick="fClearPage()">Clear</BUTTON>
+                    <BR>
+                </DIV>
+
+<!-- help text controlled by button ................................................................................ -->
+
+                <DIV id="HELPTXT">
+                    <DIV id="HELPDIV">
+                        <P>
+                            There is no help applicable to 'collectText'<BR>
+                        </P>
+                    </DIV>
+                </DIV>
+
+<!-- internals text ................................................................................................ -->
+
+                <BR>
+                   <DIV id="INTERNALS">
+                        <DETAILS>
+                            <SUMMARY>
+                                Internals
+                            </SUMMARY>
+                            <P>
+                                html file: /var/www.html/collectText.html<BR>
+                                css file: /var/www/html/css/index.css<BR>
+                                cgi file1: /usr/lib/cgi-bin/collectText.cgi<BR>
+                                cgi file2: /usr/lib/cgi-bin/showText.cgi<BR>
+                                data file: /usr/lib/cgi-bin/data.txti<BR>
+                                corner image: /var/www/html/cornerImage.png<BR>
+                                background image: /var/www/html/background.jpg<BR>
+                                CGI source code: C<BR>
+                            </P>
+                        </DETAILS>
+                    </DIV>
+
+                <SCRIPT src="collectText.js"></SCRIPT>
+
+            </MAIN>
+
+<!-- <ASIDE1> region for change log ................................................................................ -->
+
+            <ASIDE id="ASIDE1">
+                    <H3 ID=ASIDE1H3>Changes 2021</H3>
+                <UL id="ASIDE1UL">
+                    <LI class="ASIDE1LI">17-Oct: add data.txt to internals</LI>
+                    <LI class="ASIDE1LI">17-Oct: block sending nothing</LI>
+                    <LI class="ASIDE1LI">10-Oct: 'f' prefix functions</LI>
+                    <LI class="ASIDE1LI">30-Sep: change to grid layout</LI>
+                    <LI class="ASIDE1LI">19-Sep: add Help button</LI>
+                    <LI class="ASIDE1LI">18-Sep: add Internals</LI>
+                    <LI class="ASIDE1LI">16-Sep: create template as grid</LI>
+                </UL>
+            </ASIDE>
+
+<!-- <ASIDE2> region for corner image .............................................................................. -->
+
+            <ASIDE id="ASIDE2">
+                <DIV id="ASIDE2DIV">
+                     <IMG id="ASIDE2IMG" src="cornerImage.png" alt="Cannot Load cornerImage.png">
+                </DIV>
+            </ASIDE>
+
+<!-- <ASIDE3> region for corner image caption ...................................................................... -->
+
+            <ASIDE id="ASIDE3">
+                <DIV id="ASIDE3DIV">
+                    <P>
+                    Matilda Cook in Magpies uniform before her next netball game 2022
+                    </P>
+                </DIV>
+            </ASIDE>
+
+<!-- <FOOTER> region for page footer ............................................................................... -->
+
+            <FOOTER id="FOOTER1">
+                <DIV id="FOOTER1DIV">
+                    <P>&copy; 2020 www.risingfast.com ... /var/www/html/collectText.html</P>
+                </DIV>
+            </FOOTER>
+        </DIV>
+    </DIV>
+</BODY>
+
+</HTML>
+

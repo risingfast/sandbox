@@ -1,0 +1,56 @@
+/* d_template.css - a css template for a basic webpage d_template.html layout                                        */
+/* Log:                                                                                                              */
+/*     09-Sep-2021 start css                                                                                         */
+/*                                                                                                                   */
+/*                                                                                                                   */
+/* References:                                                                                                       */
+/*     https://www.youtube.com/watch?v=DJtcBoHEgdk&t=19s                                                             */
+/*         HTML & CSS for Beginners Part 21: How to create a basic website layout - the HTML                         */
+/*     https://www.youtube.com/watch?v=TAJnJCry6_4&list=PL4-IK0AVhVjM0xE0K2uZRvsM7LkIhsPT-&index=22                  */
+/*         HTML & CSS for Beginners Part 22: How to create a basic layout - the CSS                                  */
+
+
+body {
+    background-color:CDE7B0;
+    font-family:"Century Gothic",CenturyGothic,AppleGothic,sans-serif;
+    font-size:18px;
+    max-width:1440px;
+    margin:auto;
+}
+
+header {
+    background-color:59594A;
+    padding-bottom:50px;
+    padding-top:50px;
+    text-align:center;
+    color:#FFF;
+    text-transform:uppercase;
+    margin-bottom:60px;
+}
+
+.container {
+    width:80%;
+    margin:0 auto
+}
+
+section {
+    float:left;
+    width:70%;
+    margin-bottom:100px;
+}
+
+aside {
+    float:right;
+    width:25%;
+}
+
+footer {
+    clear:both;
+    text-align:center;
+    background-color:72A6A0;
+    padding:40px 0px;
+}
+
+aside ol {
+    font-size: 12px;
+}

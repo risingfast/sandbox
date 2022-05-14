@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+
+<!-- <HEAD> region for meta tags .................................................................................. -->
+
+<HTML lang="en">
+
+<HEAD>
+    <META charset="UTF-8">
+    <META name="viewport" content="width=device-width, initial-scale=1.0">
+    <META http-equiv="X-UA-Compatible" content="ie=edge">
+    <META name="description" content="Main index to risingfast website">
+    <META name="keywords" content="html, css, cgi">
+    <META name="generator" content="vim">
+    <META name="author" content="risingfast">
+    <TITLE>Authenticate User</TITLE>
+    <LINK rel="stylesheet" type="text/css" href="index.css">
+    <LINK rel="shortcut icon" href="letterRF.png" type="image/png">
+</HEAD>
+
+<!-- Comments region ............................................................................................... -->
+<!--                                                                                                                 -->
+<!-- authenticateUser.html -  grid template layout to authenticate a user                                            -->
+<!-- References:                                                                                                     -->
+<!--      https://www.youtube.com/watch?v=qTGbWfEEnKI                                                                -->
+<!--          Easily Structure your Layout with CSS Grid's 'grid-template-areas'                                     -->
+<!-- Templates:                                                                                                      -->
+<!--      none                                                                                                       -->
+<!-- Log:                                                                                                            -->
+<!--    16-Sep-2021 - start                                                                                          -->
+<!--    16-Sep-2021 - change image size on media query                                                               -->
+<!--    19-Sep-2021 - add internals section in main area                                                             -->
+<!--    19-Sep-2021 - add help button                                                                                -->
+<!--    24-Sep-2021 - copy template to authenticateUser.html for grid layout conversion                              -->
+<!--    25-Sep-2021 - add Password and Result fields                                                                 -->
+<!--    30-Sep-2021 - change footer text to match filename                                                           -->
+<!--    16-Oct-2021 - move Help button                                                                               -->
+<!--    16-Oct-2021 - disable Results input field                                                                    -->
+<!--    11-May-2022 - add <ASIDE3> for corner image caption                                                          -->
+<!--    11-May-2022 - add 'User' to heading                                                                          -->
+<!--                                                                                                                 -->
+<!-- <BODY> region for all content including header and footer ..................................................... -->
+
+<BODY>
+    <DIV ID="WRAPPER1">
+        <DIV ID="WRAPPER2">
+            <HEADER ID="HEADER1">
+                <BR>
+                <DIV ID="HEADER1DIV">
+                     <H2>www.Risingfast.com</H2>
+                </DIV>
+            </HEADER>
+            <NAV ID="NAV1">
+                    <H3 ID="NAV1H3">Links</H3>
+                <UL ID="NAV1UL">
+                    <LI class="NAV1LI"><A class="active" HREF="http://www.risingfast.com">Home</A></LI>
+                    <LI class="NAV1LI"><A HREF="http://www.risingfast.com/d_ajaxFetch.html">Latest</A></LI>
+                    <LI class="NAV1LI"><A HREF="http://www.risingfast.com/d_template.html">Template</A></LI>
+                    <LI class="NAV1LI"><A HREF="http://www.risingfast.com/email.html">Email</A></LI>
+                    <LI class="NAV1LI"><A HREF="http://www.risingfast.com/about.html">About</A></LI>
+                </UL>
+            </NAV>
+
+<!-- <MAIN> region for main content and background image ........................................................... -->
+
+            <MAIN ID="MAIN1">
+                <SECTION>
+                    <DIV STYLE="text-align:center">
+                        <H3>Authenticate User</H3>
+                    </DIV>
+                    <DIV STYLE="width:80%; margin: auto; max-width:800px; text-align:left">
+                        <LABEL FOR="idUsername" style="float:left; margin: 5px 10px 0px 0px">Username:</LABEL>
+                        <INPUT ID="idUsername" STYLE="margin: 5px 5px 10px 0px" REQUIRED SIZE="30" MAXLENGTH="60">
+                        <BR>
+                        <LABEL FOR="idPassword" style="float:left; margin: 5px 13px 0px 0px">Password:</LABEL>
+                        <INPUT ID="idPassword" type="password" STYLE="margin: 5px 5px 10px 0px; vertical-align:middle" REQUIRED SIZE="30" MAXLENGTH="60">
+                        <BUTTON STYLE="display:block; margin: 5px 5px 10px 0px" ONCLICK="fAuthenticateUser()">Authenticate</BUTTON>
+                        <LABEL FOR="idResult" style="float:left; margin: 5px 13px 0px 0px">Result:</LABEL>
+                        <INPUT ID="idResult" style="margin: 5px 5px 5px 21px; vertical-align:middle" disabled size="30" maxlength="60">
+                        <BR>
+                        <BUTTON STYLE="margin: 5px 5px 5px 0px" ONCLICK="fClearPage()">Clear</BUTTON>
+                        <BUTTON STYLE="margin: 5px 5px 5px 0px" ONCLICK="showHelp()">Help</BUTTON>
+                    </DIV>
+                </SECTION>
+
+<!-- help text controlled by button ................................................................................ -->
+
+                <DIV id="HELPTXT">
+                    <DIV id="HELPDIV" class="help">
+                        <P>
+                            There is no help applicable to 'Authenticate User'<BR>
+                        </P>
+                    </DIV>
+                </DIV>
+
+<!-- internals text ................................................................................................ -->
+
+                <BR>
+                   <DIV id="INTERNALS">
+                        <DETAILS>
+                            <SUMMARY>
+                                Internals
+                            </SUMMARY>
+                            <P>
+                                html file: /var/www.html/authenticateUser.html<BR>
+                                js file: /var/www.html/authenticateUser.js<BR>
+                                css file: /var/www/html/css/index.css<BR>
+                                cgi file: /usr/lib/cgi-bin/authenticateUser.cgi<BR>
+                                corner image: /var/www/html/cornerImage.png<BR>
+                                background image: /var/www/html/background.jpg<BR>
+                                CGI source code: C<BR>
+                            </P>
+                        </DETAILS>
+                    </DIV>
+
+                <SCRIPT src="authenticateUser.js"></SCRIPT>
+
+            </MAIN>
+
+<!-- <ASIDE1> region for change log ................................................................................ -->
+
+            <ASIDE ID="ASIDE1">
+                    <H3 ID=ASIDE1H3>Changes 2021</H3>
+                <UL ID="ASIDE1UL">
+                    <LI CLASS="ASIDE1LI">11-May: add corner image caption</LI>
+                    <LI CLASS="ASIDE1LI">16-Oct: disable Results field</LI>
+                    <LI CLASS="ASIDE1LI">16-Oct: move Help button</LI>
+                    <LI CLASS="ASIDE1LI">19-Sep: add Help button</LI>
+                    <LI CLASS="ASIDE1LI">18-Sep: add Internals</LI>
+                    <LI CLASS="ASIDE1LI">16-Sep: create template as grid</LI>
+                    <LI CLASS="ASIDE1LI">24-Sep: add a Clear button</LI>
+                    <LI CLASS="ASIDE1LI">24-Sep: add a Password</LI>
+                    <LI CLASS="ASIDE1LI">24-Sep: check password in CGI</LI>
+                </UL>
+            </ASIDE>
+
+<!-- <ASIDE2> region for corner image .............................................................................. -->
+
+            <ASIDE ID="ASIDE2">
+                <DIV ID="ASIDE2DIV">
+                     <IMG ID="ASIDE2IMG" SRC="cornerImage.png" ALT="Cannot Load cornerImage.png">
+                </DIV>
+            </ASIDE>
+
+<!-- <ASIDE3> region for corner image caption ...................................................................... -->
+
+            <ASIDE id="ASIDE3">
+                <DIV id="ASIDE3DIV">
+                    <P>
+                     Matilda Cook in Magpies uniform before her next netball game 2022
+                    </P>
+                </DIV>
+            </ASIDE>
+
+<!-- <FOOTER> region for page footer ............................................................................... -->
+
+            <FOOTER ID="FOOTER1">
+                <DIV ID="FOOTER1DIV">
+                    <P>&copy; 2020 www.risingfast.com ... /var/www/html/authenticateUser.html</P>
+                </DIV>
+            </FOOTER>
+        </DIV>
+    </DIV>
+</BODY>
+
+</HTML>
+
