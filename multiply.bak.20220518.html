@@ -14,7 +14,6 @@
     <META name="author" content="risingfast">
     <TITLE>Multiplier</TITLE>
     <LINK rel="stylesheet" type="text/css" href="index.css">
-    <LINK rel="stylesheet" type="text/css" href="multiply.css">
     <LINK rel="shortcut icon" href="letterRF.png" type="image/png">
 </HEAD>
 
@@ -46,8 +45,7 @@
 <!--    16-Oct-2021 align help and internal text                                                                     -->
 <!--    11-May-2022 add <ASIDE3> for corner image caption                                                            -->
 <!--    15-May-2022 add common.js script                                                                             -->
-<!--    18-May-2022 extend clear function                                                                            -->
-
+<!--                                                                                                                 -->
 <!-- <BODY> region for all content including header and footer ..................................................... -->
 
 <BODY>
@@ -74,74 +72,76 @@
 
             <MAIN ID="MAIN1">
 
-            <DIV id="heading-div">
-                <H3>Integer Multiplier</H3>
-                <P>Multiply two numbers through Javascript or a CGI call and return the result</P>
-           </DIV>
+            <SECTION>
+                <DIV style="width:80%; margin: auto; max-width:800px; text-align:center;">
+                    <BR>
+                    <H3>Integer Multiplier</H3>
+                    <P>Multiply two numbers through Javascript or a CGI call and return the result</P>
+               </DIV>
+            </SECTION>
 
-<!-- data entry area  .............................................................................................. -->
+<!-- data entry area          ...................................................................................... -->
 
-            <DIV id="dataEntry-div">
-                <DIV id="number1-div">
+            <DIV style="width:80%; margin: auto; max-width:800px; text-align:left;">
+                <DIV STYLE="padding: 5px">
                     <LABEL FOR="number1">Integer 1:</LABEL>
                     <INPUT ID="number1" type="number" min="-32768" max="32767" required name="m">
                 </DIV>
-                <DIV id="number2-div">
+                <DIV STYLE="padding: 5px">
                     <LABEL FOR="number2">Integer 2:</LABEL>
                     <INPUT ID="number2" type="number" name="n" min="-32768" max="332767" required>
                 </DIV>
-            </DIV>
-            <DIV id="multiply-buttons-div">
-                <DIV id="multiplyJS-div">
+                <DIV STYLE="padding: 5px">
                     <BUTTON onclick="fMultiplyJS()">MultiplyJS</BUTTON>
                 </DIV>
-                <DIV id="multiplyCGI-div">
+                <DIV STYLE="padding: 5px">
                     <BUTTON onclick="fMultiplyCGI()">MultiplyCGI</BUTTON>
                 </DIV>
-            </DIV>
-            <DIV id="results-div">
-                <LABEL for="ResultArea">Result:</LABEL>
-                <INPUT id="ResultArea" type="number" min="-32768" max="332767" readonly>
-            </DIV>
+                <DIV STYLE="padding: 5px">
+                    <LABEL FOR="result" STYLE="padding-right:13px">Result:</LABEL>
+                    <INPUT ID="result" TYPE="number" MIN="-32768" MAX="332767" STYLE="background-color:lightgrey;border-width:1px" READONLY>
+                </DIV>
 
-<!-- buttons to show and hide help and clear help and internals .................................................... -->
+<!-- buttons to clear the page and show help ....................................................................... -->
 
-            <DIV id="MOREBTTNS">
-                <BUTTON onclick="fShowHelp()">Help</BUTTON>
-                <BUTTON onclick="fClearMultiplyPage()">Clear</BUTTON>
-                <BR>
-            </DIV>
+                <DIV id="HELP">
+                    <BUTTON style="padding:5px" onclick="fClearPage()">Clear</BUTTON>
+                    <BUTTON style="margin-left:5px;padding:5px" onclick="fShowHelp()">Help</BUTTON>
+                    <BR>
+                </DIV>
 
 <!-- help text controlled by button ................................................................................ -->
 
-            <DIV ID="HELPDIV" CLASS="help">
-                <P>
-                    There is no help applicable to 'Multiply'<BR>
-                </P>
-            </DIV>
+                <DIV id="HELPTXT">
+                    <DIV ID="HELPDIV" CLASS="help">
+                        <P>
+                            There is no help applicable to 'Multiply'<BR>
+                        </P>
+                    </DIV>
+                </DIV>
 
 <!-- internals text ................................................................................................ -->
 
-            <DIV id="INTERNALS">
-                <DETAILS id="internals-details">
-                    <SUMMARY>
-                        Internals
-                    </SUMMARY>
-                    <P>
-                        html file: /var/www.html/multiply.html<BR>
-                        js file: /var/www.html/multiply.js<BR>
-                        js file: /var/www.html/common.js<BR>
-                        css file: /var/www/html/css/index.css<BR>
-                        css file: /var/www/html/css/multiply.css<BR>
-                        cgi file: /usr/lib/cgi-bin/multiply.cgi<BR>
-                        corner image: /var/www/html/cornerImage.png<BR>
-                        background image: /var/www/html/background.jpg<BR>
-                        CGI source code: C<BR>
-                     </P>
-                 </DETAILS>
+                <BR>
+                <DIV id="INTERNALS">
+                    <DETAILS>
+                        <SUMMARY>
+                            Internals
+                        </SUMMARY>
+                        <P>
+                            html file: /var/www.html/multiply.html<BR>
+                            js file: /var/www.html/multiply.js<BR>
+                            css file: /var/www/html/css/index.css<BR>
+                            cgi file: /usr/lib/cgi-bin/multiply.cgi<BR>
+                            corner image: /var/www/html/cornerImage.png<BR>
+                            background image: /var/www/html/background.jpg<BR>
+                            CGI source code: C<BR>
+                         </P>
+                     </DETAILS>
+                 </DIV>
              </DIV>
 
-             </MAIN>
+            </MAIN>
 
 <!-- <ASIDE1> region for change log ................................................................................ -->
 

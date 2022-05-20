@@ -33,6 +33,8 @@
 <!--    10-Oct-2021 add an 'f' prefix to function names                                                              -->
 <!--    10-Oct-2021 change script name to email.js from d_template.js                                                -->
 <!--    12-May-2022 add <ASIDE3> for corner image caption                                                            -->
+<!--    14-May-2022 add common.js                                                                                    -->
+<!--    16-May-2022 clear internals with clear button                                                                -->
 <!--                                                                                                                 -->
 <!-- <BODY> region for all content including header and footer ..................................................... -->
 
@@ -82,8 +84,8 @@
                             <LABEL class="emailLbl" for="text" value="text" style="margin-right:20px">Text:</LABEL>
                             <TEXTAREA id="emailBody" class="emailInp" name="text" rows="20" style="width:80%">Your message:</TEXTAREA>
                         </DIV>
-                        <DIV>
-                            <INPUT class="emailSub" type="submit" name="emailSubmit" style="margin: 5px 0px 0px 0px" value="Submit"/>
+                        <DIV id="SUBMITDIV">
+                            <INPUT class="emailSub" type="submit" name="emailSubmit" value="Submit"/>
                         </DIV>
                     </FORM>
                 </DIV>
@@ -91,50 +93,52 @@
 
 <!-- buttons to show and hide help ................................................................................. -->
 
-                <DIV id="HELP">
-                    <BUTTON style="margin: 10px 0px 10px 0px" onclick="fShowHelp()" style="margin-right: 10px">Help</BUTTON>
-                    <BUTTON style="margin: 5px 0px 10px 0px" onclick="fClearHTML()">Clear</BUTTON>
+                <DIV id="MOREBTTNS">
+                    <BUTTON style="margin: 0px 5px 0px 0px" onclick="fShowHelp()" style="margin-right: 10px">Help</BUTTON>
+                    <BUTTON style="margin: 0px 0px 0px 5px" onclick="fClearEmailFields()">Clear</BUTTON>
                     <BR>
                 </DIV>
 
 <!-- help text controlled by button ................................................................................ -->
 
-                <DIV id="HELPTXT">
-                    <DIV id="HELPDIV" class="help">
-                        <P>
-                            There is no help applicable to 'Email'<BR>
-                        </P>
-                    </DIV>
+                <DIV id="HELPDIV">
+                    <P>
+                        There is no help available for this page 'email.html'<BR>
+                    </P>
                 </DIV>
 
 <!-- internals text ................................................................................................ -->
 
-                <BR>
-                   <DIV id="INTERNALS">
-                        <DETAILS>
-                            <SUMMARY>
-                                Internals
-                            </SUMMARY>
-                            <P>
-                                html file: /var/www.html/d_template.html<BR>
-                                css file: /var/www/html/css/index.css<BR>
-                                cgi directory: /usr/lib/cgi-bin/<BR>
-                                corner image: /var/www/html/cornerImage.png<BR>
-                                background image: /var/www/html/background.jpg<BR>
-                                CGI source code: c<BR>
-                            </P>
-                        </DETAILS>
-                    </DIV>
+                <DIV id="INTERNALS">
+                     <DETAILS id="internals-details">
+                         <SUMMARY>
+                             Internals
+                         </SUMMARY>
+                         <P>
+                             html file: /var/www.html/d_template.html<BR>
+                             css file: /var/www/html/index.css<BR>
+                             js file: /var/www/html/email.js<BR>
+                             js file: /var/www/html/common.js<BR>
+                             cgi directory: /usr/lib/cgi-bin/<BR>
+                             corner image: /var/www/html/cornerImage.png<BR>
+                             background image: /var/www/html/background.jpg<BR>
+                             CGI source code: c<BR>
+                         </P>
+                     </DETAILS>
+                </DIV>
 
                 <SCRIPT src="email.js"></SCRIPT>
+                <SCRIPT src="common.js"></SCRIPT>
 
             </MAIN>
 
 <!-- <ASIDE1> region for change log ................................................................................ -->
 
             <ASIDE ID="ASIDE1">
-                    <H3 ID=ASIDE1H3>Changes 2021</H3>
+                    <H3 ID=ASIDE1H3>Changes 2021-22</H3>
                 <UL ID="ASIDE1UL">
+                    <LI CLASS="ASIDE1LT">16-May: make clear global</LI>
+                    <LI CLASS="ASIDE1LT">16-May: expand clear button function</LI>
                     <LI CLASS="ASIDE1LI">10-Oct: troubleshoot Clear function</LI>
                     <LI CLASS="ASIDE1LI">10-Oct: 'f' prefix functions</LI>
                     <LI CLASS="ASIDE1LI">19-Sep: add Help button</LI>

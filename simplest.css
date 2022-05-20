@@ -1,0 +1,37 @@
+/* simplest.css - a css template for a basic webpage simplest.html layout                                        */
+/* started - 17-May-2022                                                                                             */
+/* References:                                                                                                       */
+/*         HTML & CSS for Beginners Part 22: How to create a basic layout - the CSS                                  */
+/* Log                                                                                                               */
+/*     17-May-2022 - started                                                                                         */
+
+#heading-div {
+    width: 80%;
+    margin: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    max-width: 800px;
+    text-align: center;
+}
+
+#fGetResults-div {
+    width: 80%;
+    margin: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    max-width: 800px;
+    text-align: left;
+}
+
+#results-div {
+    width: 80%;
+    margin: auto; 
+    margin-top: 5px;
+    margin-bottom: 5px;
+    max-width: 800px;
+}
+
+#ResultArea {
+    width: 100%;
+    background-color: lightgrey;
+}

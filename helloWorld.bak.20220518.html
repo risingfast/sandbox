@@ -14,7 +14,6 @@
     <META name="author" content="risingfast">
     <TITLE>Template</TITLE>
     <LINK rel="stylesheet" type="text/css" href="index.css">
-    <LINK rel="stylesheet" type="text/css" href="helloWorld.css">
     <LINK rel="shortcut icon" href="letterRF.png" type="image/png">
 </HEAD>
 
@@ -33,7 +32,6 @@
 <!--    16-Oct-2021 - change reset to clear                                                                          -->
 <!--    11-May-2022 - add <ASIDE3> grid region for corner image caption                                              -->
 <!--    15-May-2022 - add script common.js                                                                           -->
-<!--    18-May-2022 - extend clear function                                                                          -->
 <!--                                                                                                                 -->
 <!-- <BODY> region for all content including header and footer ..................................................... -->
 
@@ -61,54 +59,62 @@
 
             <MAIN ID="MAIN1">
 
-                <DIV id="heading-div">
-                    <H2>Hello World!</H2>
-                    <P>A simple HTML template and Ajax call to print server text</P>
-                </DIV>
+                <SECTION>
+                    <DIV style="width:80%; margin: auto; max-width:800px; text-align:center;">
+                        <H2>Hello World!</H2>
+                        <P>A simple HTML template and Ajax call to print server text</P>
+                    </DIV>
+                </SECTION>
 
+                <SECTION>
 
-                <DIV id="fGetResults-div">
-                    <BUTTON onclick="fGetResults()">Fetch</BUTTON>
-                </DIV>
+                    <DIV style="width:80%; margin: auto; max-width:800px; text-align:left;">
+                        <BUTTON onclick="fGetResults()">Fetch</BUTTON>
+                    </DIV>
 
-                <DIV id="results-div">
-                    <TEXTAREA id="ResultArea" rows="15"></TEXTAREA>
-                </DIV>
+                    <BR>
+                    <DIV style="width:80%; margin: auto; max-width:800px;">
+                        <TEXTAREA id="ResultArea" rows="15" style="width:100%; margin-bottom:10px"></TEXTAREA>
+                    </DIV>
+                </SECTION>
 
-<!-- buttons to show and hide help and clear help and internals..................................................... -->
+<!-- buttons to show and hide help and clear the textbox ........................................................... -->
 
-                <DIV id="MOREBTTNS">
+                <DIV style="width:80%; margin: auto; max-width:800px; text-align:left;">
                     <BUTTON onclick="fShowHelp()">Help</BUTTON>
-                    <BUTTON onclick="fClearHelloWorldPage()">Clear</BUTTON>
+                    <BUTTON onclick="fClearPage()">Clear</BUTTON>
                     <BR>
                 </DIV>
 
 <!-- help text controlled by button ................................................................................ -->
 
-                <DIV id="HELPDIV">
-                    <P>
-                        There is no help applicable to 'Hello World'<BR>
-                    </P>
+                <DIV id="HELPTXT">
+                    <DIV id="HELPDIV" class="help">
+                        <P>
+                            There is no help applicable to 'Hello World'<BR>
+                        </P>
+                    </DIV>
                 </DIV>
 
 <!-- internals text ................................................................................................ -->
 
-               <DIV id="INTERNALS">
-                    <DETAILS id="internals-details">
-                        <SUMMARY>
-                            Internals
-                        </SUMMARY>
-                        <P>
-                            html file: /var/www.html/helloWorld.html<BR>
-                            js file: /var/www.html/helloWorld.js<BR>
-                            css file: /var/www/html/css/index.css<BR>
-                            cgi file: /usr/lib/cgi-bin/helloWorld.cgi<BR>
-                            corner image: /var/www/html/cornerImage.png<BR>
-                            background image: /var/www/html/background.jpg<BR>
-                            CGI source code: C<BR>
-                        </P>
-                    </DETAILS>
-                </DIV>
+                <BR>
+                   <DIV id="INTERNALS">
+                        <DETAILS>
+                            <SUMMARY>
+                                Internals
+                            </SUMMARY>
+                            <P>
+                                html file: /var/www.html/helloWorld.html<BR>
+                                js file: /var/www.html/helloWorld.js<BR>
+                                css file: /var/www/html/css/index.css<BR>
+                                cgi file: /usr/lib/cgi-bin/helloWorld.cgi<BR>
+                                corner image: /var/www/html/cornerImage.png<BR>
+                                background image: /var/www/html/background.jpg<BR>
+                                CGI source code: C<BR>
+                            </P>
+                        </DETAILS>
+                    </DIV>
 
                 <SCRIPT src="helloWorld.js"></SCRIPT>
                 <SCRIPT src="common.js"></SCRIPT>

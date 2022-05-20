@@ -6,8 +6,4 @@
 //    09-Oct-2021 clean up comments and remove unused functions
 //    12-May-2022 change helpDiv to uppercasse
 //    15-May-2022 remove fShowHelp() moved to common.js
-//    16-May-2022 add fClearExtras
 
-function fClearTemplateFields() {
-    fClearExtras();
-}

@@ -7,8 +7,8 @@
 //    09-Oct-2021 prefix 'f' on function names
 //    16-Oct-2021 change reset to clear
 //    12-May-2022 change "none" to "" for x.style.display
-//    17-May-2022 redefine the clear function
   
+var x = document.getElementById("helpDiv");
 const uri1 = "http://www.risingfast.com/cgi-bin/simplest.cgi";
 
 // functions for action buttons to display and hide help ..........................................
@@ -22,13 +22,11 @@ function fShowHelp() {
     }
 }
 
-function fClearSimplestPage() {
+function fClearPage() {
     var x = document.getElementById("HELPDIV");
     var y = document.getElementById("ResultArea");
     x.style.display = "none";
     y.value = "";
-
-    fClearExtras();
 }
 
 // function to ajax fetch text from the server and paste it to a textarea

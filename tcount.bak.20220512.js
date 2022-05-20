@@ -1,34 +1,31 @@
-// simplest.js -- script to implement simplest.html webpage to print server text on the web
+// tcount.js -- script to implement tcount.cgi webpage to print a counter to a web page
 // Author: Geoff Jarman
 // Started: 29-Sep-2021
 // Log: 
-//    29-Sep 2021 start and test
-//    29-Sep-2021 clear textarea in resetShow() attached to reset button
-//    09-Oct-2021 prefix 'f' on function names
-//    16-Oct-2021 change reset to clear
-//    12-May-2022 change "none" to "" for x.style.display
-//    17-May-2022 redefine the clear function
+//    30-Sep 2021 start and test
+//    09-Oct-2021 prefix function names with 'f'
+//    17-Oct-2021 change fResetShows() to fClearPage()
   
-const uri1 = "http://www.risingfast.com/cgi-bin/simplest.cgi";
+var x = document.getElementById("helpDiv");
+const uri1 = "http://www.risingfast.com/cgi-bin/tcount.cgi";
 
 // functions for action buttons to display and hide help ..........................................
   
 function fShowHelp() {
-    var x = document.getElementById("HELPDIV");
-    if (x.style.display === "") {
+    var x = document.getElementById("helpDiv");
+    if (x.style.display === "none") {
         x.style.display = "block";
     } else {
-        x.style.display = "";
+        x.style.display = "none";
     }
 }
 
-function fClearSimplestPage() {
-    var x = document.getElementById("HELPDIV");
+function fClearPage() {
+    var x = document.getElementById("helpDiv");
     var y = document.getElementById("ResultArea");
     x.style.display = "none";
     y.value = "";
-
-    fClearExtras();
+    console.log('Done like a dinner');
 }
 
 // function to ajax fetch text from the server and paste it to a textarea

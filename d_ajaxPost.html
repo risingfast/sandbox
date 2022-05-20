@@ -34,10 +34,12 @@
 <!--     10-Oct-2021 prefix function names with 'f'                                                                  -->
 <!--     10-Oct-2021 fix the internals reference to the d_ajaxPost.dat file location                                 -->
 <!--     10-Oct-2021 add <ASIDE3> region for corner image caption                                                    -->
+<!--     14-May-2022 add common.js                                                                                   -->
+<!--     16-May-2022 expand clear function()                                                                         -->
 <!--                                                                                                                 -->
 <!-- <BODY> region for all content including header and footer ..................................................... -->
 
-<BODY onload="fClearPage()">
+<BODY onload="fClearAjaxPostPage()">
     <DIV ID="WRAPPER1">
         <DIV ID="WRAPPER2">
             <HEADER ID="HEADER1">
@@ -75,48 +77,46 @@
 
 <!-- buttons to show and hide help ................................................................................. -->
 
-                <DIV id="HELP">
+                <DIV id="MOREBTTNS">
                     <BUTTON onclick="fShowHelp()">Help</BUTTON>
-                    <BUTTON onclick="fClearPage()">Clear</BUTTON>
+                    <BUTTON onclick="fClearAjaxPostPage()">Clear</BUTTON>
                     <BR>
                 </DIV>
 
 <!-- help text controlled by button ................................................................................ -->
 
-                <DIV id="HELPTXT">
-                    <DIV id="HELPDIV" class="help">
+                    <DIV id="HELPDIV">
                         <P>
+                            There is no option to print the file contents ... log onto the server for that<BR>
                             Enter text in the text box and click 'Post'<BR>
                             The text in saved to /usr/lib/cgi-bin/d_ajaxPost.dat on the server<BR>
                             The purpose is to demonstrate an Ajax call to a CGI using the POST method<BR>
                             The CGI reads the text from stdin and save it the file<BR>
-                            There is no option to print the file contents ... log onto the server for that<BR>
                         </P>
                     </DIV>
-                </DIV>
 
 <!-- internals text ................................................................................................ -->
 
-                <BR>
-                   <DIV id="INTERNALS">
-                   <DETAILS>
-                       <SUMMARY>
-                           Internals
-                       </SUMMARY>
-                       <P>
-                           html file: /var/www.html/d_ajaxPost.html<BR>
-                           js file: /var/www.html/d_ajaxPost.js<BR>
-                           data file: /usr/lib/cgi-bin/d_ajaxPost.dat<BR>
-                           css file: /var/www/html/css/index.css<BR>
-                           cgi file: /usr/lib/cgi-bin/s_ajaxPost.cgi<BR>
-                           corner image: /var/www/html/cornerImage.png<BR>
-                           background image: /var/www/html/background.jpg<BR>
-                           CGI source code: C<BR>
-                       </P>
-                       </DETAILS>
+                    <DIV id="INTERNALS">
+                        <DETAILS id="internals-details">
+                            <SUMMARY>
+                                Internals
+                            </SUMMARY>
+                            <P>
+                                html file: /var/www.html/d_ajaxPost.html<BR>
+                                js file: /var/www.html/d_ajaxPost.js<BR>
+                                data file: /usr/lib/cgi-bin/d_ajaxPost.dat<BR>
+                                css file: /var/www/html/css/index.css<BR>
+                                cgi file: /usr/lib/cgi-bin/s_ajaxPost.cgi<BR>
+                                corner image: /var/www/html/cornerImage.png<BR>
+                                background image: /var/www/html/background.jpg<BR>
+                                CGI source code: C<BR>
+                            </P>
+                        </DETAILS>
                     </DIV>
 
                 <SCRIPT src="d_ajaxPost.js"></SCRIPT>
+                <SCRIPT src="common.js"></SCRIPT>
 
             </MAIN>
 
@@ -125,6 +125,7 @@
             <ASIDE ID="ASIDE1">
                     <H3 ID=ASIDE1H3>Changes 2021</H3>
                 <UL ID="ASIDE1UL">
+                    <LI CLASS="ASIDE1LI">16-May: extend clear function()</LI>
                     <LI CLASS="ASIDE1LI">12-May: add corner image caption</LI>
                     <LI CLASS="ASIDE1LI">10-Oct: 'f' prefix functions</LI>
                     <LI CLASS="ASIDE1LI">01-Oct: clear page on load</LI>

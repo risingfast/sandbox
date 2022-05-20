@@ -9,7 +9,6 @@
 //    11-May-2022 make helpDiv uppercase
 //    12-May-2022 change "none" to "" for x.style.display
 //    15-May-2022 remove fShowHelp and move to common.js
-//    18-May-2022 extend clear function
 
 // functions for action buttons to display and hide help ..........................................
 
@@ -19,7 +18,7 @@ function fMultiplyJS () {
     var m = document.getElementById("number1").value;
     var n = document.getElementById("number2").value;
     var p = m * n;
-    document.getElementById("ResultArea").value = p;
+    document.getElementById("result").value = p;
 }
 
 // function to ajax fetch text2 from the server
@@ -34,7 +33,7 @@ async function fMultiplyCGI() {
 
     if (response.ok) {
         let text = await response.text();
-        document.getElementById("ResultArea").value=text;
+        document.getElementById("result").value=text;
     } else {
         alert("HttpError: " + response.status);
     }
@@ -43,11 +42,9 @@ async function fMultiplyCGI() {
 
 // function to clear text areas on the page and clear help
 
-function fClearMultiplyPage() {
+function fClearPage() {
     document.getElementById("number1").value = "";
     document.getElementById("number2").value = "";
-    document.getElementById("ResultArea").value = "";
+    document.getElementById("result").value = "";
     document.getElementById("HELPDIV").style.display = "";
-
-    fClearExtras();
 }

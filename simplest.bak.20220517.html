@@ -14,7 +14,6 @@
     <META name="author" content="risingfast">
     <TITLE>Text Fetch</TITLE>
     <LINK rel="stylesheet" type="text/css" href="index.css">
-    <LINK rel="stylesheet" type="text/css" href="simplest.css">
     <LINK rel="shortcut icon" href="letterRF.png" type="image/png">
 </HEAD>
 
@@ -35,7 +34,6 @@
 <!--    17-Oct-2021 - validate HTML                                                                                  -->
 <!--    17-Oct-2021 - make text read reaonly                                                                         -->
 <!--    11-May-2022 - add <ASIDE3> grid region for corner image caption                                              -->
-<!--    17-May-2022 - extend the clear function                                                                      -->
 <!--                                                                                                                 -->
 <!-- <BODY> region for all content including header and footer ..................................................... -->
 
@@ -64,68 +62,68 @@
             <MAIN ID="MAIN1">
 
                 <SECTION>
-                    <DIV id="heading-div">
+                    <DIV style="width:80%; margin: auto; max-width:800px; text-align:center;">
                         <H2>Simplest</H2>
                         <P>A simple HTML template and Ajax call to print server text</P>
                     </DIV>
 
-                    <DIV id="fGetResults-div">
+                    <DIV style="width:80%; margin: auto; max-width:800px; text-align:left;">
                         <BUTTON onclick="fGetResults()">Fetch</BUTTON>
                     </DIV>
 
-                    <DIV id="results-div">
-                        <TEXTAREA id="ResultArea" readOnly rows="15"></TEXTAREA>
+                    <BR>
+                    <DIV style="width:80%; margin: auto; max-width:800px;">
+                        <TEXTAREA id="ResultArea" readOnly rows="15" style="width:100%; margin-bottom:10px;background-color:lightgrey"></TEXTAREA>
                     </DIV>
                 </SECTION>
 
 <!-- buttons to show and hide help and clear the textbox ........................................................... -->
 
-                <DIV id="MOREBTTNS">
+                <DIV id="HELP">
                     <BUTTON onclick="fShowHelp()">Help</BUTTON>
-                    <BUTTON onclick="fClearSimplestPage()">Clear</BUTTON>
+                    <BUTTON onclick="fClearPage()">Clear</BUTTON>
+                    <BR>
                 </DIV>
 
 <!-- help text controlled by button ................................................................................ -->
 
-                <DIV id="HELPDIV" class="help">
-                    <P>
-                        There is no help applicable to 'Simplest'<BR>
-                    </P>
+                <DIV id="HELPTXT">
+                    <DIV id="HELPDIV" class="help">
+                        <P>
+                            There is no help applicable to 'Simplest'<BR>
+                        </P>
+                    </DIV>
                 </DIV>
 
 <!-- internals text ................................................................................................ -->
 
-               <DIV id="INTERNALS">
-                    <DETAILS id="internals-details">
-                        <SUMMARY>
-                            Internals
-                        </SUMMARY>
-                        <P>
-                            html file: /var/www.html/simplest.html<BR>
-                            js file: /var/www.html/simplest.js<BR>
-                            js file: /var/www.html/common.js<BR>
-                            css file: /var/www/html/css/index.css<BR>
-                            css file: /var/www/html/css/simplest.css<BR>
-                            cgi file: /usr/lib/cgi-bin/simplest.cgi<BR>
-                            corner image: /var/www/html/cornerImage.png<BR>
-                            background image: /var/www/html/background.jpg<BR>
-                            CGI source code: c<BR>
-                        </P>
-                    </DETAILS>
-                </DIV>
+                <BR>
+                   <DIV id="INTERNALS">
+                        <DETAILS>
+                            <SUMMARY>
+                                Internals
+                            </SUMMARY>
+                            <P>
+                                html file: /var/www.html/simplest.html<BR>
+                                js file: /var/www.html/simplest.js<BR>
+                                css file: /var/www/html/css/index.css<BR>
+                                cgi file: /usr/lib/cgi-bin/simplest.cgi<BR>
+                                corner image: /var/www/html/cornerImage.png<BR>
+                                background image: /var/www/html/background.jpg<BR>
+                                CGI source code: C<BR>
+                            </P>
+                        </DETAILS>
+                    </DIV>
 
                 <SCRIPT src="simplest.js"></SCRIPT>
-                <SCRIPT src="common.js"></SCRIPT>
 
             </MAIN>
 
 <!-- <ASIDE1> region for change log ................................................................................ -->
 
             <ASIDE id="ASIDE1">
-                    <H3 id=ASIDE1H3>Changes 2021-22</H3>
+                    <H3 id=ASIDE1H3>Changes 2021</H3>
                 <UL ID="ASIDE1UL">
-                    <LI class="ASIDE1LI">17-May: add local stylesheet</LI>
-                    <LI class="ASIDE1LI">17-May: extend clear function</LI>
                     <LI class="ASIDE1LI">17-Oct: make textarea readonly</LI>
                     <LI class="ASIDE1LI">17-Oct: validate the HTML</LI>
                     <LI class="ASIDE1LI">17-Oct: fix the title</LI>
@@ -156,14 +154,13 @@
                 </DIV>
             </ASIDE>
 
-<!-- <FOOTER> region for page footer ................................................................................ -->
+<!-- <FOOTER> region for page footer
 
             <FOOTER id="FOOTER1">
                 <DIV id="FOOTER1DIV">
                     <P>&copy; 2020 www.risingfast.com ... /var/www/html/simplest.html</P>
                 </DIV>
             </FOOTER>
-
         </DIV>
     </DIV>
 </BODY>

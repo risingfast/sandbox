@@ -7,26 +7,16 @@
 //    10-Oct-2021 fix fClearHTML lines
 //    12-May-2022 change helpDiv to uppercase
 //    12-May-2022 change "none" to "" on x.style.display
+//    14-May-2022 move fShowHelp() to common.js
+//    16-May-2022 add fClearExtras() to fClearEmailFields
 
-// functions for action buttons to display and hide help ................................................................
-  
-function fShowHelp() {
-    var x = document.getElementById("HELPDIV");
-    if (x.style.display === "") {
-        x.style.display = "block";
-    } else {
-        x.style.display = "";
-    }
-}
+// function to clear all fiels on the email page if the 'Clear' button is pressed
 
-// function to clear page if 'Clear' button is pressed ..................................................................
-
-function fClearHTML() {
+function fClearEmailFields() {
     document.getElementById("emailName").value = "";
     document.getElementById("emailAddress").value = "";
     document.getElementById("emailSubject").value = "";
     document.getElementById("emailBody").value = "";
-    var x = document.getElementById("HELPDIV");
-    x.style.display = "none";
+    fClearExtras();
 }
 

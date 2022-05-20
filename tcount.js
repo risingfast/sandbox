@@ -1,26 +1,25 @@
-// helloWorld.js -- script to implement simplest.html webpage to print server text on the web
+// tcount.js -- script to implement tcount.cgi webpage to print a counter to a web page
 // Author: Geoff Jarman
 // Started: 29-Sep-2021
 // Log: 
-//    29-Sep 2021 start and test
-//    29-Sep-2021 clear textarea in resetShow() attached to reset button
-//    09-Oct-2021 prefix funcion names with 'f'
-//    16-Oct-2021 change fResetShows() to fClearPage()
-//    11-May-2022 change helpDiv to HELPDIV
-//    11-May-2022 change "none" to "" on x.style.display
-//    15-May-2022 remove fShowHelp() moved to common.js
-//    18-May-2022 extend the clear function
-
-const uri1 = "http://www.risingfast.com/cgi-bin/helloWorld.cgi";
+//    30-Sep 2021 start and test
+//    09-Oct-2021 prefix function names with 'f'
+//    17-Oct-2021 change fResetShows() to fClearPage()
+//    12-May-2022 change helpDiv to uppercase
+//    12-May-2022 change "none" to "" on x.style.display
+//    15-May-2022 remove fShowHelp() now in common.js
+//    18-May-2022 extend clear function
+  
+const uri1 = "http://www.risingfast.com/cgi-bin/tcount.cgi";
 
 // functions for action buttons to display and hide help ..........................................
-  
-function fClearHelloWorldPage() {
+
+function fCleartCountPage() {
     var x = document.getElementById("HELPDIV");
     var y = document.getElementById("ResultArea");
     x.style.display = "";
     y.value = "";
-
+    
     fClearExtras();
 }
 

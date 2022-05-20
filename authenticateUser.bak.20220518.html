@@ -14,7 +14,6 @@
     <META name="author" content="risingfast">
     <TITLE>Authenticate User</TITLE>
     <LINK rel="stylesheet" type="text/css" href="index.css">
-    <LINK rel="stylesheet" type="text/css" href="authenticateUser.css">
     <LINK rel="shortcut icon" href="letterRF.png" type="image/png">
 </HEAD>
 
@@ -39,7 +38,6 @@
 <!--    11-May-2022 - add <ASIDE3> for corner image caption                                                          -->
 <!--    11-May-2022 - add 'User' to heading                                                                          -->
 <!--    15-May-2022 - add script common.js                                                                           -->
-<!--    18-May-2022 - extend clear function                                                                          -->
 <!--                                                                                                                 -->
 <!-- <BODY> region for all content including header and footer ..................................................... -->
 
@@ -66,66 +64,57 @@
 <!-- <MAIN> region for main content and background image ........................................................... -->
 
             <MAIN ID="MAIN1">
-                <DIV id="heading-div">
-                    <H3>Authenticate User</H3>
-                </DIV>
-
-<!-- main data entry area .......................................................................................... -->
-
-                <DIV id="dataentry-username-div">
-                    <LABEL id="username-label" FOR="idUsername">Username:</LABEL>
-                    <INPUT ID="idUsername" REQUIRED SIZE="30" MAXLENGTH="60">
-                </DIV>
-                <DIV id="dataentry-password-div">
-                    <LABEL id="password-label" FOR="idPassword">Password:</LABEL>
-                    <INPUT ID="idPassword" type="password" REQUIRED SIZE="30" MAXLENGTH="60">
-                </DIV>
-                <DIV id="fgetResults-div">
-                    <BUTTON ONCLICK="fAuthenticateUser()">Authenticate</BUTTON>
-                </DIV>
-                <DIV id="results-div">
-                    <LABEL id="resultarea-label" FOR="ResultArea">Result:</LABEL>
-                    <INPUT ID="ResultArea" disabled size="30" maxlength="60">
-                </DIV>
-
-<!-- buttons to show and hide help and clear help and internals ..................................................... -->
-
-                <DIV id="MOREBTTNS">
-                    <BUTTON ONCLICK="fShowHelp()">Help</BUTTON>
-                    <BUTTON ONCLICK="fClearAuthenticateUserPage()">Clear</BUTTON>
-                </DIV>
+                <SECTION>
+                    <DIV STYLE="text-align:center">
+                        <H3>Authenticate User</H3>
+                    </DIV>
+                    <DIV STYLE="width:80%; margin: auto; max-width:800px; text-align:left">
+                        <LABEL FOR="idUsername" style="float:left; margin: 5px 10px 0px 0px">Username:</LABEL>
+                        <INPUT ID="idUsername" STYLE="margin: 5px 5px 10px 0px" REQUIRED SIZE="30" MAXLENGTH="60">
+                        <BR>
+                        <LABEL FOR="idPassword" style="float:left; margin: 5px 13px 0px 0px">Password:</LABEL>
+                        <INPUT ID="idPassword" type="password" STYLE="margin: 5px 5px 10px 0px; vertical-align:middle" REQUIRED SIZE="30" MAXLENGTH="60">
+                        <BUTTON STYLE="display:block; margin: 5px 5px 10px 0px" ONCLICK="fAuthenticateUser()">Authenticate</BUTTON>
+                        <LABEL FOR="idResult" style="float:left; margin: 5px 13px 0px 0px">Result:</LABEL>
+                        <INPUT ID="idResult" style="margin: 5px 5px 5px 21px; vertical-align:middle" disabled size="30" maxlength="60">
+                        <BR>
+                        <BUTTON STYLE="margin: 5px 5px 5px 0px" ONCLICK="fClearPage()">Clear</BUTTON>
+                        <BUTTON STYLE="margin: 5px 5px 5px 0px" ONCLICK="fShowHelp()">Help</BUTTON>
+                    </DIV>
+                </SECTION>
 
 <!-- help text controlled by button ................................................................................ -->
 
-                <DIV id="HELPDIV" class="help">
-                    <P>
-                        There is no help applicable to 'Authenticate User'<BR>
-                    </P>
+                <DIV id="HELPTXT">
+                    <DIV id="HELPDIV" class="help">
+                        <P>
+                            There is no help applicable to 'Authenticate User'<BR>
+                        </P>
+                    </DIV>
                 </DIV>
 
 <!-- internals text ................................................................................................ -->
 
-               <DIV id="INTERNALS">
-                    <DETAILS id="internals-details">
-                        <SUMMARY>
-                            Internals
-                        </SUMMARY>
-                        <P>
-                            html file: /var/www.html/authenticateUser.html<BR>
-                            js file: /var/www.html/common.js<BR>
-                            js file: /var/www.html/authenticateUser.js<BR>
-                            css file: /var/www/html/css/index.css<BR>
-                            css file: /var/www/html/css/authenticateUser.css<BR>
-                            cgi file: /usr/lib/cgi-bin/authenticateUser.cgi<BR>
-                            corner image: /var/www/html/cornerImage.png<BR>
-                            background image: /var/www/html/background.jpg<BR>
-                            CGI source code: C<BR>
-                        </P>
-                    </DETAILS>
-               </DIV>
+                <BR>
+                   <DIV id="INTERNALS">
+                        <DETAILS>
+                            <SUMMARY>
+                                Internals
+                            </SUMMARY>
+                            <P>
+                                html file: /var/www.html/authenticateUser.html<BR>
+                                js file: /var/www.html/authenticateUser.js<BR>
+                                css file: /var/www/html/css/index.css<BR>
+                                cgi file: /usr/lib/cgi-bin/authenticateUser.cgi<BR>
+                                corner image: /var/www/html/cornerImage.png<BR>
+                                background image: /var/www/html/background.jpg<BR>
+                                CGI source code: C<BR>
+                            </P>
+                        </DETAILS>
+                    </DIV>
 
-               <SCRIPT src="authenticateUser.js"></SCRIPT>
-               <SCRIPT src="common.js"></SCRIPT>
+                <SCRIPT src="authenticateUser.js"></SCRIPT>
+                <SCRIPT src="common.js"></SCRIPT>
 
             </MAIN>
 

@@ -9,17 +9,8 @@
 //     01-Oct-2021 add a clear()
 //     10-Oct-2021 prefix function names with 'f'
 //     12-May-2022 change helpDiv to uppercase
-
-// functions for action buttons to display and hide help ..........................................
-  
-function fShowHelp() {
-    var x = document.getElementById("HELPDIV");
-    if (x.style.display === "none") {
-        x.style.display = "block";
-    } else {
-        x.style.display = "none";
-    }
-}
+//     14-May-2022 remove showHelp()
+//     15-May-2022 change HELPDIV display.style from none to ""
 
 function fd_ajaxPost() {
     const root = '/cgi-bin/';
@@ -52,7 +43,8 @@ function fd_ajaxPost() {
      })
 }
 
-function fClearPage() {
+function fClearAjaxPostPage() {
     document.getElementById("textArea1").value="";
-    document.getElementById("HELPDIV").style.display = "none";
+    document.getElementById("HELPDIV").style.display = "";
+    fClearExtras();
 }

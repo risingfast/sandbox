@@ -58,11 +58,11 @@
             <NAV id="NAV1">
                     <H3 ID="NAV1H3">Links</H3>
                 <UL id="NAV1UL">
-                    <li class="NAV1LI"><A class="active" href="http://www.risingfast.com">Home</A></li>
-                    <li class="NAV1LI"><A href="http://www.risingfast.com/d_ajaxFetch.html">Latest</A></li>
-                    <li class="NAV1LI"><A href="http://www.risingfast.com/d_template.html">Template</A></li>
-                    <li class="NAV1LI"><A href="http://www.risingfast.com/email.html">Email</A></li>
-                    <li class="NAV1LI"><A href="http://www.risingfast.com/about.html">About</A></li>
+                    <LI class="NAV1LI"><A class="active" href="http://www.risingfast.com">Home</A></LI>
+                    <LI class="NAV1LI"><A href="http://www.risingfast.com/d_ajaxFetch.html">Latest</A></LI>
+                    <LI class="NAV1LI"><A href="http://www.risingfast.com/d_template.html">Template</A></LI>
+                    <LI class="NAV1LI"><A href="http://www.risingfast.com/email.html">Email</A></LI>
+                    <LI class="NAV1LI"><A href="http://www.risingfast.com/about.html">About</A></LI>
                 </UL>
             </NAV>
 
@@ -70,28 +70,30 @@
 
             <MAIN id="MAIN1">
 
-            <DIV id="heading-div">
+        <SECTION>
+            <DIV style="width:80%; margin: auto; max-width:800px; text-align:center;">
                 <H2>Collect Text</H2>
                 <P>
-                    Input a string of text and send it to a server file
+                    Input a string of text and send it to a file
                 </P>
             </DIV>
+        </SECTION>
 
 <!-- form .......................................................................................................... -->
 
-            <DIV id="input-div">
-                Your input (80 chars max):<BR>
-                <INPUT id="data" name="data" size="60" maxlength="80" onfocus="fEnableSend()">
-                <button id="sendButton" disabled onclick="fSaveText()">Send</button>
-            </DIV>
-
-            <DIV id="results-div">
-                <TEXTAREA id="resultsarea" rows="20"></TEXTAREA>
-            </DIV>
-
-            <DIV id="fgetresults-div">
-                <A href="javascript:fGetResults()">Show file contents</A>
-            </DIV>
+        <DIV style="width:80%; margin: auto; max-width:800px; text-align:left;">
+                <DIV id="inputtext-div">
+                    Your input (80 chars max):<BR>
+                    <INPUT id="data" name="data" size="60" maxlength="80" onfocus="fEnableSend()">
+                    <button id="sendButton" style="float:right" disabled onclick="fSaveText()">Send</button>
+                </DIV>
+                <DIV style="width:100%; margin-top: 10px">
+                    <TEXTAREA id="ResultArea" style="width:100%; margin: auto" rows="20"></TEXTAREA>
+                </DIV>
+                <DIV style="margin:10px 0px">
+                    <A href="javascript:fGetResults()">Show file contents</A>
+                </DIV>
+        </DIV>
 
 <!-- buttons to show and hide help and clear results ............................................................... -->
 
@@ -139,15 +141,14 @@
             <ASIDE id="ASIDE1">
                     <H3 ID=ASIDE1H3>Changes 2021</H3>
                 <UL id="ASIDE1UL">
-                    <li class="ASIDE1LI">19-May: implement collectText.css</li>
-                    <li class="ASIDE1LI">16-May: expand clear function</li>
-                    <li class="ASIDE1LI">17-Oct: add data.txt to internals</li>
-                    <li class="ASIDE1LI">17-Oct: block sending nothing</li>
-                    <li class="ASIDE1LI">10-Oct: 'f' prefix functions</li>
-                    <li class="ASIDE1LI">30-Sep: change to grid layout</li>
-                    <li class="ASIDE1LI">19-Sep: add Help button</li>
-                    <li class="ASIDE1LI">18-Sep: add Internals</li>
-                    <li class="ASIDE1LI">16-Sep: create template as grid</li>
+                    <LI class="ASIDE1LI">16-May: expand clear function</LI>
+                    <LI class="ASIDE1LI">17-Oct: add data.txt to internals</LI>
+                    <LI class="ASIDE1LI">17-Oct: block sending nothing</LI>
+                    <LI class="ASIDE1LI">10-Oct: 'f' prefix functions</LI>
+                    <LI class="ASIDE1LI">30-Sep: change to grid layout</LI>
+                    <LI class="ASIDE1LI">19-Sep: add Help button</LI>
+                    <LI class="ASIDE1LI">18-Sep: add Internals</LI>
+                    <LI class="ASIDE1LI">16-Sep: create template as grid</LI>
                 </UL>
             </ASIDE>
 

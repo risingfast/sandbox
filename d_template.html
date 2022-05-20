@@ -32,6 +32,7 @@
 <!--    19-Sep-2021 - add help button                                                                                -->
 <!--    09-Oct-2021 - prefix function names with 'f'                                                                 -->
 <!--    12-May-2022 - add <ASIDE3> for corner image caption                                                          -->
+<!--    16-May-2022 - expand clear function                                                                          -->
 <!--                                                                                                                 -->
 <!-- <BODY> region for all content including header and footer ..................................................... -->
 
@@ -89,43 +90,44 @@
                 </SECTION>
 
 
-<!-- buttons to show and hide help ................................................................................. -->
+<!-- buttons clear the page and show and hide help ................................................................................. -->
 
-                <DIV id="HELP">
+                <DIV id="MOREBTTNS">
                     <BUTTON onclick="fShowHelp()">Help</BUTTON>
+                    <BUTTON onclick="fClearTemplateFields()">Clear</BUTTON>
                     <BR>
                 </DIV>
 
 <!-- help text controlled by button ................................................................................ -->
 
-                <DIV id="HELPTXT">
-                    <DIV id="HELPDIV">
-                        <P>
-                            There is no help applicable to 'Template'<BR>
-                        </P>
-                    </DIV>
+                <DIV id="HELPDIV">
+                    <P>
+                    There is no help available for this page 'd_template.html'<BR>
+                    </P>
                 </DIV>
 
 <!-- internals text ................................................................................................ -->
 
-                <BR>
-                   <DIV id="INTERNALS">
-                        <DETAILS>
-                            <SUMMARY>
-                                Internals
-                            </SUMMARY>
-                            <P>
-                                html file: /var/www.html/d_template.html<BR>
-                                css file: /var/www/html/css/index.css<BR>
-                                cgi directory: /usr/lib/cgi-bin/<BR>
-                                corner image: /var/www/html/cornerImage.png<BR>
-                                background image: /var/www/html/background.jpg<BR>
-                                CGI source code: c<BR>
-                            </P>
-                        </DETAILS>
-                    </DIV>
+               <DIV id="INTERNALS">
+                    <DETAILS id="internals-details">
+                        <SUMMARY>
+                            Internals
+                        </SUMMARY>
+                        <P>
+                            html file: /var/www.html/d_template.html<BR>
+                            css file: /var/www/html/css/index.css<BR>
+                            js file: /var/www/html/css/d_template.js<BR>
+                            js file: /var/www/html/css/common.js<BR>
+                            cgi directory: /usr/lib/cgi-bin/<BR>
+                            corner image: /var/www/html/cornerImage.png<BR>
+                            background image: /var/www/html/background.jpg<BR>
+                            CGI source code: c<BR>
+                        </P>
+                    </DETAILS>
+               </DIV>
 
                 <SCRIPT src="d_template.js"></SCRIPT>
+                <SCRIPT src="common.js"></SCRIPT>
 
             </MAIN>
 
@@ -134,6 +136,7 @@
             <ASIDE id="ASIDE1">
                     <H3 id=ASIDE1H3>Changes 2021</H3>
                 <UL ID="ASIDE1UL">
+                    <LI class="ASIDE1LI">16-May: expand  id="internals-details"clear button</LI>
                     <LI class="ASIDE1LI">12-May: add corner image caption</LI>
                     <LI class="ASIDE1LI">09-Oct: 'f' prefix functions</LI>
                     <LI class="ASIDE1LI">19-Sep: add Help button</LI>

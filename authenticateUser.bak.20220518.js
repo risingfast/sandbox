@@ -25,28 +25,26 @@ async function fAuthenticateUser() {
     var sUsername = document.getElementById("idUsername").value;
     var sPassword = document.getElementById("idPassword").value;
 
-    fClearAuthenticateUserPage();
-    document.getElementById("ResultArea").disabled = false;
+    fClearPage();
+    document.getElementById("idResult").disabled = false;
 
     const uri2 = uri1 + '?Username=' + sUsername + '&Password=' + sPassword;
     let response = await fetch(uri2);
 
     if (response.ok) {
         let text = await response.text();
-        document.getElementById("ResultArea").value= text;
+        document.getElementById("idResult").value= text;
     } else {
-        document.getElementById("ResultArea").value= "CGI Call Failed";
+        document.getElementById("idResult").value= "CGI Call Failed";
     }
-    document.getElementById("ResultArea").disabled = true;
+    document.getElementById("idResult").disabled = true;
 }
 
-function fClearAuthenticateUserPage() {
+function fClearPage() {
     document.getElementById("idUsername").value = "";
     document.getElementById("idPassword").value = "";
-    document.getElementById("ResultArea").value = "";
+    document.getElementById("idResult").value = "";
     document.getElementById("idUsername").focus();
     var x = document.getElementById("HELPDIV");
     x.style.display = "";
-
-    fClearExtras();
 }
