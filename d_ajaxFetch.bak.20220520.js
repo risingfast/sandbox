@@ -35,7 +35,7 @@ async function fd_AjaxFetch1() {
     if (response.ok) {
         let text = await response.text();
         console.log(text.slice(0, 80));
-        document.getElementById("text1-area").value=(text + "\nFired by the AjaxFetch1() button");
+        document.getElementById("TextArea1").value=(text + "\nFired by the AjaxFetch1() button");
         document.getElementById("MessageInput").value="d_AjaxFetch1() fired";
     } else {
         alert("HttpError: " + response.status);
@@ -49,7 +49,7 @@ async function fd_AjaxFetch2() {
     if (response.ok) {
         let text = await response.text();
         console.log(text.slice(0, 80));
-        document.getElementById("text2-area").value=(text + "\nFired by the AjaxFetch2() button");
+        document.getElementById("TextArea2").value=(text + "\nFired by the AjaxFetch2() button");
         document.getElementById("MessageInput").value="d_AjaxFetch2() fired";
     } else {
         alert("HttpError: " + response.status);
@@ -59,9 +59,7 @@ async function fd_AjaxFetch2() {
 // function to clear existing text in text and message areas
 
 function fClearTextAreas() {
-    document.getElementById("text1-area").value="";
-    document.getElementById("text2-area").value="";
+    document.getElementById("TextArea1").value="";
+    document.getElementById("TextArea2").value="";
     document.getElementById("MessageInput").value="";
-
-    fClearExtras();
 }

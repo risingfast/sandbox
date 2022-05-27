@@ -2,20 +2,21 @@
 
 <!-- <HEAD> region for meta tags ................................................................................... -->
 
-<HTML lang="en">
+<html lang="en">
 
-<HEAD>
-    <META charset="UTF-8">
-    <META name="viewport" content="width=device-width, initial-scale=1.0">
-    <META http-equiv="X-UA-Compatible" content="ie=edge">
-    <META name="description" content="Main index to risingfast website">
-    <META name="keywords" content="html, css, cgi">
-    <META name="generator" content="vim">
-    <META name="author" content="risingfast">
-    <TITLE>Email</TITLE>
-    <LINK rel="stylesheet" type="text/css" href="index.css">
-    <LINK rel="shortcut icon" href="letterRF.png" type="image/png">
-</HEAD>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Main index to risingfast website">
+    <meta name="keywords" content="html, css, cgi">
+    <meta name="generator" content="vim">
+    <meta name="author" content="risingfast">
+    <title>Email</title>
+    <link rel="stylesheet" type="text/css" href="common.css">
+    <link rel="stylesheet" type="text/css" href="email.css">
+    <link rel="shortcut icon" href="letterRF.png" type="image/png">
+</head>
 <!-- Comments region ............................................................................................... -->
 <!--                                                                                                                 -->
 <!-- email.html - email page                                                                                         -->
@@ -35,147 +36,147 @@
 <!--    12-May-2022 add <ASIDE3> for corner image caption                                                            -->
 <!--    14-May-2022 add common.js                                                                                    -->
 <!--    16-May-2022 clear internals with clear button                                                                -->
+<!--    24-May-2022 lowercase html tags                                                                              -->
 <!--                                                                                                                 -->
 <!-- <BODY> region for all content including header and footer ..................................................... -->
 
-<BODY>
-    <DIV ID="WRAPPER1">
-        <DIV ID="WRAPPER2">
-            <HEADER ID="HEADER1">
-                <BR>
-                <DIV ID="HEADER1DIV">
-                     <H2>www.Risingfast.com</H2>
-                </DIV>
-            </HEADER>
-            <NAV ID="NAV1">
-                    <H3 ID="NAV1H3">Links</H3>
-                <UL ID="NAV1UL">
-                    <LI class="NAV1LI"><A class="active" HREF="http://www.risingfast.com">Home</A></LI>
-                    <LI class="NAV1LI"><A HREF="http://www.risingfast.com/d_ajaxFetch.html">Latest</A></LI>
-                    <LI class="NAV1LI"><A HREF="http://www.risingfast.com/d_template.html">Template</A></LI>
-                    <LI class="NAV1LI"><A HREF="http://www.risingfast.com/email.html">Email</A></LI>
-                    <LI class="NAV1LI"><A HREF="http://www.risingfast.com/about.html">About</A></LI>
-                </UL>
-            </NAV>
+<body>
+    <div id="WRAPPER1">
+        <div id="WRAPPER2">
+            <header id="HEADER1">
+                <br>
+                <div id="HEADER1DIV">
+                     <h2>www.Risingfast.com</h2>
+                </div>
+            </header>
+            <nav id="NAV1">
+                    <h3 id="NAV1H3">Links</h3>
+                <ul id="NAV1UL">
+                    <li class="NAV1LI"><a class="active" HREF="http://www.risingfast.com">Home</a></li>
+                    <li class="NAV1LI"><a HREF="http://www.risingfast.com/d_ajaxFetch.html">Latest</a></li>
+                    <li class="NAV1LI"><a HREF="http://www.risingfast.com/d_template.html">Template</a></li>
+                    <li class="NAV1LI"><a HREF="http://www.risingfast.com/email.html">Email</a></li>
+                    <li class="NAV1LI"><a HREF="http://www.risingfast.com/about.html">About</a></li>
+                </ul>
+            </nav>
 
 <!-- <MAIN> region for main content and background image ........................................................... -->
 
-            <MAIN ID="MAIN1">
+            <main id="MAIN1">
 
-            <SECTION>
-                <DIV style="width:80%; margin:auto; max-width:800px; text-align:center;">
-                    <H3 id="mailHeader">Email</H3>
-                </DIV>
-                <DIV style="width:80%; max-width: 800px; margin:auto; display:in-line;">
-                    <FORM action="mailto:webmail@risingfast.com" method="GET" enctype="text/plain">
-                        <DIV class="emailLblAndInput" style="margin-bottom: 5px">
-                            <LABEL class="emailLbl" for="Name" value="name:" style="margin-right: 10px">Name:</LABEL>
-                            <INPUT id="emailName" class="emailInp" type="text" name="name"/>
-                        </DIV>
-                        <DIV id=emailLblAndInput style="margin-bottom: 5px">
-                            <LABEL class="emailLbl" for="email" value="email:" style="margin-right: 10px">Email:</LABEL>
-                            <INPUT id="emailAddress" class="emailInp" type="text" name="email"/>
-                        </DIV>
-                        <DIV id=emailLblAndInput style="margin-bottom: 5px">
-                            <LABEL class="emailLbl" for="emailSub" value="email:">Subject:</LABEL>
-                            <INPUT id="emailSubject" class="emailInp" type="text" name="Subject"/>
-                        </DIV>
-                        <DIV id=emailLblAndInput>
-                            <LABEL class="emailLbl" for="text" value="text" style="margin-right:20px">Text:</LABEL>
-                            <TEXTAREA id="emailBody" class="emailInp" name="text" rows="20" style="width:80%">Your message:</TEXTAREA>
-                        </DIV>
-                        <DIV id="SUBMITDIV">
-                            <INPUT class="emailSub" type="submit" name="emailSubmit" value="Submit"/>
-                        </DIV>
-                    </FORM>
-                </DIV>
-            </SECTION>
+                <div id="heading-div">
+                    <h3 id="mailHeader">Email</h3>
+                </div>
+                <div id="form-div">
+                    <form action="mailto:webmail@risingfast.com" method="GET" enctype="text/plain">
+                        <div id="name-div">
+                            <labeL class="emailLbl" for="Name" value="name:" style="margin-right: 10px">Name:</label>
+                            <input id="emailName" type="text" name="name"/>
+                        </div>
+                        <div id="mailto-div">
+                            <label class="emailLbl" for="email" value="email:" style="margin-right: 10px">Email:</label>
+                            <input id="emailAddress" type="text" name="email"/>
+                        </div>
+                        <div id="subject-div">
+                            <label class="emailLbl" for="emailSub" value="email:">Subject:</label>
+                            <input id="emailSubject" type="text" name="Subject"/>
+                        </div>
+                        <div id="message-div">
+                            <textarea id="emailBody" name="text" rows="20">Your message:</textarea>
+                        </div>
+                        <div id="submit-div">
+                            <input id="submit-input" type="submit" name="emailSubmit" value="Submit"/>
+                        </div>
+                    </form>
+                </div>
 
 <!-- buttons to show and hide help ................................................................................. -->
 
-                <DIV id="MOREBTTNS">
-                    <BUTTON style="margin: 0px 5px 0px 0px" onclick="fShowHelp()" style="margin-right: 10px">Help</BUTTON>
-                    <BUTTON style="margin: 0px 0px 0px 5px" onclick="fClearEmailFields()">Clear</BUTTON>
-                    <BR>
-                </DIV>
+                <div id="MOREBTTNS">
+                    <button style="margin: 0px 5px 0px 0px" onclick="fShowHelp()" style="margin-right: 10px">Help</button>
+                    <button style="margin: 0px 0px 0px 5px" onclick="fClearEmailFields()">Clear</button>
+                    <br>
+                </div>
 
 <!-- help text controlled by button ................................................................................ -->
 
-                <DIV id="HELPDIV">
-                    <P>
-                        There is no help available for this page 'email.html'<BR>
-                    </P>
-                </DIV>
+                <div id="HELPDIV">
+                    <p>
+                        There is no help available for this page 'email.html'<br>
+                    </p>
+                </div>
 
 <!-- internals text ................................................................................................ -->
 
-                <DIV id="INTERNALS">
-                     <DETAILS id="internals-details">
-                         <SUMMARY>
+                <div id="INTERNALS">
+                     <details id="internals-details">
+                         <summary>
                              Internals
-                         </SUMMARY>
-                         <P>
-                             html file: /var/www.html/d_template.html<BR>
-                             css file: /var/www/html/index.css<BR>
-                             js file: /var/www/html/email.js<BR>
-                             js file: /var/www/html/common.js<BR>
-                             cgi directory: /usr/lib/cgi-bin/<BR>
-                             corner image: /var/www/html/cornerImage.png<BR>
-                             background image: /var/www/html/background.jpg<BR>
-                             CGI source code: c<BR>
-                         </P>
-                     </DETAILS>
-                </DIV>
+                         </summary>
+                         <p>
+                             html file: /var/www.html/d_template.html<br>
+                             css1 file: /var/www/html/common.css<br>
+                             css2 file: /var/www/html/email.css<br>
+                             js file1: /var/www/html/common.js<br>
+                             js file2: /var/www/html/email.js<br>
+                             cgi directory: /usr/lib/cgi-bin/<br>
+                             corner image: /var/www/html/cornerImage.png<br>
+                             background image: /var/www/html/background.jpg<br>
+                             CGI source code: c<br>
+                         </p>
+                     </details>
+                </div>
 
-                <SCRIPT src="email.js"></SCRIPT>
-                <SCRIPT src="common.js"></SCRIPT>
+                <script src="email.js"></script>
+                <script src="common.js"></script>
 
-            </MAIN>
+            </main>
 
 <!-- <ASIDE1> region for change log ................................................................................ -->
 
-            <ASIDE ID="ASIDE1">
-                    <H3 ID=ASIDE1H3>Changes 2021-22</H3>
-                <UL ID="ASIDE1UL">
-                    <LI CLASS="ASIDE1LT">16-May: make clear global</LI>
-                    <LI CLASS="ASIDE1LT">16-May: expand clear button function</LI>
-                    <LI CLASS="ASIDE1LI">10-Oct: troubleshoot Clear function</LI>
-                    <LI CLASS="ASIDE1LI">10-Oct: 'f' prefix functions</LI>
-                    <LI CLASS="ASIDE1LI">19-Sep: add Help button</LI>
-                    <LI CLASS="ASIDE1LI">18-Sep: add Internals</LI>
-                    <LI CLASS="ASIDE1LI">16-Sep: create template as grid</LI>
-                </UL>
-            </ASIDE>
+            <aside id="ASIDE1">
+                    <h3 id=ASIDE1H3>Changes 2021-22</h3>
+                <ul id="ASIDE1UL">
+                    <li CLASS="ASIDE1LT">24-May: lowercase html tags</li>
+                    <li CLASS="ASIDE1LT">16-May: make clear global</li>
+                    <li CLASS="ASIDE1LT">16-May: expand clear button function</li>
+                    <li CLASS="ASIDE1LI">10-Oct: troubleshoot Clear function</li>
+                    <li CLASS="ASIDE1LI">10-Oct: 'f' prefix functions</li>
+                    <li CLASS="ASIDE1LI">19-Sep: add Help button</li>
+                    <li CLASS="ASIDE1LI">18-Sep: add Internals</li>
+                    <li CLASS="ASIDE1LI">16-Sep: create template as grid</li>
+                </ul>
+            </aside>
 
 <!-- <ASIDE2> region for corner image .............................................................................. -->
 
-            <ASIDE ID="ASIDE2">
-                <DIV ID="ASIDE2DIV">
-                     <IMG ID="ASIDE2IMG" SRC="cornerImage.png" ALT="Cannot Load cornerImage.png">
-                </DIV>
-            </ASIDE>
+            <aside id="ASIDE2">
+                <div id="ASIDE2DIV">
+                     <img id="ASIDE2IMG" SRC="cornerImage.png" ALT="Cannot Load cornerImage.png">
+                </div>
+            </aside>
 
 <!-- <ASIDE3> region for corner image caption ...................................................................... -->
 
-            <ASIDE id="ASIDE3">
-                <DIV id="ASIDE3DIV">
-                    <P>
+            <aside id="ASIDE3">
+                <div id="ASIDE3DIV">
+                    <p>
                     Matilda Cook in Magpies uniform before her next netball game 2022
-                    </P>
-                </DIV>
-            </ASIDE>
+                    </p>
+                </div>
+            </aside>
 
 
 <!-- <FOOTER> region for page footer ............................................................................... -->
 
-            <FOOTER ID="FOOTER1">
-                <DIV ID="FOOTER1DIV">
-                    <P>&copy; 2020 www.risingfast.com ... /var/www/html/index.html</P>
-                </DIV>
-            </FOOTER>
-        </DIV>
-    </DIV>
-</BODY>
+            <footer id="FOOTER1">
+                <div id="FOOTER1DIV">
+                    <p>&copy; 2020 www.risingfast.com ... /var/www/html/index.html</p>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
 
-</HTML>
+</html>
 

@@ -11,13 +11,12 @@
 //     12-May-2022 change helpDiv to uppercase
 //     14-May-2022 remove showHelp()
 //     15-May-2022 change HELPDIV display.style from none to ""
-//     20-May-2022 change TextArea1 to text1-area
 
 function fd_ajaxPost() {
     const root = '/cgi-bin/';
     let url = root + 'd_ajaxPost.cgi';
 
-    strData = document.getElementById("text1-area").value;
+    strData = document.getElementById("textArea1").value;
 
     let options = {
         method: 'POST',
@@ -29,7 +28,7 @@ function fd_ajaxPost() {
     fetch(req)
       .then ((response) => {
             if(response.ok) {
-            document.getElementById("text1-area").value="Text posted to d_ajaxPost.dat on the server";
+            document.getElementById("textArea1").value="Text posted to d_ajaxPost.dat on the server";
             return response.text();
             }
        else {
@@ -45,8 +44,7 @@ function fd_ajaxPost() {
 }
 
 function fClearAjaxPostPage() {
-    document.getElementById("text1-area").value="";
+    document.getElementById("textArea1").value="";
     document.getElementById("HELPDIV").style.display = "";
-
     fClearExtras();
 }

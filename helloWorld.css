@@ -4,12 +4,13 @@
 /*         HTML & CSS for Beginners Part 22: How to create a basic layout - the CSS                                  */
 /* Log                                                                                                               */
 /*     18-May-2022 - started                                                                                         */
+/*     24-May-2022 - changed margin spacing from 5px to 10px                                                         */
 
 #heading-div {
     width: 80%;
     margin: auto;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     max-width: 800px;
     text-align: center;
 }
@@ -17,8 +18,8 @@
 #fGetResults-div {
     width: 80%;
     margin: auto;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     max-width: 800px;
     text-align: left;
 }
@@ -26,8 +27,8 @@
 #results-div {
     width: 80%;
     margin: auto; 
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     max-width: 800px;
 }
 

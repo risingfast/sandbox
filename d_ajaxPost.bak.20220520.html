@@ -37,7 +37,6 @@
 <!--     10-Oct-2021 add <ASIDE3> region for corner image caption                                                    -->
 <!--     14-May-2022 add common.js                                                                                   -->
 <!--     16-May-2022 expand clear function()                                                                         -->
-<!--     16-May-2022 add d_ajaxPost.css                                                                              -->
 <!--                                                                                                                 -->
 <!-- <BODY> region for all content including header and footer ..................................................... -->
 
@@ -45,6 +44,7 @@
     <DIV ID="WRAPPER1">
         <DIV ID="WRAPPER2">
             <HEADER ID="HEADER1">
+                <BR>
                 <DIV ID="HEADER1DIV">
                      <H2>www.Risingfast.com</H2>
                 </DIV>
@@ -64,14 +64,16 @@
 
             <MAIN ID="MAIN1">
 
-            <DIV id="heading-div">
-                <H3>Post Drill</H3>
-                <TEXTAREA id="text1-area" rows="6">
-                    </TEXTAREA>
-                    <DIV id="post-div">
-                    <BUTTON id="post-button" onclick="fd_ajaxPost()">Post</BUTTON>
-                    </DIV>
-            </DIV>
+            <SECTION>
+                <DIV style="width:80%; margin: auto; max-width:800px; text-align:center;">
+                    <H3>Post Drill</H3>
+                        <TEXTAREA id="textArea1" rows="6" style="width:100%">
+                        </TEXTAREA>
+                        <DIV style="text-align: left;">
+                        <BUTTON style="margin: 10px 0px 10px 0px" onclick="fd_ajaxPost()">Post</BUTTON>
+                        </DIV>
+                </DIV>
+            </SECTION>
 
 
 <!-- buttons to show and hide help ................................................................................. -->
@@ -104,10 +106,8 @@
                             <P>
                                 html file: /var/www.html/d_ajaxPost.html<BR>
                                 js file: /var/www.html/d_ajaxPost.js<BR>
-                                js file: /var/www.html/common.js<BR>
                                 data file: /usr/lib/cgi-bin/d_ajaxPost.dat<BR>
-                                css file: /var/www/html/common.css<BR>
-                                css file: /var/www/html/d_ajaxPost.css<BR>
+                                css file: /var/www/html/css/index.css<BR>
                                 cgi file: /usr/lib/cgi-bin/s_ajaxPost.cgi<BR>
                                 corner image: /var/www/html/cornerImage.png<BR>
                                 background image: /var/www/html/background.jpg<BR>
@@ -126,7 +126,6 @@
             <ASIDE ID="ASIDE1">
                     <H3 ID=ASIDE1H3>Changes 2021</H3>
                 <UL ID="ASIDE1UL">
-                    <LI CLASS="ASIDE1LI">20-May: add d_ajaxPost.css</LI>
                     <LI CLASS="ASIDE1LI">16-May: extend clear function()</LI>
                     <LI CLASS="ASIDE1LI">12-May: add corner image caption</LI>
                     <LI CLASS="ASIDE1LI">10-Oct: 'f' prefix functions</LI>

@@ -69,61 +69,71 @@
 
             <MAIN ID="MAIN1">
 
-                <DIV id="heading-div">
-                    <H2>Ajax Fetch</H2>
-                    <P>An HTML an CGI to fetch server data</P>
-                </DIV>
+                <SECTION>
+                    <DIV style="width:80%; margin: auto; max-width:800px; text-align:center;">
+                        <H2>Ajax Fetch</H2>
+                        <P>An HTML an CGI to fetch server data</P>
+                    </DIV>
+                </SECTION>
 
 
 <!-- first ajax fetch text area..................................................................................... -->
 
-            <DIV id="firsttest-div">
+        <SECTION>
+            <DIV style="text-align:center; width:80%;  margin:auto">
                 <H3>First Ajax Test Section</H3>
                 <P>
                     Updated by AjaxFetch1(): 
                     <BUTTON onclick="fd_AjaxFetch1()">AjaxFetch1()</BUTTON><BR><BR>
+                    <TEXTAREA id="TextArea1" rows="4" style="width:100%"> </TEXTAREA>
                 </P>
-                <TEXTAREA id="text1-area" rows="4"> </TEXTAREA>
             </DIV>
+        </SECTION>
 
 <!-- second ajax fetch text area.................................................................................... -->
 
-            <DIV id="secondtest-div">
+        <SECTION>
+            <DIV style="text-align:center; width:80%;  margin:auto">
                 <H3>Second Ajax Test Section</H3>
                 <P>
                     Updated by AjaxFetch2():
                     <BUTTON onclick="fd_AjaxFetch2()">AjaxFetch2()</BUTTON><BR><BR>
+                    <TEXTAREA id="TextArea2" rows="4" style="width:100%"> </TEXTAREA>
                 </P>
-                <TEXTAREA id="text2-area" rows="4"> </TEXTAREA>
             </DIV>
-
-            <DIV id="messages-div">
+        </SECTION> 
+        <SECTION>
+            <DIV style="text-align:center; width:80%; margin:auto">
                 <H3>System Messages Section</H3>
+                <P>
                     System Messages:<BR><BR>
                     Messages: 
                     <INPUT id="MessageInput" type="text" readonly placeholder="System controlled messages here">
+                </P>
             </DIV>
+        </SECTION>
+
 
 <!-- buttons to show and hide help ................................................................................. -->
 
-            <DIV id="MOREBTTNS">
-                <BUTTON onclick="fShowHelp()">Help</BUTTON>
-                <BUTTON onclick="fClearTextAreas()">Clear</BUTTON>
-            </DIV>
+                <DIV id="MOREBTTNS">
+                    <BUTTON onclick="fShowHelp()">Help</BUTTON>
+                    <BUTTON onclick="fClearTextAreas()">Clear</BUTTON>
+                </DIV>
 
 <!-- help text controlled by button ................................................................................ -->
 
-            <DIV id="HELPDIV" class="help">
-                <P>
-                    There is no help applicable to 'Ajax Fetch'<BR>
-                </P>
-            </DIV>
+                <DIV id="HELPDIV" class="help">
+                    <P>
+                        There is no help applicable to 'Ajax Fetch'<BR>
+                    </P>
+                </DIV>
 
 <!-- internals text ................................................................................................ -->
 
                    <DIV id="INTERNALS">
-                        <DETAILS id="internals-details">
-                            <SUMMARY>
+                        <DETAILS>
+                            <SUMMARY style="outline:none">
                                 Internals
                             </SUMMARY>
                             <P>
@@ -149,8 +159,7 @@
             <ASIDE ID="ASIDE1">
                     <H3 ID=ASIDE1H3>Changes 2021-22</H3>
                 <UL ID="ASIDE1UL">
-                    <LI CLASS="ASIDE1LI">20-May - add d_ajaxFetch.css</LI>
-                    <LI CLASS="ASIDE1LI">19-May - add common.css</LI>
+                    <LI CLASS="ASIDE1LI">12-May - add corner image caption</LI>
                     <LI CLASS="ASIDE1LI">10-Oct - 'f' prefix functions</LI>
                     <LI CLASS="ASIDE1LI">02-Oct - move to grid layout</LI>
                     <LI CLASS="ASIDE1LI">11-Sep - center top navigation</LI>

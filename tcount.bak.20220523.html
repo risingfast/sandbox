@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<!-- <HEAD> region for meta tags ................................................................................... -->
+<!-- <HEAD> region for meta tags .................................................................................. -->
 
 <HTML lang="en">
 
@@ -12,29 +12,28 @@
     <META name="keywords" content="html, css, cgi">
     <META name="generator" content="vim">
     <META name="author" content="risingfast">
-    <TITLE>Template</TITLE>
+    <TITLE>Counter</TITLE>
     <LINK rel="stylesheet" type="text/css" href="common.css">
-    <LINK rel="stylesheet" type="text/css" href="d_template.css">
+    <LINK rel="stylesheet" type="text/css" href="tcount.css">
     <LINK rel="shortcut icon" href="letterRF.png" type="image/png">
 </HEAD>
 
 <!-- Comments region ............................................................................................... -->
 <!--                                                                                                                 -->
-<!-- d_template.html -  grid template for risingfast website pages                                                   -->
+<!-- tcount.html -  counter print in grid layout using CGI to fetch the server counter value                         -->
 <!-- References:                                                                                                     -->
 <!--      https://www.youtube.com/watch?v=qTGbWfEEnKI                                                                -->
 <!--          Easily Structure your Layout with CSS Grid's 'grid-template-areas'                                     -->
 <!-- Templates:                                                                                                      -->
 <!--      none                                                                                                       -->
 <!-- Log:                                                                                                            -->
-<!--    16-Sep-2021 - start                                                                                          -->
-<!--    16-Sep-2021 - change image size on media query                                                               -->
-<!--    19-Sep-2021 - add internals section in main area                                                             -->
-<!--    19-Sep-2021 - add help button                                                                                -->
+<!--    30-Sep-2021 - start                                                                                          -->
 <!--    09-Oct-2021 - prefix function names with 'f'                                                                 -->
-<!--    12-May-2022 - add <ASIDE3> for corner image caption                                                          -->
-<!--    16-May-2022 - expand clear function                                                                          -->
-<!--    20-May-2022 - remove <SECTION> tags                                                                          -->
+<!--    17-Oct-2021 - change fResetShow() to fClearPage()                                                            -->
+<!--    17-Oct-2021 - validate HTML                                                                                  -->
+<!--    12-May-2022 - add <ASIDE3> corner image caption                                                              -->
+<!--    15-May-2022 - add common.js script reference                                                                 -->
+<!--    18-May-2022 - extend clear function                                                                          -->
 <!--                                                                                                                 -->
 <!-- <BODY> region for all content including header and footer ..................................................... -->
 
@@ -42,6 +41,7 @@
     <DIV id="WRAPPER1">
         <DIV id="WRAPPER2">
             <HEADER id="HEADER1">
+                <BR>
                 <DIV id="HEADER1DIV">
                      <H2>www.Risingfast.com</H2>
                 </DIV>
@@ -57,46 +57,35 @@
                 </UL>
             </NAV>
 
-<!-- <MAIN> region for main content and background image ........................................................... -->
+<!-- <MAIN> region for main content and background image .......................................................... -->
 
             <MAIN id="MAIN1">
 
                 <DIV id="heading-div">
-                    <H2>Template</H2>
-                    <P>An HTML template layout using CSS Grid</P>
+                    <H2>Counter</H2>
+                    <P>A simple HTML template and Ajax call to print a server counter</P>
                 </DIV>
 
-                <DIV id="section1-div">
-                    <H3>Section 1:</H3>
-                        <OL id="OL1">
-                            <LI>Ordered List Item 1</LI>
-                            <LI>Ordered List Item 2</LI>
-                            <LI>Ordered List Item 3</LI>
-                        </OL>
+                <DIV id="fGetResults-div">
+                    <BUTTON onclick="fGetResults()">Fetch</BUTTON>
                 </DIV>
 
-                <DIV id="section2-div">
-                    <H3>Section 2:</H3>
-                        <OL id="OL2">
-                            <LI>Ordered List Item 1</LI>
-                            <LI>Ordered List Item 2</LI>
-                            <LI>Ordered List Item 3</LI>
-                        </OL>
+                <DIV id="results-div">
+                    <TEXTAREA id="ResultArea" rows="10" ></TEXTAREA>
                 </DIV>
 
-
-<!-- buttons clear the page and show and hide help ................................................................................. -->
+<!-- buttons to show and hide help and clear the textbox ........................................................... -->
 
                 <DIV id="MOREBTTNS">
                     <BUTTON onclick="fShowHelp()">Help</BUTTON>
-                    <BUTTON onclick="fClearTemplateFields()">Clear</BUTTON>
+                    <BUTTON onclick="fCleartCountPage()">Clear</BUTTON>
                 </DIV>
 
 <!-- help text controlled by button ................................................................................ -->
 
-                <DIV id="HELPDIV">
+                <DIV id="HELPDIV" class="help">
                     <P>
-                    There is no help available for this page 'd_template.html'<BR>
+                        There is no help applicable to 'Counter'<BR>
                     </P>
                 </DIV>
 
@@ -108,20 +97,20 @@
                             Internals
                         </SUMMARY>
                         <P>
-                            html file: /var/www.html/d_template.html<BR>
-                            css file: /var/www/html/common.css<BR>
-                            css file: /var/www/html/d_template.css<BR>
-                            js file: /var/www/html/d_template.js<BR>
-                            js file: /var/www/html/common.js<BR>
-                            cgi directory: /usr/lib/cgi-bin/<BR>
+                            html file: /var/www.html/tcount.html<BR>
+                            js file: /var/www.html/tcount.js<BR>
+                            js file: /var/www.html/common.js<BR>
+                            css file: /var/www/html/css/index.css<BR>
+                            css file: /var/www/html/css/tcount.css<BR>
+                            cgi file: /usr/lib/cgi-bin/tcount.cgi<BR>
                             corner image: /var/www/html/cornerImage.png<BR>
                             background image: /var/www/html/background.jpg<BR>
-                            CGI source code: c<BR>
+                            CGI source code: C<BR>
                         </P>
                     </DETAILS>
-               </DIV>
+                </DIV>
 
-                <SCRIPT src="d_template.js"></SCRIPT>
+                <SCRIPT src="tcount.js"></SCRIPT>
                 <SCRIPT src="common.js"></SCRIPT>
 
             </MAIN>
@@ -129,17 +118,13 @@
 <!-- <ASIDE1> region for change log ................................................................................ -->
 
             <ASIDE id="ASIDE1">
-                    <H3 id=ASIDE1H3>Changes 2021</H3>
-                <UL ID="ASIDE1UL">
-                    <LI class="ASIDE1LI">20-May: remove SECTION tags</LI>
-                    <LI class="ASIDE1LI">20-May: add d_template.css </LI>
-                    <LI class="ASIDE1LI">20-May: add d_common.css </LI>
-                    <LI class="ASIDE1LI">16-May: expand clear function </LI>
-                    <LI class="ASIDE1LI">12-May: add corner image caption</LI>
+                    <H3 id=ASIDE1H3>Changes 2021-22</H3>
+                <UL id="ASIDE1UL">
+                    <LI class="ASIDE1LI">12-May: add caption to corner image</LI>
+                    <LI class="ASIDE1LI">17-Oct: validate HTML</LI>
+                    <LI class="ASIDE1LI">17-Oct: change reset to clear</LI>
                     <LI class="ASIDE1LI">09-Oct: 'f' prefix functions</LI>
-                    <LI class="ASIDE1LI">19-Sep: add Help button</LI>
-                    <LI class="ASIDE1LI">18-Sep: add Internals</LI>
-                    <LI class="ASIDE1LI">16-Sep: create template as grid</LI>
+                    <LI class="ASIDE1LI">30-Sep: move to grid layout</LI>
                 </UL>
             </ASIDE>
 
@@ -161,11 +146,11 @@
                 </DIV>
             </ASIDE>
 
-<!-- <FOOTER> region for page footer ............................................................................... -->
+<!-- <FOOTER> region for page footer -----------------------------------------------------------------------------.- -->
 
             <FOOTER id="FOOTER1">
                 <DIV id="FOOTER1DIV">
-                    <P>&copy; 2020 www.risingfast.com ... /var/www/html/index.html</P>
+                    <P>&copy; 2020 www.risingfast.com ... /var/www/html/tcount.html</P>
                 </DIV>
             </FOOTER>
         </DIV>
