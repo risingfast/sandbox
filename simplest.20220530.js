@@ -8,11 +8,8 @@
 //    16-Oct-2021 change reset to clear
 //    12-May-2022 change "none" to "" for x.style.display
 //    17-May-2022 redefine the clear function
-//    30-May-2022 add fSetCornerImage();
-//    31-May-2021 add math.random() to fSetCornerImage()
   
 const uri1 = "http://www.risingfast.com/cgi-bin/simplest.cgi";
-const uri2 = "http://www.risingfast.com/cgi-bin/setCornerImage.cgi";
 
 // functions for action buttons to display and hide help ..........................................
   
@@ -45,22 +42,3 @@ async function fGetResults() {
         alert("HttpError: " + response.status);
     }
 }
-
-// function to ajax fetch the current corner image and caption
-
-async function fSetCornerImage() {
-    let response = await fetch(uri2);
-    if (response.ok) {
-        let text = await response.text();
-        let array = text.split("\n");
-        array.pop();                      // remove the last element (empty element) created by the split("\n")
-        let intRecords = array.length/3;
-        let intRecordSelected = Math.trunc(Math.random() * intRecords);
-        document.getElementById("ASIDE2IMG").src=array[intRecordSelected * 3]
-        document.getElementById("ASIDE3-PARA").innerHTML=array[(intRecordSelected * 3) + 1];
-    } else {
-        alert("HttpError: " + response.status);
-    }
-}
-
-

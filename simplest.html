@@ -37,10 +37,13 @@
 <!--    11-May-2022 - add <ASIDE3> grid region for corner image caption                                              -->
 <!--    17-May-2022 - extend the clear function                                                                      -->
 <!--    22-May-2022 - lowercase html tags                                                                            -->
+<!--    30-May-2022 - set the corner image                                                                           -->
+<!--    31-May-2022 - change default cornerimage                                                                     -->
+<!--    31-May-2022 - add cornerimage rotation                                                                       -->
 <!--                                                                                                                 -->
 <!-- <BODY> region for all content including header and footer ..................................................... -->
 
-<body>
+<body onload="fSetCornerImage()">
     <div id="WRAPPER1">
         <div id="WRAPPER2">
             <header id="HEADER1">
@@ -125,6 +128,9 @@
             <aside id="ASIDE1">
                     <h3 id=ASIDE1H3>Changes 2021-22</h3>
                 <ul id="ASIDE1UL">
+                    <li class="ASIDE1LI">31-May: add cornerimage rotation</li>
+                    <li class="ASIDE1LI">31-May: change dflt cornerimage</li>
+                    <li class="ASIDE1LI">30-May: set corner image</li>
                     <li class="ASIDE1LI">22-May: lowercase html tags</li>
                     <li class="ASIDE1LI">17-May: add local stylesheet</li>
                     <li class="ASIDE1LI">17-May: extend clear function</li>
@@ -144,7 +150,7 @@
 
             <aside id="ASIDE2">
                 <div id="ASIDE2DIV">
-                     <img id="ASIDE2IMG" src="cornerImage.png" alt="Cannot Load cornerImage.png">
+                     <img id="ASIDE2IMG" src="cornerImageLeithAndNatalieGarden.png" alt="Cannot Load cornerImage.png">
                 </div>
             </aside>
 
@@ -152,7 +158,7 @@
 
             <aside id="ASIDE3">
                 <div id="ASIDE3DIV">
-                    <p>
+                    <p id="ASIDE3-PARA">
                      Matilda Cook in Magpies uniform before her next netball game 2022
                     </p>
                 </div>

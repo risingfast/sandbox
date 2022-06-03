@@ -22,7 +22,7 @@ CFLAGS=-g -o
 SQL2FLAGS=-L/usr/lib/x86_64-linux-gnu
 #SQL2FLAGS=-L/usr/lib/x86_64-linux-gnu -lmysqlclient -lpthread -lz -lm -lrt -lssl -lcrypto -ldl -lresolv
 
-all: authenticateUser collectText d_AjaxFetch1 d_AjaxFetch2 d_ajaxPost helloWorld multiply simplest
+all: authenticateUser collectText d_AjaxFetch1 d_AjaxFetch2 d_ajaxPost helloWorld multiply simplest setCornerImage
 
 authenticateUser: authenticateUser.c
 	$(CC) $(CFLAGS) $@ $^ $(SQL2FLAGS)
@@ -52,5 +52,8 @@ simplest: simplest.c
 tcount: tcount.c
 	$(CC) $(CFLAGS) $@ $^ $(SQL2FLAGS)
 
+setCornerImage: setCornerImage.c
+	$(CC) $(CFLAGS) $@ $^ $(SQL2FLAGS)
+
 clean:
-	rm -f *.o *.s *.i authenticateUser collectText d_AjaxFetch1 d_AjaxFetch2 d_ajaxPost helloWorld multiply simplest
+	rm -f *.o *.s *.i authenticateUser collectText d_AjaxFetch1 d_AjaxFetch2 d_ajaxPost helloWorld multiply simplest setCornerImage

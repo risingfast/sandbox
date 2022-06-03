@@ -1,10 +1,10 @@
-/* authenticateUser.css - a css template for the authenticateUer.html layout                                         */
+/* tcount.css - a css template for the tcount.html layout                                                            */
 /* started - 18-May-2022                                                                                             */
 /* References:                                                                                                       */
 /*         HTML & CSS for Beginners Part 22: How to create a basic layout - the CSS                                  */
 /* Log                                                                                                               */
 /*     18-May-2022 - started                                                                                         */
-/*     23-May-2022 - changed 5px margins to 10px                                                                     */
+/*     24-May-2022 - changed margins from 5px to 10px                                                                */
 
 #heading-div {
     width: 80%;
@@ -15,46 +15,13 @@
     text-align: center;
 }
 
-#dataentry-username-div {
+#fGetResults-div {
     width: 80%;
     margin: auto;
     margin-top: 10px;
     margin-bottom: 10px;
     max-width: 800px;
     text-align: left;
-}
-
-#dataentry-password-div {
-    width: 80%;
-    margin: auto;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    max-width: 800px;
-    text-align: left;
-}
-
-#username-label {
-    width: 80px;
-    display: inline-block;
-}
-
-#password-label {
-    width: 80px;
-    display: inline-block;
-}
-
-#fgetResults-div {
-    width: 80%;
-    margin: auto;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    max-width: 800px;
-    text-align: left;
-}
-
-#resultarea-label {
-    width: 80px;
-    display: inline-block;
 }
 
 #results-div {
@@ -65,17 +32,7 @@
     max-width: 800px;
 }
 
-#idUsername {
-    width: 200px;
-}
-
-#idPassword {
-    width: 200px;
-}
-
 #ResultArea {
-    width: 200px;
+    width: 100%;
     background-color: lightgrey;
-    border-style: solid;
-    border-width: thin;
 }

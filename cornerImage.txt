@@ -1,0 +1,2 @@
+testimage.png
+this is a test image

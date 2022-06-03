@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<!-- <head> region for meta tags .................................................................................. -->
+<!-- <HEAD> region for meta tags ................................................................................... -->
 
 <html lang="en">
 
@@ -8,86 +8,96 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description" content="Main index to risingfast website">
+    <meta name="description" content="html template">
     <meta name="keywords" content="html, css, cgi">
     <meta name="generator" content="vim">
     <meta name="author" content="risingfast">
-    <title>Counter</title>
+    <title>Template</title>
     <link rel="stylesheet" type="text/css" href="common.css">
-    <link rel="stylesheet" type="text/css" href="tcount.css">
+    <link rel="stylesheet" type="text/css" href="d_template.css">
     <link rel="shortcut icon" href="letterRF.png" type="image/png">
 </head>
 
 <!-- Comments region ............................................................................................... -->
 <!--                                                                                                                 -->
-<!-- tcount.html -  counter print in grid layout using CGI to fetch the server counter value                         -->
+<!-- d_template.html -  grid template for risingfast website pages                                                   -->
 <!-- References:                                                                                                     -->
 <!--      https://www.youtube.com/watch?v=qTGbWfEEnKI                                                                -->
 <!--          Easily Structure your Layout with CSS Grid's 'grid-template-areas'                                     -->
 <!-- Templates:                                                                                                      -->
 <!--      none                                                                                                       -->
 <!-- Log:                                                                                                            -->
-<!--    30-Sep-2021 - start                                                                                          -->
+<!--    16-Sep-2021 - start                                                                                          -->
+<!--    16-Sep-2021 - change image size on media query                                                               -->
+<!--    19-Sep-2021 - add internals section in main area                                                             -->
+<!--    19-Sep-2021 - add help button                                                                                -->
 <!--    09-Oct-2021 - prefix function names with 'f'                                                                 -->
-<!--    17-Oct-2021 - change fResetShow() to fClearPage()                                                            -->
-<!--    17-Oct-2021 - validate HTML                                                                                  -->
-<!--    12-May-2022 - add <ASIDE3> corner image caption                                                              -->
-<!--    15-May-2022 - add common.js script reference                                                                 -->
-<!--    18-May-2022 - extend clear function                                                                          -->
+<!--    12-May-2022 - add <ASIDE3> for corner image caption                                                          -->
+<!--    16-May-2022 - expand clear function                                                                          -->
+<!--    20-May-2022 - remove SECTION tags                                                                          -->
 <!--    23-May-2022 - lowercase html tags                                                                            -->
-<!--    01-Jun-2022 - add cornerimage rotation                                                                       -->
 <!--                                                                                                                 -->
 <!-- <body> region for all content including header and footer ..................................................... -->
 
-<body onload="fSetCornerImage()">
+<body>
     <div id="WRAPPER1">
         <div id="WRAPPER2">
             <header id="HEADER1">
-                <br>
                 <div id="HEADER1DIV">
                      <h2>www.Risingfast.com</h2>
                 </div>
             </header>
             <nav id="NAV1">
                     <h3 id="NAV1H3">Links</h3>
-                <ul id="NAV1UL">
-                    <li class="NAV1LI"><a class="active" href="http://www.risingfast.com">Home</a></li>
-                    <li class="NAV1LI"><a href="http://www.risingfast.com/d_ajaxFetch.html">Latest</a></li>
-                    <li class="NAV1LI"><a href="http://www.risingfast.com/d_template.html">Template</a></li>
-                    <li class="NAV1LI"><a href="http://www.risingfast.com/email.html">Email</a></li>
-                    <li class="NAV1LI"><a href="http://www.risingfast.com/about.html">About</a></li>
+                <UL id="NAV1UL">
+                    <LI class="NAV1LI"><a class="active" href="http://www.risingfast.com">Home</a></li>
+                    <LI class="NAV1LI"><a href="http://www.risingfast.com/d_ajaxFetch.html">Latest</a></li>
+                    <LI class="NAV1LI"><a href="http://www.risingfast.com/d_template.html">Template</a></li>
+                    <LI class="NAV1LI"><a href="http://www.risingfast.com/email.html">Email</a></li>
+                    <LI class="NAV1LI"><a href="http://www.risingfast.com/about.html">About</a></li>
                 </ul>
             </nav>
 
-<!-- <MAIN> region for main content and background image .......................................................... -->
+<!-- <main> region for main content and background image ........................................................... -->
 
             <main id="MAIN1">
 
                 <div id="heading-div">
-                    <h2>Counter</h2>
-                    <p>A simple HTML template and Ajax call to print a server counter</p>
+                    <h2>Template</h2>
+                    <p>An HTML template layout using CSS Grid</p>
                 </div>
 
-                <div id="fGetResults-div">
-                    <button onclick="fGetResults()">Fetch</button>
+                <div id="section1-div">
+                    <h3>Section 1:</h3>
+                        <ol id="OL1">
+                            <li>Ordered List Item 1</li>
+                            <li>Ordered List Item 2</li>
+                            <li>Ordered List Item 3</li>
+                        </ol>
                 </div>
 
-                <div id="results-div">
-                    <textarea id="ResultArea" rows="10" ></textarea>
+                <div id="section2-div">
+                    <h3>Section 2:</h3>
+                        <ol id="OL2">
+                            <li>Ordered List Item 1</li>
+                            <li>Ordered List Item 2</li>
+                            <li>Ordered List Item 3</li>
+                        </ol>
                 </div>
 
-<!-- buttons to show and hide help and clear the textbox ........................................................... -->
+
+<!-- buttons clear the page and show and hide help ................................................................................. -->
 
                 <div id="MOREBTTNS">
                     <button onclick="fShowHelp()">Help</button>
-                    <button onclick="fCleartCountPage()">Clear</button>
+                    <button onclick="fClearTemplateFields()">Clear</button>
                 </div>
 
 <!-- help text controlled by button ................................................................................ -->
 
-                <div id="HELPDIV" class="help">
+                <div id="HELPDIV">
                     <p>
-                        There is no help applicable to 'Counter'<br>
+                    There is no help available for this page 'd_template.html'<br>
                     </p>
                 </div>
 
@@ -99,20 +109,20 @@
                             Internals
                         </summary>
                         <p>
-                            html file: /var/www.html/tcount.html<br>
-                            js file1: /var/www.html/tcount.js<br>
-                            js file2: /var/www.html/common.js<br>
-                            css file1: /var/www/html/css/index.css<br>
-                            css file2: /var/www/html/css/tcount.css<br>
-                            cgi file: /usr/lib/cgi-bin/tcount.cgi<br>
+                            html file: /var/www.html/d_template.html<br>
+                            css file1: /var/www/html/common.css<br>
+                            css file2: /var/www/html/d_template.css<br>
+                            js file1: /var/www/html/d_template.js<br>
+                            js file2: /var/www/html/common.js<br>
+                            cgi directory: /usr/lib/cgi-bin/<br>
                             corner image: /var/www/html/cornerImage.png<br>
                             background image: /var/www/html/background.jpg<br>
-                            CGI source code: C<br>
+                            CGI source code: c<br>
                         </p>
                     </details>
-                </div>
+               </div>
 
-                <script src="tcount.js"></script>
+                <script src="d_template.js"></script>
                 <script src="common.js"></script>
 
             </main>
@@ -120,15 +130,18 @@
 <!-- <ASIDE1> region for change log ................................................................................ -->
 
             <aside id="ASIDE1">
-                    <h3 id=ASIDE1H3>Changes 2021-22</h3>
+                    <h3 id=ASIDE1H3>Changes 2021</h3>
                 <ul id="ASIDE1UL">
-                    <li class="ASIDE1LI">01-Jun: add cornerimage rotation</li>
                     <li class="ASIDE1LI">23-May: lowercase html tags</li>
-                    <li class="ASIDE1LI">12-May: add caption to corner image</li>
-                    <li class="ASIDE1LI">17-Oct: validate HTML</li>
-                    <li class="ASIDE1LI">17-Oct: change reset to clear</li>
+                    <li class="ASIDE1LI">20-May: remove SECTION tags</li>
+                    <li class="ASIDE1LI">20-May: add d_template.css </li>
+                    <li class="ASIDE1LI">20-May: add d_common.css </li>
+                    <li class="ASIDE1LI">16-May: expand clear function </li>
+                    <li class="ASIDE1LI">12-May: add corner image caption</li>
                     <li class="ASIDE1LI">09-Oct: 'f' prefix functions</li>
-                    <li class="ASIDE1LI">30-Sep: move to grid layout</li>
+                    <li class="ASIDE1LI">19-Sep: add Help button</li>
+                    <li class="ASIDE1LI">18-Sep: add Internals</li>
+                    <li class="ASIDE1LI">16-Sep: create template as grid</li>
                 </ul>
             </aside>
 
@@ -137,24 +150,24 @@
             <aside id="ASIDE2">
                 <div id="ASIDE2DIV">
                      <img id="ASIDE2IMG" src="cornerImage.png" alt="Cannot Load cornerImage.png">
-                </div>
+                </diV>
             </aside>
 
 <!-- <ASIDE3> region for corner image caption ...................................................................... -->
 
             <aside id="ASIDE3">
                 <div id="ASIDE3DIV">
-                    <p id="ASIDE3-PARA">
+                    <p>
                     Matilda Cook in Magpies uniform before her next netball game 2022
                     </p>
                 </div>
             </aside>
 
-<!-- <FOOTER> region for page footer -----------------------------------------------------------------------------.- -->
+<!-- <FOOTER> region for page footer ............................................................................... -->
 
             <footer id="FOOTER1">
                 <div id="FOOTER1DIV">
-                    <p>&copy; 2020 www.risingfast.com ... /var/www/html/tcount.html</p>
+                    <p>&copy; 2020 www.risingfast.com ... /var/www/html/index.html</P>
                 </div>
             </footer>
         </div>

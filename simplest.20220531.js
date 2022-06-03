@@ -1,26 +1,33 @@
-// helloWorld.js -- script to implement simplest.html webpage to print server text on the web
+// simplest.js -- script to implement simplest.html webpage to print server text on the web
 // Author: Geoff Jarman
 // Started: 29-Sep-2021
 // Log: 
 //    29-Sep 2021 start and test
 //    29-Sep-2021 clear textarea in resetShow() attached to reset button
-//    09-Oct-2021 prefix funcion names with 'f'
-//    16-Oct-2021 change fResetShows() to fClearPage()
-//    11-May-2022 change helpDiv to HELPDIV
-//    11-May-2022 change "none" to "" on x.style.display
-//    15-May-2022 remove fShowHelp() moved to common.js
-//    18-May-2022 extend the clear function
-//    01-Jun-2022 add cornerimage rotation
-
-const uri1 = "http://www.risingfast.com/cgi-bin/helloWorld.cgi";
+//    09-Oct-2021 prefix 'f' on function names
+//    16-Oct-2021 change reset to clear
+//    12-May-2022 change "none" to "" for x.style.display
+//    17-May-2022 redefine the clear function
+//    30-May-2022 add fSetCornerImage(ecd 
+  
+const uri1 = "http://www.risingfast.com/cgi-bin/simplest.cgi";
 const uri2 = "http://www.risingfast.com/cgi-bin/setCornerImage.cgi";
 
 // functions for action buttons to display and hide help ..........................................
   
-function fClearHelloWorldPage() {
+function fShowHelp() {
+    var x = document.getElementById("HELPDIV");
+    if (x.style.display === "") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "";
+    }
+}
+
+function fClearSimplestPage() {
     var x = document.getElementById("HELPDIV");
     var y = document.getElementById("ResultArea");
-    x.style.display = "";
+    x.style.display = "none";
     y.value = "";
 
     fClearExtras();
@@ -40,18 +47,17 @@ async function fGetResults() {
 
 // function to ajax fetch the current corner image and captiona
 
+
 async function fSetCornerImage() {
     let response = await fetch(uri2);
     if (response.ok) {
         let text = await response.text();
         let array = text.split("\n");
-        array.pop();                      // remove the last element (empty element) created by the split("\n")
-        let intRecords = array.length/3;
-        let intRecordSelected = Math.trunc(Math.random() * intRecords);
-        document.getElementById("ASIDE2IMG").src=array[intRecordSelected * 3]
-        document.getElementById("ASIDE3-PARA").innerHTML=array[(intRecordSelected * 3) + 1];
+        document.getElementById("ASIDE2IMG").src=array[0]
+        document.getElementById("ASIDE3-PARA").innerHTML=array[1];
     } else {
         alert("HttpError: " + response.status);
     }
 }
+
 

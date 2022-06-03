@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<!-- <head> region for meta tags ................................................................................... -->
+<!-- <head> region for meta tags .................................................................................. -->
 
 <html lang="en">
 
@@ -12,15 +12,15 @@
     <meta name="keywords" content="html, css, cgi">
     <meta name="generator" content="vim">
     <meta name="author" content="risingfast">
-    <title>Template</title>
+    <title>Authenticate User</title>
     <link rel="stylesheet" type="text/css" href="common.css">
-    <link rel="stylesheet" type="text/css" href="helloWorld.css">
+    <link rel="stylesheet" type="text/css" href="authenticateUser.css">
     <link rel="shortcut icon" href="letterRF.png" type="image/png">
 </head>
 
 <!-- Comments region ............................................................................................... -->
 <!--                                                                                                                 -->
-<!-- helloWorld.html -  helloWorld text print in grid layout using CGI to fetch the text                             -->
+<!-- authenticateUser.html -  grid template layout to authenticate a user                                            -->
 <!-- References:                                                                                                     -->
 <!--      https://www.youtube.com/watch?v=qTGbWfEEnKI                                                                -->
 <!--          Easily Structure your Layout with CSS Grid's 'grid-template-areas'                                     -->
@@ -28,18 +28,23 @@
 <!--      none                                                                                                       -->
 <!-- Log:                                                                                                            -->
 <!--    16-Sep-2021 - start                                                                                          -->
-<!--    29-Sep-2021 - implement Reset button and Fetch button                                                        -->
-<!--    09-Oct-2021 - prefix functions with 'f'                                                                      -->
-<!--    16-Oct-2021 - change reset to clear                                                                          -->
-<!--    11-May-2022 - add <ASIDE3> grid region for corner image caption                                              -->
+<!--    16-Sep-2021 - change image size on media query                                                               -->
+<!--    19-Sep-2021 - add internals section in main area                                                             -->
+<!--    19-Sep-2021 - add help button                                                                                -->
+<!--    24-Sep-2021 - copy template to authenticateUser.html for grid layout conversion                              -->
+<!--    25-Sep-2021 - add Password and Result fields                                                                 -->
+<!--    30-Sep-2021 - change footer text to match filename                                                           -->
+<!--    16-Oct-2021 - move Help button                                                                               -->
+<!--    16-Oct-2021 - disable Results input field                                                                    -->
+<!--    11-May-2022 - add <ASIDE3> for corner image caption                                                          -->
+<!--    11-May-2022 - add 'User' to heading                                                                          -->
 <!--    15-May-2022 - add script common.js                                                                           -->
 <!--    18-May-2022 - extend clear function                                                                          -->
 <!--    23-May-2022 - lowercase html tags                                                                            -->
-<!--    01-Jun-2022 - lowercase html tags                                                                            -->
 <!--                                                                                                                 -->
 <!-- <BODY> region for all content including header and footer ..................................................... -->
 
-<body onload="fSetCornerImage()">
+<body>
     <div id="WRAPPER1">
         <div id="WRAPPER2">
             <header id="HEADER1">
@@ -62,34 +67,40 @@
 <!-- <MAIN> region for main content and background image ........................................................... -->
 
             <main id="MAIN1">
-
                 <div id="heading-div">
-                    <h2>Hello World!</h2>
-                    <p>A simple HTML template and Ajax call to print server text</p>
+                    <h3>Authenticate User</h3>
                 </div>
 
+<!-- main data entry area .......................................................................................... -->
 
-                <div id="fGetResults-div">
-                    <button onclick="fGetResults()">Fetch</button>
+                <div id="dataentry-username-div">
+                    <label id="username-label" FOR="idUsername">Username:</label>
+                    <input id="idUsername" REQUIRED SIZE="30" MAXLENGTH="60">
                 </div>
-
+                <div id="dataentry-password-div">
+                    <label id="password-label" FOR="idPassword">Password:</label>
+                    <input id="idPassword" type="password" REQUIRED SIZE="30" MAXLENGTH="60">
+                </div>
+                <div id="fgetResults-div">
+                    <button ONCLICK="fAuthenticateUser()">Authenticate</button>
+                </div>
                 <div id="results-div">
-                    <textarea id="ResultArea" rows="15"></textarea>
+                    <label id="resultarea-label" FOR="ResultArea">Result:</label>
+                    <input id="ResultArea" disabled size="30" maxlength="60">
                 </div>
 
-<!-- buttons to show and hide help and clear help and internals..................................................... -->
+<!-- buttons to show and hide help and clear help and internals ..................................................... -->
 
                 <div id="MOREBTTNS">
-                    <button onclick="fShowHelp()">Help</button>
-                    <button onclick="fClearHelloWorldPage()">Clear</button>
-                    <br>
+                    <button ONCLICK="fShowHelp()">Help</button>
+                    <button ONCLICK="fClearAuthenticateUserPage()">Clear</button>
                 </div>
 
 <!-- help text controlled by button ................................................................................ -->
 
-                <div id="HELPDIV">
+                <div id="HELPDIV" class="help">
                     <p>
-                        There is no help applicable to 'Hello World'<br>
+                        There is no help applicable to 'Authenticate User'<br>
                     </p>
                 </div>
 
@@ -97,25 +108,25 @@
 
                <div id="INTERNALS">
                     <details id="internals-details">
-                        <SUMMARY>
+                        <summary>
                             Internals
-                        </SUMMARY>
+                        </summary>
                         <p>
-                            html file: /var/www.html/helloWorld.html<br>
-                            js file1: /var/www.html/helloWorld.js<br>
-                            js file2: /var/www.html/common.js<br>
-                            css file1: /var/www/html/css/helloWorld.css<br>
-                            css file2: /var/www/html/css/common.css<br>
-                            cgi file: /usr/lib/cgi-bin/helloWorld.cgi<br>
+                            html file: /var/www.html/authenticateUser.html<br>
+                            js file1: /var/www.html/common.js<br>
+                            js file2: /var/www.html/authenticateUser.js<br>
+                            css file1: /var/www/html/css/common.css<br>
+                            css file2: /var/www/html/authenticateUser.css<br>
+                            cgi file: /usr/lib/cgi-bin/authenticateUser.cgi<br>
                             corner image: /var/www/html/cornerImage.png<br>
                             background image: /var/www/html/background.jpg<br>
                             CGI source code: C<br>
                         </p>
                     </details>
-                </div>
+               </div>
 
-                <script src="helloWorld.js"></script>
-                <script src="common.js"></script>
+               <script src="authenticateUser.js"></script>
+               <script src="common.js"></script>
 
             </main>
 
@@ -124,11 +135,16 @@
             <aside id="ASIDE1">
                     <h3 id=ASIDE1H3>Changes 2021-22</h3>
                 <ul id="ASIDE1UL">
-                    <li class="ASIDE1LI">01-Jun: set cornerimage rotation</li>
                     <li class="ASIDE1LI">23-May: lowercase html tags</li>
-                    <li class="ASIDE1LI">16-Oct: change reset to clear</li>
-                    <li class="ASIDE1LI">09-Oct: 'f' prefix functions</li>
-                    <li class="ASIDE1LI">19-Sep: move to grid layout</li>
+                    <li class="ASIDE1LI">11-May: add corner image caption</li>
+                    <li class="ASIDE1LI">16-Oct: disable Results field</li>
+                    <li class="ASIDE1LI">16-Oct: move Help button</li>
+                    <li class="ASIDE1LI">19-Sep: add Help button</li>
+                    <li class="ASIDE1LI">18-Sep: add Internals</li>
+                    <li class="ASIDE1LI">16-Sep: create template as grid</li>
+                    <li class="ASIDE1LI">24-Sep: add a Clear button</li>
+                    <li class="ASIDE1LI">24-Sep: add a Password</li>
+                    <li class="ASIDE1LI">24-Sep: check password in CGI</li>
                 </ul>
             </aside>
 
@@ -144,7 +160,7 @@
 
             <aside id="ASIDE3">
                 <div id="ASIDE3DIV">
-                    <p id="ASIDE3-PARA">
+                    <p>
                      Matilda Cook in Magpies uniform before her next netball game 2022
                     </p>
                 </div>
@@ -154,7 +170,7 @@
 
             <footer id="FOOTER1">
                 <div id="FOOTER1DIV">
-                    <p>&copy; 2020 www.risingfast.com ... /var/www/html/helloWorld.html</p>
+                    <p>&copy; 2020 www.risingfast.com ... /var/www/html/authenticateUser.html</P>
                 </div>
             </footer>
         </div>

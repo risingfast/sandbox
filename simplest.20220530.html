@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<!-- <head> region for meta tags ................................................................................... -->
+<!-- <HEAD> region for meta tags .................................................................................. -->
 
 <html lang="en">
 
@@ -12,15 +12,15 @@
     <meta name="keywords" content="html, css, cgi">
     <meta name="generator" content="vim">
     <meta name="author" content="risingfast">
-    <title>Template</title>
+    <title>Text Fetch</title>
     <link rel="stylesheet" type="text/css" href="common.css">
-    <link rel="stylesheet" type="text/css" href="helloWorld.css">
+    <link rel="stylesheet" type="text/css" href="simplest.css">
     <link rel="shortcut icon" href="letterRF.png" type="image/png">
 </head>
 
 <!-- Comments region ............................................................................................... -->
 <!--                                                                                                                 -->
-<!-- helloWorld.html -  helloWorld text print in grid layout using CGI to fetch the text                             -->
+<!-- simplest.html -  simple text print in grid layout using CGI to fetch the text                                   -->
 <!-- References:                                                                                                     -->
 <!--      https://www.youtube.com/watch?v=qTGbWfEEnKI                                                                -->
 <!--          Easily Structure your Layout with CSS Grid's 'grid-template-areas'                                     -->
@@ -29,17 +29,18 @@
 <!-- Log:                                                                                                            -->
 <!--    16-Sep-2021 - start                                                                                          -->
 <!--    29-Sep-2021 - implement Reset button and Fetch button                                                        -->
-<!--    09-Oct-2021 - prefix functions with 'f'                                                                      -->
+<!--    09-Oct-2021 - prefix 'f' on function names                                                                   -->
 <!--    16-Oct-2021 - change reset to clear                                                                          -->
+<!--    17-Oct-2021 - fix the title                                                                                  -->
+<!--    17-Oct-2021 - validate HTML                                                                                  -->
+<!--    17-Oct-2021 - make text read reaonly                                                                         -->
 <!--    11-May-2022 - add <ASIDE3> grid region for corner image caption                                              -->
-<!--    15-May-2022 - add script common.js                                                                           -->
-<!--    18-May-2022 - extend clear function                                                                          -->
-<!--    23-May-2022 - lowercase html tags                                                                            -->
-<!--    01-Jun-2022 - lowercase html tags                                                                            -->
+<!--    17-May-2022 - extend the clear function                                                                      -->
+<!--    22-May-2022 - lowercase html tags                                                                            -->
 <!--                                                                                                                 -->
 <!-- <BODY> region for all content including header and footer ..................................................... -->
 
-<body onload="fSetCornerImage()">
+<body>
     <div id="WRAPPER1">
         <div id="WRAPPER2">
             <header id="HEADER1">
@@ -51,45 +52,45 @@
             <nav id="NAV1">
                     <h3 id="NAV1H3">Links</h3>
                 <ul id="NAV1UL">
-                    <li class="NAV1LI"><a class="active" HREF="http://www.risingfast.com">Home</a></li>
-                    <li class="NAV1LI"><a HREF="http://www.risingfast.com/d_ajaxFetch.html">Latest</a></li>
-                    <li class="NAV1LI"><a HREF="http://www.risingfast.com/d_template.html">Template</a></li>
-                    <li class="NAV1LI"><a HREF="http://www.risingfast.com/email.html">Email</a></li>
-                    <li class="NAV1LI"><a HREF="http://www.risingfast.com/about.html">About</a></li>
+                    <li class="NAV1LI"><a class="active" href="http://www.risingfast.com">Home</a></li>
+                    <li class="NAV1LI"><a href="http://www.risingfast.com/d_ajaxFetch.html">Latest</a></li>
+                    <li class="NAV1LI"><a href="http://www.risingfast.com/d_template.html">Template</a></li>
+                    <li class="NAV1LI"><a href="http://www.risingfast.com/email.html">Email</a></li>
+                    <li class="NAV1LI"><a href="http://www.risingfast.com/about.html">About</a></li>
                 </ul>
             </nav>
 
-<!-- <MAIN> region for main content and background image ........................................................... -->
+<!-- <MAIN> region for main content and background image .......................................................... -->
 
             <main id="MAIN1">
 
-                <div id="heading-div">
-                    <h2>Hello World!</h2>
-                    <p>A simple HTML template and Ajax call to print server text</p>
-                </div>
+                <section>
+                    <div id="heading-div">
+                        <h2>Simplest</h2>
+                        <p>A simple HTML template and Ajax call to print server text</p>
+                    </div>
 
+                    <div id="fGetResults-div">
+                        <button onclick="fGetResults()">Fetch</button>
+                    </div>
 
-                <div id="fGetResults-div">
-                    <button onclick="fGetResults()">Fetch</button>
-                </div>
+                    <div id="results-div">
+                        <textarea id="ResultArea" readOnly rows="15"></textarea>
+                    </div>
+                </section>
 
-                <div id="results-div">
-                    <textarea id="ResultArea" rows="15"></textarea>
-                </div>
-
-<!-- buttons to show and hide help and clear help and internals..................................................... -->
+<!-- buttons to show and hide help and clear the textbox ........................................................... -->
 
                 <div id="MOREBTTNS">
                     <button onclick="fShowHelp()">Help</button>
-                    <button onclick="fClearHelloWorldPage()">Clear</button>
-                    <br>
+                    <button onclick="fClearSimplestPage()">Clear</button>
                 </div>
 
 <!-- help text controlled by button ................................................................................ -->
 
-                <div id="HELPDIV">
+                <div id="HELPDIV" class="help">
                     <p>
-                        There is no help applicable to 'Hello World'<br>
+                        There is no help applicable to 'Simplest'<BR>
                     </p>
                 </div>
 
@@ -97,24 +98,24 @@
 
                <div id="INTERNALS">
                     <details id="internals-details">
-                        <SUMMARY>
+                        <summary>
                             Internals
-                        </SUMMARY>
+                        </summary>
                         <p>
-                            html file: /var/www.html/helloWorld.html<br>
-                            js file1: /var/www.html/helloWorld.js<br>
+                            html file: /var/www.html/simplest.html<br>
+                            js file1: /var/www.html/simplest.js<br>
                             js file2: /var/www.html/common.js<br>
-                            css file1: /var/www/html/css/helloWorld.css<br>
-                            css file2: /var/www/html/css/common.css<br>
-                            cgi file: /usr/lib/cgi-bin/helloWorld.cgi<br>
+                            css file1: /var/www/html/simplest.css<br>
+                            css file2: /var/www/html/common.css<br>
+                            cgi file: /usr/lib/cgi-bin/simplest.cgi<br>
                             corner image: /var/www/html/cornerImage.png<br>
                             background image: /var/www/html/background.jpg<br>
-                            CGI source code: C<br>
+                            CGI source code: c<br>
                         </p>
                     </details>
                 </div>
 
-                <script src="helloWorld.js"></script>
+                <script src="simplest.js"></script>
                 <script src="common.js"></script>
 
             </main>
@@ -124,19 +125,26 @@
             <aside id="ASIDE1">
                     <h3 id=ASIDE1H3>Changes 2021-22</h3>
                 <ul id="ASIDE1UL">
-                    <li class="ASIDE1LI">01-Jun: set cornerimage rotation</li>
-                    <li class="ASIDE1LI">23-May: lowercase html tags</li>
+                    <li class="ASIDE1LI">22-May: lowercase html tags</li>
+                    <li class="ASIDE1LI">17-May: add local stylesheet</li>
+                    <li class="ASIDE1LI">17-May: extend clear function</li>
+                    <li class="ASIDE1LI">17-Oct: make textarea readonly</li>
+                    <li class="ASIDE1LI">17-Oct: validate the HTML</li>
+                    <li class="ASIDE1LI">17-Oct: fix the title</li>
                     <li class="ASIDE1LI">16-Oct: change reset to clear</li>
                     <li class="ASIDE1LI">09-Oct: 'f' prefix functions</li>
-                    <li class="ASIDE1LI">19-Sep: move to grid layout</li>
+                    <li class="ASIDE1LI">19-Sep: add a Reset button</li>
+                    <li class="ASIDE1LI">19-Sep: add a Help button</li>
+                    <li class="ASIDE1LI">18-Sep: add Internals dropdown</li>
+                    <li class="ASIDE1LI">16-Sep: create template as grid</li>
                 </ul>
             </aside>
 
-<!-- <ASIDE2> region for corner image .............................................................................. -->
+<!-- <ASIDE2> region for corner image ............................................................................. -->
 
             <aside id="ASIDE2">
                 <div id="ASIDE2DIV">
-                     <img id="ASIDE2IMG" SRC="cornerImage.png" ALT="Cannot Load cornerImage.png">
+                     <img id="ASIDE2IMG" src="cornerImage.png" alt="Cannot Load cornerImage.png">
                 </div>
             </aside>
 
@@ -144,19 +152,20 @@
 
             <aside id="ASIDE3">
                 <div id="ASIDE3DIV">
-                    <p id="ASIDE3-PARA">
+                    <p>
                      Matilda Cook in Magpies uniform before her next netball game 2022
                     </p>
                 </div>
             </aside>
 
-<!-- <FOOTER> region for page footer ............................................................................... -->
+<!-- <FOOTER> region for page footer ................................................................................ -->
 
             <footer id="FOOTER1">
                 <div id="FOOTER1DIV">
-                    <p>&copy; 2020 www.risingfast.com ... /var/www/html/helloWorld.html</p>
+                    <p>&copy; 2020 www.risingfast.com ... /var/www/html/simplest.html</p>
                 </div>
             </footer>
+
         </div>
     </div>
 </body>
