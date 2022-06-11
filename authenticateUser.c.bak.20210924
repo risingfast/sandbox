@@ -1,0 +1,157 @@
+/*  authenticateUser.c - CGI to authenticate a user from an entered string
+ *  Author: Geoff Jarman
+ *  Started: 08/06/2020
+ *  References:
+ *  Log:
+ *      07/26/2020 initial authentication with string comparison
+ *      08/07/2020 migrate to the web and tested out
+ *      08/07/2020 streamline exception checking in web code for http-posted data
+ *      08/07/2020 add string comparison logic
+ *      09/08/2020 add menu bar links
+ *      10/11/2020 center navigation links in main heading
+ *      10/24/2020 center the body of the html on the webpage
+ *  Enhancements:
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include <string.h>
+#define HTML_LEN 60                                    // Max length of input string from html form
+#define CGI_LEN HTML_LEN + 6                               // 5 for "data=" and 1 for trailing NULL
+#define DATAFILE "authenticateUser.dat"
+
+int main(void) {
+    char   *lenstr;
+    char   input[CGI_LEN];
+    char   *strVal = "Jake is older";                     // the secret sentence to validate against
+    long   len;
+    time_t tmeCurrTime;
+    int    length = 0;
+    int    i = 0;                                                    // general purpose loop counter
+
+// print the html page content type and <head> block -----------------------------------------------
+
+    printf("Content-type: text/html\n\n");
+    printf("<!DOCTYPE html>\n");
+    printf("<html lang=\"en\">\n");
+    printf("<head>\n");
+    printf("<title>Authenticate User</title>\n");
+    printf("<link rel=\"stylesheet\" type=\"text/css\" href=\"/rfstyles.css\">\n");
+    printf("<link rel=\"shortcut icon\" href=\"http://www.risingfast.com/letterRF.png\" type=\"image/png\">\n");
+    printf("<meta charset=\"UTF-8\">\n");
+    printf("<meta name=\"description\" content=\"Authenticate a user from a text string\">\n");
+    printf("<meta name=\"keywords\" content=\"html, css, cgi\">\n");
+    printf("<meta name=\"generator\" content=\"vim\">\n");
+    printf("<meta name=\"author\" content=\"risingfast\">\n");
+    printf("<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n");
+    printf("</head>\n");
+
+// print the html page body starting with an on-page header ---------------------------------------
+
+    printf("<body>\n");
+    printf("<div class=\"header\">\n");
+    printf("<h3>www.risingfast.com</h3>\n");
+    printf("</div>\n");
+
+// print the navigation bar and links -------------------------------------------------------------
+
+    printf("<NAV>\n");
+    printf("<DIV class=\"outerTopNav\">\n");
+    printf("<DIV class=\"topnav\">\n");
+    printf("<A class=\"active\" HREF=\"http://www.risingfast.com\">Home</A>\n");
+    printf("<A HREF=\"http://www.risingfast.com/d_ajaxFetch.html\">Latest</A>\n");
+    printf("<A HREF=\"http://www.risingfast.com/d_template.html\">Template</A>\n");
+    printf("<A HREF=\"http://www.risingfast.com/email.html\">Email</A>\n");
+    printf("<A HREF=\"http://www.risingfast.com/about.html\">About</A>");
+    printf("</DIV>\n");
+    printf("</DIV>\n");
+    printf("</NAV>\n");
+
+// print the body heading -------------------------------------------------------------------------
+
+    printf("<DIV style=\"width:80%%; margin:auto; max-width:800px; text-align:center\">");
+    printf("<h3>\n");
+    printf("<br>Authenticate User\n");
+    printf("</h3>\n");
+    printf("</DIV>\n");
+
+//  get the content from stdin --------------------------------------------------------------------
+
+    if ((lenstr = getenv("CONTENT_LENGTH")) != NULL) {;
+        if ((len = atoi(lenstr)) != 0) {
+            fgets(input, len + 1, stdin);
+            strcpy(input, input + 5);          // cut off the prefix "data=" --
+            while (input[i] != '\0') {
+                if (input[i] == '+') {
+                input[i] = ' ';
+                }
+            i++;
+            }
+            printf("<DIV style=\"width:80%%; margin:auto; max-width:800px; text-align:left\">");
+            printf("<p>\nInput: %s\n", input);
+            printf("</DIV>\n");
+        }
+        else {
+            printf("<DIV style=\"width:80%%; margin:auto; max-width:800px; text-align:left\">");
+            printf("<p>\nContent Length cannot convert to integer</p>");
+            printf("</DIV>\n");
+        }
+    }
+    else {
+        printf("<DIV style=\"width:80%%; margin:auto; max-width:800px; text-align:left\">");
+        printf("\n<p>No Content length found</p>");
+        printf("</DIV>\n");
+    }
+
+// validate the authentication string -------------------------------------------------------------
+
+    if (strcmp(input, strVal) == 0) {
+        printf("<DIV style=\"width:80%%; margin:auto; max-width:800px; text-align:left\">");
+        printf("\n(Authenticated)</p>");
+        printf("</DIV>\n");
+    }
+    else {
+        printf("<DIV style=\"width:80%%; margin:auto; max-width:800px; text-align:left\">");
+        printf("\n(Not authenticated)</p>");
+        printf("</DIV>\n");
+    }
+
+// internal information with display controlled by showInternals() --------------------------------
+
+    printf("<div id=\"internalsDiv\" class=\"internals\">\n");
+    printf("<br>\n");
+    printf("</p>\n");
+    printf("</div>\n");
+
+//  print the internals dropdown ------------------------------------------------------------------
+
+    printf("<DIV style=\"width:80%%; margin:auto; max-width:800px; text-align:left\">");
+    printf("<details>\n");
+    printf("<summary style=\"outline:none\">");
+    printf("Internals\n");
+    printf("</summary>\n");
+    printf("<p>anchor cgi: /usr/lib/cgi-bin/authenticateUser.cgi<br>\n");
+    printf("data file: /usr/lib/cgi-bin/authenticateuser.dat<br>\n");
+    printf("source code: c\n");
+    printf("</details>\n");
+    printf("</div>\n");
+
+//  print the navigation links ---------------------------------------------------------------------
+
+    printf("<DIV style=\"width:80%%; margin:auto; max-width:800px; text-align:left\">");
+    printf("<h3>Go To:</h3>\n");
+    printf("<a href=\"http://www.risingfast.com/authenticateUser.html\">Back</a><br>\n");
+    printf("</div>\n");
+
+// print the html page footer ---------------------------------------------------------------------
+
+    printf("<div class=\"footer\">\n");
+    printf("<p>www.risingfast.com ... /usr/lib/cgi-bin/authenticateUser.cgi</p>\n");
+    printf("</div>\n");
+
+    printf("</body>\n");
+    printf("</html>\n");
+
+    return 0;
+}

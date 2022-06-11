@@ -16,8 +16,6 @@
 //      04-Jan-2021 remove HTML tags and re-write for grid layout
 //      24-Sep-2021 tokenize GET string and check each value
 //      25-Sep-2021 return username check and password check
-//      10-Jun-2021 change the test username and test password
-//      10-Jun-2021 remove the datafile definition as unused
 //  Enhancements (0):
 // 
 
@@ -28,6 +26,7 @@
 #include <string.h>
 #define HTML_LEN 60                                    // Max length of input string from html form
 #define CGI_LEN HTML_LEN + 6                               // 5 for "data=" and 1 for trailing NULL
+#define DATAFILE "authenticateUser.dat"
 
 int main(void) {
     char   *sParams;                                                  // pointer to the QUERY_STRING
@@ -35,8 +34,8 @@ int main(void) {
     char   caDelimiter[] = "&";                                                   // token delimiter
     char   caUsername[60] = "\0";                                                  // username array
     char   caPassword[60] = "\0";                                                  // password array
-    char   *sValidUser = "testUser";                                           // the valid username
-    char   *sValidPassword = "testPwd$";                                       // the valid password
+    char   *sValidUser = "gjarman";                                            // the valid username
+    char   *sValidPassword = "Mpa4egu9";                                       // the valid password
     bool   bUserIsValid = false;                                    // flag to indicate a valid user
     bool   bPasswordIsValid = false;                            // flag to indicate a valid password
 
@@ -47,7 +46,7 @@ int main(void) {
     printf("Content-type: text/html");
     printf("\n\n");
 
-//  get the content from QUERY_STRING and tokenize the username and password based on '&' character---------------------
+//  get the content from QUERY_STRING and tokenize based on '&' character-----------------------------------------------
 
     sParams = getenv("QUERY_STRING");
 
