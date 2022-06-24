@@ -1,0 +1,134 @@
+<!-- fetch.html .. fetch data from the server using CGI and insert into current HTML page       -->
+<!-- Started 04/21/2020                                                                         -->
+<!-- Author: Geoff Jarman                                                                       -->
+<!-- Reference:                                                                                 -->
+<!--  https://www.willmaster.com/library/tutorials/javascript-and-cgi-talking-to-each-other.php -->
+<!--  https://c-program-example.com/2012/01/c-program-to-get-the-system-information.html        -->
+<!-- Log:                                                                                       -->
+<!--   07/21/2020  initial creation and testing                                                 -->
+<!--   07/29/2020  format html to standard appearance                                           -->
+<!--   08/13/2020  add server data from the cgi call                                            -->
+<!--   09/03/2020  add lang="en" to <HTML> tag                                                  -->
+<!--   09/06/2020  add menu links and reformat                                                  -->
+<!--   10/11/2020  center navigation links in main heading                                      -->
+<!--   10/12/2020  change internals to summary/details tags                                     -->
+<!--   10/22/2020  center the main body of the html on the webpage                              -->
+<!-- Enhancements:                                                                              -->
+<!--                                                                                            -->
+
+<!DOCTYPE html>
+
+<HTML lang="en">
+
+<!-- html document head ....................................................................... -->
+
+  <HEAD>
+     <TITLE>Fetch Serverdata</TITLE>
+     <META charset="UTF-8">
+     <LINK rel="stylesheet" type="text/css" href="rfstyles.css">
+     <LINK rel="shortcut icon" href="letterRF.png" type="image/png">
+     <META name="description" content="Fetch server data back to the calling html using js">
+     <META name="keywords" content="html, css, cgi">
+     <META name="generator" content="HTML Text Input">
+     <META name="author" content="risingfast">
+     <META name="viewport" content="width=device-width, initial-scale=1.0">
+  </HEAD>
+
+<!-- main page ................................................................................. -->
+
+    <BODY>
+
+<!-- page heading and horizontal navigation links .............................................. -->
+
+    <HEADER>
+        <DIV class="header">
+            <H3>www.risingfast.com</H3>
+        </DIV>
+    </HEADER>
+    <NAV>
+        <DIV class="outerTopNav">
+            <DIV class="topnav">
+                <A class="active" HREF="http://www.risingfast.com">Home</A>
+                <A HREF="http://www.risingfast.com/d_ajaxFetch.html">Latest</A>
+                <A HREF="http://www.risingfast.com/d_template.html">Template</A>
+                <A HREF="http://www.risingfast.com/email.html">Email</A>
+                <A HREF="http://www.risingfast.com/about.html">About</A>
+            </DIV>
+        </DIV>
+     </NAV>
+
+<!-- main document content ..................................................................... -->
+
+    <MAIN>
+        <SECTION>
+            <DIV style="width:80%; margin: auto; max-width:800px; text-align:center;">
+                <H3>Fetch</H3>
+                <P>
+                    Fetch data from the server using CGI and return to the same html page
+                </P>
+            </DIV>
+        </SECTION>
+    </MAIN>
+
+    <SCRIPT>
+        type="text/javascript"; 
+        language="JavaScript";
+        var ServerSysName;
+        var ServerNodeName;
+        var ServerRelease;
+        var ServerVersion;
+        var ServerMachine;
+        var ServerDomainName;
+    </SCRIPT>
+
+    <SCRIPT
+        src="/cgi-bin/fetch.cgi">
+    </SCRIPT>
+
+    <DIV style="width:80%; margin: auto; max-width:800px;">
+    <SCRIPT>
+        type="text/javascript" 
+        language="JavaScript">
+        document.write('The server system name is: ' + ServerSysName);
+        document.write("\n");
+        document.write('<br>The server node name is: ' + ServerNodeName);
+        document.write("\n");
+        document.write('<br>The server release is: ' + ServerRelease);
+        document.write("\n");
+        document.write('<br>The server version is: ' + ServerVersion);
+        document.write("\n");
+        document.write('<br>The server machine is: ' + ServerMachine);
+    </SCRIPT>
+    </DIV>
+
+<!-- Internal information with display controlled by showInternals() ........................... -->
+
+    <BR><BR>
+    <DIV style="width:80%; margin:auto; max-width:800px;">
+        <DETAILS>
+            <SUMMARY style="outline:none">
+                Internals
+            </SUMMARY>
+            <P>
+                html file: /var/www/html/fetch.html<BR>
+                form method: get<BR>
+                form handler: /usr/lib/cgi-bin/fetch.cgi<BR>
+                source code: c<BR>
+            </P>
+        </DETAILS>
+    </DIV>
+
+<!-- page footer ............................................................................... -->
+
+        <DIV class="footer">
+            <P>
+                &copy; 2020 www.risingfast.com ... /var/www/html/fetch.html
+            </P>
+        </DIV>
+
+    </SCRIPT>
+
+    </BODY>
+
+</HTML>
+

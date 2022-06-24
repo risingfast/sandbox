@@ -42,10 +42,11 @@
 <!--    18-May-2022 - extend clear function                                                                          -->
 <!--    23-May-2022 - lowercase html tags                                                                            -->
 <!--    01-Jun-2022 - add cornerimage rotation                                                                       -->
+<!--    10-Jun-2022 - change username and password and add to internals list                                         -->
 <!--                                                                                                                 -->
 <!-- <BODY> region for all content including header and footer ..................................................... -->
 
-<body onload="fSetCornerImage()">
+<body onload="fcSetCornerImage()">
     <div id="WRAPPER1">
         <div id="WRAPPER2">
             <header id="HEADER1">
@@ -93,7 +94,7 @@
 <!-- buttons to show and hide help and clear help and internals ..................................................... -->
 
                 <div id="MOREBTTNS">
-                    <button ONCLICK="fShowHelp()">Help</button>
+                    <button ONCLICK="fcShowHelp()">Help</button>
                     <button ONCLICK="fClearAuthenticateUserPage()">Clear</button>
                 </div>
 
@@ -120,6 +121,7 @@
                             css file2: /var/www/html/authenticateUser.css<br>
                             cgi file: /usr/lib/cgi-bin/authenticateUser.cgi<br>
                             corner image: /var/www/html/cornerImage.png<br>
+                            test user and pwd: testUser/testPwd$<br>
                             background image: /var/www/html/background.jpg<br>
                             CGI source code: C<br>
                         </p>

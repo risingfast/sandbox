@@ -1,0 +1,107 @@
+<!-- d_listOfValues3.html - script to implement a selection list with an initial value from a cgi list of values     -->
+<!-- Author: Geoff Jarman                                                                                            -->
+<!-- Started: 25-Dec-2021                                                                                            -->
+<!-- Reference: https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_select_add                               -->
+<!--            https://www.tutorialspoint.com/How-to-create-a-two-dimensional-array-in-JavaScript                   -->
+<!-- Log:                                                                                                            -->
+<!--    25-Dec-2021 start                                                                                            -->
+<!--    25-Dec-2021 copy d_template1.js and modify by adding an array of values                                      -->
+<!--    26-Dec-2021 troubleshoot return from async function by populating html within the function                   -->
+<!--    26-Dec-2021 Troubleshoot local vs global variable conflict with myArray                                      -->
+<!--    26-Dec-2021 add trim() to array values                                                                       -->
+<!--    26-Dec-2021 cleaqn up the code and comments                                                                  -->
+
+<!DOCTYPE html>
+
+<html>
+
+    <body>
+        <br>
+            <label for="authorId">Author:</lable>
+            <input id="authorId" style="width:35px;display:inline-block">
+            <select id="authorNme" name="authorNme" size="1" onchange="fMyFunction3()">
+            </select>
+        <br>
+
+        <p>Click the 'Add CGI Values' button to add authors from MySQL.</p>
+
+        <button type="button" id="addButton" onclick="fMyFunction1()">Add CGI Values</button>
+        <button type="button" id="setButton" onclick="fMyFunction2('Molly Fitz')">Choose Molly</button>
+
+<!-- parse a string of values into a two dimensional array and add the values to a select list                       -->
+        
+        <script>
+
+              let myArray = [];                        // global array to avoid issues with returns from async functions
+
+            // fMyFunction1(): build options in the authorName select element from a cgi
+
+            async function fMyFunction1() {
+
+                if (myArray.length > 0) {
+                    return;
+                }
+
+                let text = '';                                                                   // fetch values via cgi
+                const uri01 = "http://www.risingfast.com/cgi-bin/bookInquiry2.cgi";
+                const sRequest = uri01 + '?' + 'topic=' + 'authors' + '&filter= ';
+                let response = await fetch(sRequest);
+                if (response.ok) {
+                    text = await response.text();
+                } else {
+                      alert("HttpError: " + response.status);
+                }
+
+                myArray = text.split("\n");                                                        // populate myArray[]
+                const y = document.getElementById("authorNme");
+                for (let i = 0; i < myArray.length; i++) {
+                    myArray[i] = myArray[i].split(",");
+                }
+
+                myArray.pop();                                                          // remove the last empty element
+
+                for (let i = 0; i < myArray.length; i++)                                      // populate select options
+                {
+                    var option = document.createElement("option");
+                    option.text = myArray[i][1].trim();
+                    y.add(option);
+                }
+
+                document.getElementById('addButton').disabled = true;          // disable more adds and choose an option
+                document.getElementById('authorNme').value = 'Cindy Bell';
+                
+                fMyFunction3();
+
+            }
+
+            // fMyFunction2(): set the authorId and authorNme elements to specific values
+
+            function fMyFunction2(sNewAuthor) {
+                let index = 0;
+                for (let i = 0; i < myArray.length; i++) {
+                    if (myArray[i][1] == sNewAuthor) {
+                        document.getElementById("authorId").value = myArray[i][0];
+                        document.getElementById("authorNme").value = myArray[i][1];
+                        break;
+                    };
+                }
+            }
+
+            // fMyFunction3(): populate the AuthorID input element to match the current authorNme element
+
+            function fMyFunction3() {
+
+                for (let i = 0; i < myArray.length; i++) {
+                    if (myArray[i][1] == document.getElementById("authorNme").value) {
+                        document.getElementById("authorId").value = myArray[i][0].trim();
+                        break;
+                    };
+                }
+            }
+
+        </script>
+
+    </body>
+
+</html>
+
