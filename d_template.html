@@ -2,20 +2,22 @@
 
 <!-- <HEAD> region for meta tags ................................................................................... -->
 
-<HTML lang="en">
+<html lang="en">
 
-<HEAD>
-    <META charset="UTF-8">
-    <META name="viewport" content="width=device-width, initial-scale=1.0">
-    <META http-equiv="X-UA-Compatible" content="ie=edge">
-    <META name="description" content="Main index to risingfast website">
-    <META name="keywords" content="html, css, cgi">
-    <META name="generator" content="vim">
-    <META name="author" content="risingfast">
-    <TITLE>Template</TITLE>
-    <LINK rel="stylesheet" type="text/css" href="index.css">
-    <LINK rel="shortcut icon" href="letterRF.png" type="image/png">
-</HEAD>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Main index to risingfast website">
+    <meta name="keywords" content="html, css, cgi">
+    <meta name="generator" content="vim">
+    <meta name="author" content="risingfast">
+    <link rel="stylesheet" type="text/css" href="d_template.css">
+    <link rel="stylesheet" type="text/css" href="common.css">
+    <title>Template</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <link rel="shortcut icon" href="letterRF.png" type="image/png">
+</head>
 
 <!-- Comments region ............................................................................................... -->
 <!--                                                                                                                 -->
@@ -32,147 +34,158 @@
 <!--    19-Sep-2021 - add help button                                                                                -->
 <!--    09-Oct-2021 - prefix function names with 'f'                                                                 -->
 <!--    12-May-2022 - add <ASIDE3> for corner image caption                                                          -->
-<!--    16-May-2022 - expand clear button                                                                           -->
+<!--    16-May-2022 - expand clear button                                                                            -->
+<!--    20-Jun-2022 - rotate corner image                                                                            -->
+<!--    27-Jun-2022 - add fooer options                                                                              -->
 <!--                                                                                                                 -->
 <!-- <BODY> region for all content including header and footer ..................................................... -->
 
-<BODY>
-    <DIV id="WRAPPER1">
-        <DIV id="WRAPPER2">
-            <HEADER id="HEADER1">
-                <BR>
-                <DIV id="HEADER1DIV">
-                     <H2>www.Risingfast.com</H2>
-                </DIV>
-            </HEADER>
-            <NAV id="NAV1">
-                    <H3 id="NAV1H3">Links</H3>
-                <UL ID="NAV1UL">
-                    <LI class="NAV1LI"><A class="active" href="http://www.risingfast.com">Home</A></LI>
-                    <LI class="NAV1LI"><A href="http://www.risingfast.com/d_ajaxFetch.html">Latest</A></LI>
-                    <LI class="NAV1LI"><A href="http://www.risingfast.com/d_template.html">Template</A></LI>
-                    <LI class="NAV1LI"><A href="http://www.risingfast.com/email.html">Email</A></LI>
-                    <LI class="NAV1LI"><A href="http://www.risingfast.com/about.html">About</A></LI>
-                </UL>
-            </NAV>
+<body onload="fcSetCornerImage(), fcSetFooterOptions()">
+    <div id="WRAPPER1">
+        <div id="WRAPPER2">
+            <header id="HEADER1">
+                <br>
+                <div id="HEADER1DIV">
+                     <h2>www.Risingfast.com</h2>
+                </div>
+            </header>
+            <nav id="NAV1">
+                    <h3 id="NAV1H3">Links</h3>
+                <ul ID="NAV1UL">
+                    <li class="NAV1LI"><a class="active" href="http://www.risingfast.com">Home</a></li>
+                    <li class="NAV1LI"><a href="http://www.risingfast.com/d_ajaxFetch.html">Latest</a></li>
+                    <li class="NAV1LI"><a href="http://www.risingfast.com/d_template.html">Template</a></li>
+                    <li class="NAV1LI"><a href="http://www.risingfast.com/email.html">Email</a></li>
+                    <li class="NAV1LI"><a href="http://www.risingfast.com/about.html">About</a></li>
+                    <li class="NAV1LI"><a href="http://www.risingfast.com/options.html">Options</a></li>
+                </ul>
+            </nav>
 
 <!-- <MAIN> region for main content and background image ........................................................... -->
 
-            <MAIN id="MAIN1">
+            <main id="MAIN1">
 
-                <SECTION>
-                    <DIV style="width:80%; margin: auto; max-width:800px; text-align:center;">
-                        <H2>Template</H2>
-                        <P>An HTML template layout using CSS Grid</P>
-                    </DIV>
-                </SECTION>
+                <section>
+                    <div style="width:80%; margin: auto; max-width:800px; text-align:center;">
+                        <h2>Template</h2>
+                        <p>An HTML template layout using CSS Grid</p>
+                    </div>
+                </section>
 
-                <SECTION>
-                    <DIV style="width:80%; margin: auto; max-width:800px;">
-                        <H3>Section 1:</H3>
-                            <OL id="OL1">
-                                <LI>Ordered List Item 1</LI>
-                                <LI>Ordered List Item 2</LI>
-                                <LI>Ordered List Item 3</LI>
-                            </OL>
-                    </DIV>
-                </SECTION>
+                <section>
+                    <div style="width:80%; margin: auto; max-width:800px;">
+                        <h3>Section 1:</H3>
+                            <ol id="OL1">
+                                <li>Ordered List Item 1</li>
+                                <li>Ordered List Item 2</li>
+                                <li>Ordered List Item 3</li>
+                            </ol>
+                    </div>
+                </section>
 
-                <SECTION>
-                    <DIV style="width:80%; margin: auto; max-width:800px;">
-                        <H3>Section 2:</H3>
-                            <OL id="OL2">
-                                <LI>Ordered List Item 1</LI>
-                                <LI>Ordered List Item 2</LI>
-                                <LI>Ordered List Item 3</LI>
-                            </OL>
-                    </DIV>
-                </SECTION>
+                <section>
+                    <div style="width:80%; margin: auto; max-width:800px;">
+                        <h3>Section 2:</h3>
+                            <ol id="OL2">
+                                <li>Ordered List Item 1</li>
+                                <li>Ordered List Item 2</li>
+                                <li>Ordered List Item 3</li>
+                            </ol>
+                    </div>
+                </section>
 
 
 <!-- buttons to show and hide help ................................................................................. -->
 
-                <DIV id="MOREBTTNS">
-                    <BUTTON onclick="fcShowHelp()">Help</BUTTON>
-                    <BUTTON onclick="fClearTemplateFields()">Clear</BUTTON>
-                    <BR>
-                </DIV>
+                <div id="MOREBTTNS">
+                    <button onclick="fcShowHelp()">Help</button>
+                    <button onclick="fClearTemplateFields()">Clear</button>
+                    <br>
+                </div>
 
 <!-- help text controlled by button ................................................................................ -->
 
-                <DIV id="HELPDIV">
-                    <P>
-                    There is no help available for this page 'd_template.html'<BR>
-                    </P>
-                </DIV>
+                <div id="HELPDIV">
+                    <p>
+                    There is no help available for this page 'd_template.html'<br>
+                    </p>
+                </div>
 
 <!-- internals text ................................................................................................ -->
 
-               <DIV id="INTERNALS">
-                    <DETAILS id="internals-details">
-                        <SUMMARY>
+               <div id="INTERNALS">
+                    <details id="internals-details">
+                        <summary>
                             Internals
-                        </SUMMARY>
-                        <P>
-                            html file: /var/www.html/d_template.html<BR>
-                            css file: /var/www/html/css/index.css<BR>
-                            js file: /var/www/html/css/d_template.js<BR>
-                            js file: /var/www/html/css/common.js<BR>
-                            cgi directory: /usr/lib/cgi-bin/<BR>
-                            corner image: /var/www/html/cornerImage.png<BR>
-                            background image: /var/www/html/background.jpg<BR>
-                            CGI source code: c<BR>
-                        </P>
-                    </DETAILS>
-               </DIV>
+                        </summary>
+                        <p>
+                            html file: /var/www.html/d_template.html<br>
+                            css file: /var/www/html/css/index.css<br>
+                            js file: /var/www/html/css/d_template.js<br>
+                            js file: /var/www/html/css/common.js<br>
+                            cgi directory: /usr/lib/cgi-bin/<br>
+                            corner image: /var/www/html/cornerImage.png<br>
+                            background image: /var/www/html/background.jpg<br>
+                            CGI source code: c<br>
+                        </p>
+                    </details>
+               </div>
 
-                <SCRIPT src="d_template.js"></SCRIPT>
-                <SCRIPT src="common.js"></SCRIPT>
+                <script src="common.js"></script>
+                <script src="d_template.js"></script>
 
-            </MAIN>
+            </main>
 
 <!-- <ASIDE1> region for change log ................................................................................ -->
 
-            <ASIDE id="ASIDE1">
-                    <H3 id=ASIDE1H3>Changes 2021</H3>
-                <UL ID="ASIDE1UL">
-                    <LI class="ASIDE1LI">16-May: expand  id="internals-details"clear button</LI>
-                    <LI class="ASIDE1LI">12-May: add corner image caption</LI>
-                    <LI class="ASIDE1LI">09-Oct: 'f' prefix functions</LI>
-                    <LI class="ASIDE1LI">19-Sep: add Help button</LI>
-                    <LI class="ASIDE1LI">18-Sep: add Internals</LI>
-                    <LI class="ASIDE1LI">16-Sep: create template as grid</LI>
-                </UL>
-            </ASIDE>
+            <aside id="ASIDE1">
+                    <h3 id=ASIDE1H3>Changes 2021</h3>
+                <ul ID="ASIDE1UL">
+                    <li class="ASIDE1LI">27-Jun: add footer options</li>
+                    <li class="ASIDE1LI">20-Jun: rotate corner image</li>
+                    <li class="ASIDE1LI">16-May: expand clear button</li>
+                    <li class="ASIDE1LI">12-May: add corner image caption</li>
+                    <li class="ASIDE1LI">09-Oct: 'f' prefix functions</li>
+                    <li class="ASIDE1LI">19-Sep: add Help button</li>
+                    <li class="ASIDE1LI">18-Sep: add Internals</li>
+                    <li class="ASIDE1LI">16-Sep: create template as grid</li>
+                </ul>
+            </aside>
 
 <!-- <ASIDE2> region for corner image .............................................................................. -->
 
-            <ASIDE id="ASIDE2">
-                <DIV id="ASIDE2DIV">
-                     <IMG id="ASIDE2IMG" src="cornerImage.png" alt="Cannot Load cornerImage.png">
-                </DIV>
-            </ASIDE>
+            <aside id="ASIDE2">
+                <div id="ASIDE2DIV">
+                     <img id="ASIDE2IMG" src="cornerImage.png" alt="Cannot Load cornerImage.png">
+                </div>
+            </aside>
 
 <!-- <ASIDE3> region for corner image caption ...................................................................... -->
 
-            <ASIDE id="ASIDE3">
-                <DIV id="ASIDE3DIV">
-                    <P>
+            <aside id="ASIDE3">
+                <div id="ASIDE3DIV">
+                    <p id="ASIDE3-PARA">
                     Matilda Cook in Magpies uniform before her next netball game 2022
-                    </P>
-                </DIV>
-            </ASIDE>
+                    </p>
+                </div>
+            </aside>
 
 <!-- <FOOTER> region for page footer ............................................................................... -->
 
-            <FOOTER id="FOOTER1">
-                <DIV id="FOOTER1DIV">
-                    <P>&copy; 2020 www.risingfast.com ... /var/www/html/index.html</P>
-                </DIV>
-            </FOOTER>
-        </DIV>
-    </DIV>
-</BODY>
+            <footer id="FOOTER1">
+                <div id="FOOTER1OPTIONS-DIV">
+                    Corner Image Behaviour: <label id="footeroptionscichoice"></label>;
+                    Background Image: <label id="footeroptionsbackgroundimage"></label>;
+                    Show Current User: <label id="footeroptionsshowuser"></label>;
+                    Show Access Log: <label id="footeroptionsshowlog"></label>
+                </div>
+                <div id="FOOTER1DIV">
+                    <p>&copy; 2020 www.risingfast.com ... /var/www/html/index.html</p>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
 
-</HTML>
+</html>
 
