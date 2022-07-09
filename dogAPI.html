@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+
+<!-- <HEAD> region for meta tags ................................................................................... -->
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Dog API test page">
+    <meta name="keywords" content="html, css, cgi">
+    <meta name="generator" content="vim">
+    <meta name="author" content="dog api">
+    <link rel="stylesheet" type="text/css" href="d_template.css">
+    <link rel="stylesheet" type="text/css" href="common.css">
+    <title>Template</title>
+    <link rel="stylesheet" type="text/css" href="dogAPI.css">
+    <link rel="shortcut icon" href="letterRF.png" type="image/png">
+</head>
+
+<!-- Comments region ............................................................................................... -->
+<!--                                                                                                                 -->
+<!-- dogAPI.html -  API test                                                                                         -->
+<!-- References:                                                                                                     -->
+<!--    https://www.youtube.com/watch?v=AVmGmLFcukM - Dogs, JavaScript & An API                                      -->
+<!-- Templates:                                                                                                      -->
+<!--      none                                                                                                       -->
+<!-- Log:                                                                                                            -->
+<!--    02-Jul-2022 start by copying d_template.html                                                                 -->
+<!--                                                                                                                 -->
+<!-- <BODY> region for all content including header and footer ..................................................... -->
+
+<body onload="fcSetCornerImage(), fcSetFooterOptions()">
+    <div id="WRAPPER1">
+        <div id="WRAPPER2">
+            <header id="HEADER1">
+                <br>
+                <div id="HEADER1DIV">
+                     <h2>www.Risingfast.com</h2>
+                </div>
+            </header>
+            <nav id="NAV1">
+                    <h3 id="NAV1H3">Links</h3>
+                <ul ID="NAV1UL">
+                    <li class="NAV1LI"><a class="active" href="http://www.risingfast.com">Home</a></li>
+                    <li class="NAV1LI"><a href="http://www.risingfast.com/d_ajaxFetch.html">Latest</a></li>
+                    <li class="NAV1LI"><a href="http://www.risingfast.com/d_template.html">Template</a></li>
+                    <li class="NAV1LI"><a href="http://www.risingfast.com/email.html">Email</a></li>
+                    <li class="NAV1LI"><a href="http://www.risingfast.com/about.html">About</a></li>
+                    <li class="NAV1LI"><a href="http://www.risingfast.com/options.html">Options</a></li>
+                </ul>
+            </nav>
+
+<!-- <MAIN> region for main content and background image ........................................................... -->
+
+            <main id="MAIN1">
+
+                <div style="width:80%; margin: auto; max-width:800px; text-align:center;">
+                    <h2>Dogs</h2>
+                    <p>A test of the Dog API</p>
+                </div>
+
+                <div style="width:80%; margin: auto; max-width:800px;">
+                    <h3>Section 1:</H3>
+                    Look at the console log for a list of dogs breeds ...
+                </div>
+
+<!-- buttons to show and hide help ................................................................................. -->
+
+                <div id="MOREBTTNS">
+                    <button onclick="fcShowHelp()">Help</button>
+                    <button onclick="fClearTemplateFields()">Clear</button>
+                    <br>
+                </div>
+
+<!-- help text controlled by button ................................................................................ -->
+
+                <div id="HELPDIV">
+                    <p>
+                    There is no help available for this page 'dogAPI.html'<br>
+                    </p>
+                </div>
+
+<!-- internals text ................................................................................................ -->
+
+               <div id="INTERNALS">
+                    <details id="internals-details">
+                        <summary>
+                            Internals
+                        </summary>
+                        <p>
+                            html file: /var/www.html/dogAPI.html<br>
+                            css file: /var/www/html/css/dogAPI.css<br>
+                            js file: /var/www/html/css/dogAPI.js<br>
+                            js file: /var/www/html/css/common.js<br>
+                            cgi directory: /usr/lib/cgi-bin/<br>
+                            corner image: /var/www/html/cornerImage.png<br>
+                            background image: /var/www/html/background.jpg<br>
+                            CGI source code: c<br>
+                        </p>
+                    </details>
+               </div>
+
+                <script src="common.js"></script>
+                <script src="dogAPI.js"></script>
+
+            </main>
+
+<!-- <ASIDE1> region for change log ................................................................................ -->
+
+            <aside id="ASIDE1">
+                    <h3 id=ASIDE1H3>Changes 2021</h3>
+                <ul ID="ASIDE1UL">
+                    <li class="ASIDE1LI">27-Jun: add footer options</li>
+                    <li class="ASIDE1LI">20-Jun: rotate corner image</li>
+                    <li class="ASIDE1LI">16-May: expand clear button</li>
+                    <li class="ASIDE1LI">12-May: add corner image caption</li>
+                    <li class="ASIDE1LI">09-Oct: 'f' prefix functions</li>
+                    <li class="ASIDE1LI">19-Sep: add Help button</li>
+                    <li class="ASIDE1LI">18-Sep: add Internals</li>
+                    <li class="ASIDE1LI">16-Sep: create template as grid</li>
+                </ul>
+            </aside>
+
+<!-- <ASIDE2> region for corner image .............................................................................. -->
+
+            <aside id="ASIDE2">
+                <div id="ASIDE2DIV">
+                     <img id="ASIDE2IMG" src="cornerImage.png" alt="Cannot Load cornerImage.png">
+                </div>
+            </aside>
+
+<!-- <ASIDE3> region for corner image caption ...................................................................... -->
+
+            <aside id="ASIDE3">
+                <div id="ASIDE3DIV">
+                    <p id="ASIDE3-PARA">
+                    Matilda Cook in Magpies uniform before her next netball game 2022
+                    </p>
+                </div>
+            </aside>
+
+<!-- <FOOTER> region for page footer ............................................................................... -->
+
+            <footer id="FOOTER1">
+                <div id="FOOTER1OPTIONS-DIV">
+                    Corner Image Behaviour: <label id="footeroptionscichoice"></label>;
+                    Background Image: <label id="footeroptionsbackgroundimage"></label>;
+                    Show Current User: <label id="footeroptionsshowuser"></label>;
+                    Show Access Log: <label id="footeroptionsshowlog"></label>
+                </div>
+                <div id="FOOTER1DIV">
+                    <p>&copy; 2020 www.risingfast.com ... /var/www/html/index.html</p>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+
+</html>
+
