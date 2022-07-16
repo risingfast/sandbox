@@ -3,17 +3,14 @@
 // Started: 29-Sep-2021
 // Log: 
 //    29-Sep 2021 start and test
-//    29-Sep-2021 clear textarea in resetShow() attached to reset button
 //    09-Oct-2021 prefix funcion names with 'f'
-//    16-Oct-2021 change fResetShows() to fClearPage()
 //    11-May-2022 change helpDiv to HELPDIV
 //    11-May-2022 change "none" to "" on x.style.display
-//    15-May-2022 remove fShowHelp() moved to common.js
 //    18-May-2022 extend the clear function
 //    01-Jun-2022 add cornerimage rotation
+//    18-Jun-2022 add cornerimage rotation
 
 const uri1 = "http://www.risingfast.com/cgi-bin/helloWorld.cgi";
-const uri2 = "http://www.risingfast.com/cgi-bin/setCornerImage.cgi";
 
 // functions for action buttons to display and hide help ..........................................
   
@@ -23,7 +20,7 @@ function fClearHelloWorldPage() {
     x.style.display = "";
     y.value = "";
 
-    fClearExtras();
+    fcClearExtras();
 }
 
 // function to ajax fetch text from the server and paste it to a textarea
@@ -33,23 +30,6 @@ async function fGetResults() {
     if (response.ok) {
         let text = await response.text();
         document.getElementById("ResultArea").value=text;
-    } else {
-        alert("HttpError: " + response.status);
-    }
-}
-
-// function to ajax fetch the current corner image and captiona
-
-async function fSetCornerImage() {
-    let response = await fetch(uri2);
-    if (response.ok) {
-        let text = await response.text();
-        let array = text.split("\n");
-        array.pop();                      // remove the last element (empty element) created by the split("\n")
-        let intRecords = array.length/3;
-        let intRecordSelected = Math.trunc(Math.random() * intRecords);
-        document.getElementById("ASIDE2IMG").src=array[intRecordSelected * 3]
-        document.getElementById("ASIDE3-PARA").innerHTML=array[(intRecordSelected * 3) + 1];
     } else {
         alert("HttpError: " + response.status);
     }

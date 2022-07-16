@@ -11,9 +11,9 @@
 //    12-May-2022 change "none" to "" on x.style.display
 //    15-May-2022 remove function showHelp() moved to common.js
 //    01-Jun-2022 add cornerimage rotation
+//    18-Jun-2022 move fSetCornerImage() to common.js
 
 const uri1 = "http://www.risingfast.com/cgi-bin/authenticateUser.cgi";
-const uri2 = "http://www.risingfast.com/cgi-bin/setCornerImage.cgi";
 
 // functions for action buttons to display and hide help ..........................................
   
@@ -50,23 +50,6 @@ function fClearAuthenticateUserPage() {
     var x = document.getElementById("HELPDIV");
     x.style.display = "";
 
-    fClearExtras();
-}
-
-// function to ajax fetch the current corner image and caption
-
-async function fSetCornerImage() {
-    let response = await fetch(uri2);
-    if (response.ok) {
-        let text = await response.text();
-        let array = text.split("\n");
-        array.pop();                      // remove the last element (empty element) created by the split("\n")
-        let intRecords = array.length/3;
-        let intRecordSelected = Math.trunc(Math.random() * intRecords);
-        document.getElementById("ASIDE2IMG").src=array[intRecordSelected * 3]
-        document.getElementById("ASIDE3-PARA").innerHTML=array[(intRecordSelected * 3) + 1];
-    } else {
-        alert("HttpError: " + response.status);
-    }
+    fcClearExtras();
 }
 

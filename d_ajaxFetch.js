@@ -15,18 +15,15 @@
 //    10-Oct-2021 rename functions with 'f' prefix
 //    12-May-2022 convert helpDiv to uppercase
 //    12-May-2022 change "none" to "" on x.style.display
-//    15-May-2022 remove fShowHelp() moved to common.js
 //    01-Jun-2022 add cornerimage rotation
+//    18-Jun-2022 move fSetCornerImage() to common.js
 // Enhancements:
 //
 
 'use strict';
 
-// const uri1 = "https://cors-anywhere.herokuapp.com/http://risingfast.com/cgi-bin/d_AjaxFetch.cgi";
-
 const uri1 = "http://www.risingfast.com/cgi-bin/d_AjaxFetch1.cgi";
 const uri2 = "http://www.risingfast.com/cgi-bin/d_AjaxFetch2.cgi";
-const uri3 = "http://www.risingfast.com/cgi-bin/setCornerImage.cgi";
 //
 
 // function to ajax fetch text2 from the server
@@ -64,23 +61,6 @@ function fClearTextAreas() {
     document.getElementById("text2-area").value="";
     document.getElementById("MessageInput").value="";
 
-    fClearExtras();
-}
-
-// function to ajax fetch the current corner image and caption
-
-async function fSetCornerImage() {
-    let response = await fetch(uri3);
-    if (response.ok) {
-        let text = await response.text();
-        let array = text.split("\n");
-        array.pop();                      // remove the last element (empty element) created by the split("\n")
-        let intRecords = array.length/3;
-        let intRecordSelected = Math.trunc(Math.random() * intRecords);
-        document.getElementById("ASIDE2IMG").src=array[intRecordSelected * 3]
-        document.getElementById("ASIDE3-PARA").innerHTML=array[(intRecordSelected * 3) + 1];
-    } else {
-        alert("HttpError: " + response.status);
-    }
+    fcClearExtras();
 }
 
