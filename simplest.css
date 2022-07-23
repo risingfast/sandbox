@@ -4,7 +4,9 @@
 /*         HTML & CSS for Beginners Part 22: How to create a basic layout - the CSS                                  */
 /* Log                                                                                                               */
 /*     17-May-2022 - started                                                                                         */
-/*     24-May-2022 - change margin spacing from 5px to 10px                                                                                         */
+/*     24-May-2022 - change margin spacing from 5px to 10px                                                          */
+/*     18-Jul-2022 - add styles for unsecured and secured regions                                                    */
+/*     22-Jul-2022 - remove styling for secured and unsecured divs                                                   */
 
 #heading-div {
     width: 80%;

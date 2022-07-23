@@ -1,9 +1,10 @@
-/* perlTest.css - a css template for the perlTest.html webpage                                                       */
-/* started - 15-Jul-2022                                                                                             */
+/* simplest.css - a css template for a basic webpage simplest.html layout                                        */
+/* started - 17-May-2022                                                                                             */
 /* References:                                                                                                       */
 /*         HTML & CSS for Beginners Part 22: How to create a basic layout - the CSS                                  */
 /* Log                                                                                                               */
-/*     15-Jul-2022 - copied from helloWorld.css                                                                      */
+/*     17-May-2022 - started                                                                                         */
+/*     24-May-2022 - change margin spacing from 5px to 10px                                                                                         */
 
 #heading-div {
     width: 80%;
@@ -35,4 +36,3 @@
     width: 100%;
     background-color: lightgrey;
 }
-

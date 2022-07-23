@@ -39,10 +39,11 @@
 <!--    24-May-2022 lowercase html tags                                                                              -->
 <!--    01-Jun-2022 add cornerimage rotation                                                                         -->
 <!--    27-Jun-2022 add footer options                                                                               -->
+<!--    22-Jul-2022 - add session div, secured div and authentication link                                           -->
 <!--                                                                                                                 -->
 <!-- <BODY> region for all content including header and footer ..................................................... -->
 
-<body onload="fcSetCornerImage(), fcSetFooterOptions()">
+<body onload="fcSetCornerImage(), fcSetFooterOptions(), fcCheckAuthentication()">
     <div id="WRAPPER1">
         <div id="WRAPPER2">
             <header id="HEADER1">
@@ -60,8 +61,17 @@
                     <li class="NAV1LI"><a HREF="http://www.risingfast.com/email.html">Email</a></li>
                     <li class="NAV1LI"><a HREF="http://www.risingfast.com/about.html">About</a></li>
                     <li class="NAV1LI"><a HREF="http://www.risingfast.com/options.html">Options</a></li>
+                    <li class="NAV1LI"><a href="http://www.risingfast.com/authenticateUser.html">Authenticate</a></li>
                 </ul>
             </nav>
+
+<!-- <SESSION1> region for session information .................................................................... -->
+
+            <aside id="SESSION1">
+                    <h3 id=SESSION1H3>Current Session</h3>
+                    <p id="SESSION1PARA">
+                    </p>
+            </aside>
 
 <!-- <MAIN> region for main content and background image ........................................................... -->
 
@@ -70,27 +80,34 @@
                 <div id="heading-div">
                     <h3 id="mailHeader">Email</h3>
                 </div>
-                <div id="form-div">
-                    <form action="mailto:webmail@risingfast.com" method="GET" enctype="text/plain">
-                        <div id="name-div">
-                            <labeL class="emailLbl" for="Name" value="name:" style="margin-right: 10px">Name:</label>
-                            <input id="emailName" type="text" name="name"/>
-                        </div>
-                        <div id="mailto-div">
-                            <label class="emailLbl" for="email" value="email:" style="margin-right: 10px">Email:</label>
-                            <input id="emailAddress" type="text" name="email"/>
-                        </div>
-                        <div id="subject-div">
-                            <label class="emailLbl" for="emailSub" value="email:">Subject:</label>
-                            <input id="emailSubject" type="text" name="Subject"/>
-                        </div>
-                        <div id="message-div">
-                            <textarea id="emailBody" name="text" rows="20">Your message:</textarea>
-                        </div>
-                        <div id="submit-div">
-                            <input id="submit-input" type="submit" name="emailSubmit" value="Submit"/>
-                        </div>
-                    </form>
+
+                <div id="unsecured-div">
+                    <p>Authentication is required for this page (via: Home >> Utilities >> Authenticate)</p>
+                </div>
+
+                <div id="secured-div">
+                    <div id="form-div">
+                        <form action="mailto:webmail@risingfast.com" method="GET" enctype="text/plain">
+                            <div id="name-div">
+                                <labeL class="emailLbl" for="Name" value="name:" style="margin-right: 10px">Name:</label>
+                                <input id="emailName" type="text" name="name"/>
+                            </div>
+                            <div id="mailto-div">
+                                <label class="emailLbl" for="email" value="email:" style="margin-right: 10px">Email:</label>
+                                <input id="emailAddress" type="text" name="email"/>
+                            </div>
+                            <div id="subject-div">
+                                <label class="emailLbl" for="emailSub" value="email:">Subject:</label>
+                                <input id="emailSubject" type="text" name="Subject"/>
+                            </div>
+                            <div id="message-div">
+                                <textarea id="emailBody" name="text" rows="20">Your message:</textarea>
+                            </div>
+                            <div id="submit-div">
+                                <input id="submit-input" type="submit" name="emailSubmit" value="Submit"/>
+                            </div>
+                        </form>
+                    </div>
                 </div>
 
 <!-- buttons to show and hide help ................................................................................. -->
@@ -140,6 +157,8 @@
             <aside id="ASIDE1">
                     <h3 id=ASIDE1H3>Changes 2021-22</h3>
                 <ul id="ASIDE1UL">
+                    <li class="ASIDE1LI">22-Jul: add authenticate link</li>
+                    <li class="ASIDE1LI">22-Jul: show session block</li>
                     <li CLASS="ASIDE1LT">27-Jun: add footer options</li>
                     <li CLASS="ASIDE1LT">01-Jun: add cornerimage rotation</li>
                     <li CLASS="ASIDE1LT">24-May: lowercase html tags</li>

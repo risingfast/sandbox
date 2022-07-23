@@ -36,11 +36,12 @@
 <!--    18-May-2022 - extend clear function                                                                          -->
 <!--    23-May-2022 - lowercase html tags                                                                            -->
 <!--    01-Jun-2022 - add cornerimage rotation                                                                       -->
-<!--    27-Jun-2022 - add footer optins                                                                              -->
+<!--    27-Jun-2022 - add footer options                                                                              -->
+<!--    22-Jul-2022 - add session block, secured div and authentication linke                                                                              -->
 <!--                                                                                                                 -->
 <!-- <body> region for all content including header and footer ..................................................... -->
 
-<body onload="fcSetCornerImage(), fcSetFooterOptions()">
+<body onload="fcSetCornerImage(), fcSetFooterOptions(), fcCheckAuthentication()">
     <div id="WRAPPER1">
         <div id="WRAPPER2">
             <header id="HEADER1">
@@ -58,8 +59,18 @@
                     <li class="NAV1LI"><a href="http://www.risingfast.com/email.html">Email</a></li>
                     <li class="NAV1LI"><a href="http://www.risingfast.com/about.html">About</a></li>
                     <li class="NAV1LI"><a href="http://www.risingfast.com/options.html">Options</a></li>
+                    <li class="NAV1LI"><a href="http://www.risingfast.com/authenticateUser.html">Authenticate</a></li>
                 </ul>
             </nav>
+
+
+<!-- <SESSION1> region for session information .................................................................... -->
+
+            <aside id="SESSION1">
+                    <h3 id=SESSION1H3>Current Session</h3>
+                    <p id="SESSION1PARA">
+                    </p>
+            </aside>
 
 <!-- <MAIN> region for main content and background image .......................................................... -->
 
@@ -70,12 +81,19 @@
                     <p>A simple HTML template and Ajax call to print a server counter</p>
                 </div>
 
-                <div id="fGetResults-div">
-                    <button onclick="fGetResults()">Fetch</button>
+
+                <div id="unsecured-div">
+                    <p>Authentication is required for this page (via: Home >> Utilities >> Authenticate)</p>
                 </div>
 
-                <div id="results-div">
-                    <textarea id="ResultArea" rows="10" ></textarea>
+                <div id="secured-div">
+                    <div id="fGetResults-div">
+                        <button onclick="fGetResults()">Fetch</button>
+                    </div>
+
+                    <div id="results-div">
+                        <textarea id="ResultArea" rows="10" ></textarea>
+                    </div>
                 </div>
 
 <!-- buttons to show and hide help and clear the textbox ........................................................... -->
@@ -124,6 +142,8 @@
             <aside id="ASIDE1">
                     <h3 id=ASIDE1H3>Changes 2021-22</h3>
                 <ul id="ASIDE1UL">
+                    <li class="ASIDE1LI">22-Jul: add authenticate link</li>
+                    <li class="ASIDE1LI">22-Jul: show session block</li>
                     <li class="ASIDE1LI">27-Jun: add footer options</li>
                     <li class="ASIDE1LI">01-Jun: add cornerimage rotation</li>
                     <li class="ASIDE1LI">23-May: lowercase html tags</li>

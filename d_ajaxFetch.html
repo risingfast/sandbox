@@ -44,12 +44,13 @@
 <!--     23-May-2022 lowercase html tags                                                                             -->
 <!--     01-Jun-2022 add cornerimage rotation                                                                        -->
 <!--     27-Jun-2022 add footer options                                                                              -->
+<!--     22-Jul-2022 - add session div, secured div and authentication link                                           --
 <!-- Enhancements:                                                                                                   -->
 <!--                                                                                                                 -->
 <!-- ............................................................................................................... -->
 
 
-<body onload="fcSetCornerImage(), fcSetFooterOptions()">
+<body onload="fcSetCornerImage(), fcSetFooterOptions(), fcCheckAuthorization()">
     <div id="WRAPPER1">
         <div id="WRAPPER2">
             <header id="HEADER1">
@@ -66,10 +67,19 @@
                     <li class="NAV1LI"><a href="http://www.risingfast.com/email.html">Email</a></li>
                     <li class="NAV1LI"><a href="http://www.risingfast.com/about.html">About</a></li>
                     <li class="NAV1LI"><a href="http://www.risingfast.com/options.html">Options</a></li>
+                     <li class="NAV1LI"><a href="http://www.risingfast.com/authenticateUser.html">Authenticate</a></li>
                 </ul>
             </nav>
 
-<!-- <MAIN> region for main content and background image ........................................................i... -->
+<!-- <SESSION1> region for session information ...................................................................... -->
+
+            <aside id="SESSION1">
+                    <h3 id=SESSION1H3>Current Session</h3>
+                    <p id="SESSION1PARA">
+                    </p>
+            </aside>
+
+<!-- <MAIN> region for main content and background image ............................................................ -->
 
             <main id="MAIN1">
 
@@ -78,35 +88,40 @@
                     <p>An HTML an CGI to fetch server data</p>
                 </div>
 
+                <div id="unsecured-div">
+                    <p>Authentication is required for this page (via: Home >> Utilities >> Authenticate)</p>
+                </div>
 
 <!-- first ajax fetch text area..................................................................................... -->
 
-            <div id="firsttest-div">
-                <h3>First Ajax Test Section</h3>
-                <p>
-                    Updated by AjaxFetch1(): 
-                    <button onclick="fd_AjaxFetch1()">AjaxFetch1()</button><br><bR>
-                </p>
-                <textarea id="text1-area" rows="4"> </textarea>
-            </div>
+                <div id="secured-div">
+                    <div id="firsttest-div">
+                        <h3>First Ajax Test Section</h3>
+                        <p>
+                            Updated by AjaxFetch1(): 
+                            <button onclick="fd_AjaxFetch1()">AjaxFetch1()</button><br><bR>
+                        </p>
+                        <textarea id="text1-area" rows="4"> </textarea>
+                    </div>
 
 <!-- second ajax fetch text area.................................................................................... -->
 
-            <div id="secondtest-div">
-                <h3>Second Ajax Test Section</h3>
-                <p>
-                    Updated by AjaxFetch2():
-                    <button onclick="fd_AjaxFetch2()">AjaxFetch2()</button><br><br>
-                </p>
-                <textarea id="text2-area" rows="4"> </textarea>
-            </div>
+                    <div id="secondtest-div">
+                        <h3>Second Ajax Test Section</h3>
+                        <p>
+                            Updated by AjaxFetch2():
+                            <button onclick="fd_AjaxFetch2()">AjaxFetch2()</button><br><br>
+                        </p>
+                        <textarea id="text2-area" rows="4"> </textarea>
+                    </div>
 
-            <div id="messages-div">
-                <h3>System Messages Section</h3>
-                    System Messages:<br><br>
-                    Messages: 
-                    <input id="MessageInput" type="text" readonly placeholder="System controlled messages here">
-            </div>
+                    <div id="messages-div">
+                        <h3>System Messages Section</h3>
+                            System Messages:<br><br>
+                            Messages: 
+                            <input id="MessageInput" type="text" readonly placeholder="System controlled messages here">
+                    </div>
+                </div>
 
 <!-- buttons to show and hide help ................................................................................. -->
 
@@ -155,6 +170,8 @@
             <aside id="ASIDE1">
                     <h3 id=ASIDE1H3>Changes 2021-22</h3>
                 <ul id="ASIDE1UL">
+                    <li class="ASIDE1LI">22-Jul: add authenticate link</li>
+                    <li class="ASIDE1LI">22-Jul: show session block</li>
                     <li class="ASIDE1LI">27-Jun - add footer options</li>
                     <li class="ASIDE1LI">01-Jun - add cornerimage rotation</li>
                     <li class="ASIDE1LI">23-May - lowercase html tags</li>

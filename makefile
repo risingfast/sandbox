@@ -17,16 +17,12 @@
 # Variables
 
 CC=gcc
-CFLAGS=-g -o
-#SQL1FLAGS=-I/usr/include/mysql
-SQL2FLAGS=-L/usr/lib/x86_64-linux-gnu
+CFLAGS=-Wall -g -o
+SQL1FLAGS=-I/usr/include/mysql
+SQL2FLAGS=-L/usr/lib/x86_64-linux-gnu -lmysqlclient -lpthread -lz -lm -lrt -lssl -lcrypto -ldl -lresolv
 #SQL2FLAGS=-L/usr/lib/x86_64-linux-gnu -lmysqlclient -lpthread -lz -lm -lrt -lssl -lcrypto -ldl -lresolv
 
-all: authenticateUser collectText d_AjaxFetch1 d_AjaxFetch2 d_ajaxPost helloWorld multiply simplest setCornerImage
-
-authenticateUser: authenticateUser.c
-	$(CC) $(CFLAGS) $@ $^ $(SQL2FLAGS)
-#	$(CC) $(CFLAGS) $@ $(SQL1FLAGS) $^ $(SQL2FLAGS)
+all: collectText d_AjaxFetch1 d_AjaxFetch2 d_ajaxPost helloWorld multiply simplest setCornerImage checkAuthentication
 
 collectText: collectText.c ../shared/rf50.c
 	$(CC) $(CFLAGS) $@ $^ $(SQL2FLAGS)
@@ -55,5 +51,8 @@ tcount: tcount.c
 setCornerImage: setCornerImage.c
 	$(CC) $(CFLAGS) $@ $^ $(SQL2FLAGS)
 
+checkAuthentication: checkAuthentication.c
+	$(CC) $(CFLAGS) $@ $(SQL1FLAGS) $^ $(SQL2FLAGS) -luuid
+
 clean:
-	rm -f *.o *.s *.i authenticateUser collectText d_AjaxFetch1 d_AjaxFetch2 d_ajaxPost helloWorld multiply simplest setCornerImage
+	rm -f *.o *.s *.i collectText d_AjaxFetch1 d_AjaxFetch2 d_ajaxPost helloWorld multiply simplest setCornerImage checkAuthentication

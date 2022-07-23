@@ -28,28 +28,29 @@
 <!--      d_template.html                                                                                            -->
 <!-- Started 04/01/2020                                                                                              -->
 <!-- Log:                                                                                                            -->
-<!--   23-Jul-2020 reformat and add a button to hide internals                                                       -->
-<!--   23-Jul-2020 add option to display texts collected from the file                                               -->
-<!--   29-Jul-2020 make the text input field required                                                                -->
-<!--   03-Sep-2020 add lant="en" to <HTML> tag and clean up comment lines                                            -->
-<!--   05-Sep-2020 add navbar links and reformat                                                                     -->
-<!--   11-Sep-2020 run through validator.w3.org                                                                      -->
-<!--   11-Oct-2020 center the heading navigatino links                                                               -->
-<!--   12-Oct-2020 change internals to summary/detail tags                                                           -->
-<!--   24-Oct-2020 center the body of the html in the browser                                                        -->
-<!--   30-Sep-2021 move to grid layout                                                                               -->
-<!--   10-Oct-2021 prefix functions with 'f'                                                                         -->
-<!--   17-Oct-2021 change fResetShow() to fClearPage()                                                               -->
-<!--   12-May-2022 add <ASIDE3> for corner image caption                                                             -->
-<!--   16-May-2022 extend the clear function                                                                         -->
-<!--   23-May-2022 lowercase html tags                                                                               -->
-<!--   01-Jun-2022 set corner image rotation                                                                         -->
-<!--   27-Jun-2022 add footer options                                                                                -->
+<!--   23-Jul-2020 - reformat and add a button to hide internals                                                     -->
+<!--   23-Jul-2020 - add option to display texts collected from the file                                             -->
+<!--   29-Jul-2020 - make the text input field required                                                              -->
+<!--   03-Sep-2020 - add lant="en" to <HTML> tag and clean up comment lines                                          -->
+<!--   05-Sep-2020 - add navbar links and reformat                                                                   -->
+<!--   11-Sep-2020 - run through validator.w3.org                                                                    -->
+<!--   11-Oct-2020 - center the heading navigatino links                                                             -->
+<!--   12-Oct-2020 - change internals to summary/detail tags                                                         -->
+<!--   24-Oct-2020 - center the body of the html in the browser                                                      -->
+<!--   30-Sep-2021 - move to grid layout                                                                             -->
+<!--   10-Oct-2021 - prefix functions with 'f'                                                                       -->
+<!--   17-Oct-2021 - change fResetShow() to fClearPage()                                                             -->
+<!--   12-May-2022 - add <ASIDE3> for corner image caption                                                           -->
+<!--   16-May-2022 - extend the clear function                                                                       -->
+<!--   23-May-2022 - lowercase html tags                                                                             -->
+<!--   01-Jun-2022 - set corner image rotation                                                                       -->
+<!--   27-Jun-2022 - add footer options                                                                              -->
+<!--   22-Jul-2022 - - add session div, secured div and authentication link                                          -->
 <!-- Enhancements:                                                                                                   -->
 <!--                                                                                                                 -->
 <!-- <BODY> region for all content including header and footer ..................................................... -->
 
-<body onload="fcSetCornerImage(), fcSetFooterOptions()">
+<body onload="fcSetCornerImage(), fcSetFooterOptions(), fcCheckAuthentication()">
     <div id="WRAPPER1">
         <div id="WRAPPER2">
             <header id="HEADER1">
@@ -67,10 +68,19 @@
                     <li class="NAV1LI"><a href="http://www.risingfast.com/email.html">Email</a></li>
                     <li class="NAV1LI"><a href="http://www.risingfast.com/about.html">About</a></li>
                     <li class="NAV1LI"><a href="http://www.risingfast.com/options.html">Options</a></li>
+                    <li class="NAV1LI"><a href="http://www.risingfast.com/authenticateUser.html">Authenticate</a></li>
                 </ul>
             </nav>
 
-<!-- <main> region for main content and background image ........................................................... -->
+<!-- <SESSION1> region for session information .................................................................... -->
+
+            <aside id="SESSION1">
+                    <h3 id=SESSION1H3>Current Session</h3>
+                    <p id="SESSION1PARA">
+                    </p>
+            </aside>
+
+<!-- <MAIN> region for main content and background image ........................................................... -->
 
             <main id="MAIN1">
 
@@ -80,21 +90,27 @@
                     Input a string of text and send it to a server file
                 </p>
             </div>
+           <div id="unsecured-div">
+                <p>Authentication is required for this page (via: Home >> Utilities >> Authenticate)</p>
+            </div>
+
 
 <!-- form .......................................................................................................... -->
 
-            <div id="input-div">
-                Your input (80 chars max):<br>
-                <input id="data" name="data" size="60" maxlength="80" onfocus="fEnableSend()">
-                <button id="sendButton" disabled onclick="fSaveText()">Send</button>
-            </div>
+            <div id="secured-div">
+                <div id="input-div">
+                    Your input (80 chars max):<br>
+                    <input id="data" name="data" size="60" maxlength="80" onfocus="fEnableSend()">
+                    <button id="sendButton" disabled onclick="fSaveText()">Send</button>
+                </div>
 
-            <div id="results-div">
-                <textarea id="resultsarea" rows="20"></textarea>
-            </div>
+                <div id="results-div">
+                    <textarea id="resultsarea" rows="20"></textarea>
+                </div>
 
-            <div id="fgetresults-div">
-                <a href="javascript:fGetResults()">Show file contents</a>
+                <div id="fgetresults-div">
+                    <a href="javascript:fGetResults()">Show file contents</a>
+                </div>
             </div>
 
 <!-- buttons to show and hide help and clear results ............................................................... -->
@@ -146,6 +162,8 @@
             <aside id="ASIDE1">
                     <h3 id=ASIDE1H3>Changes 2021-22</h3>
                 <ul id="ASIDE1UL">
+                    <li class="ASIDE1LI">22-Jul: add authenticate link</li>
+                    <li class="ASIDE1LI">22-Jul: show session block</li>
                     <li class="ASIDE1LI">26-Jun: add footer options</li>
                     <li class="ASIDE1LI">01-Jun: add cornerimage rotation</li>
                     <li class="ASIDE1LI">23-May: lowercase html tags</li>

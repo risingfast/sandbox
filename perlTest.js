@@ -46,4 +46,3 @@ async function fSetCornerImage() {
         alert("HttpError: " + response.status);
     }
 }
-

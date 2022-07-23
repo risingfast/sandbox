@@ -27,33 +27,34 @@
 <!-- Templates:                                                                                                      -->
 <!--      none                                                                                                       -->
 <!-- Log:                                                                                                            -->
-<!--    22-Jul-2020 add button to show and hide internals                                                            -->
-<!--    28-Jul-2020 add option to display texts collected                                                            -->
-<!--    29-Jul=2020 make both number fields required with numeric ranges                                             -->
-<!--    03-Sep-2020 add lang="en" to <HTML> tab and uppercase the tags                                               -->
-<!--    03-Sep-2020 cleanup up comments style to remove double dashes                                                -->
-<!--    05-Sep-2020 add navbar links and reformat                                                                    -->
-<!--    05-Sep-2020 run through validator.w3.org                                                                     -->
-<!--    12-Oct-2020 change internals button to summary/detail tab                                                    -->
-<!--    24-Oct-2020 center the body of the webpage in the browser                                                    -->
-<!--    22-Sep-2021 migrate to grid layout                                                                           -->
-<!--    23-Sep-2021 move js to external file multiply.js                                                             -->
-<!--    23-Sep-2021 fix GET parameter string passing values to CGI                                                   -->
-<!--    23-Sep-2021 add a clear button and js function                                                               -->
-<!--    30-Sep-2021 change footer text to match filename                                                             -->
-<!--    10-Oct-2021 add 'f' prefix to function names                                                                 -->
-<!--    16-Oct-2021 change reset button to 'Clear'                                                                   -->
-<!--    16-Oct-2021 align help and internal text                                                                     -->
-<!--    11-May-2022 add <ASIDE3> for corner image caption                                                            -->
-<!--    15-May-2022 add common.js script                                                                             -->
-<!--    18-May-2022 extend clear function                                                                            -->
-<!--    23-May-2022 lowercae html tags                                                                               -->
-<!--    01-Jun-2022 add cornerimage rotation                                                                         -->
-<!--    27-Jun-2022 add footer options                                                                               -->
+<!--    22-Jul-2020 - add button to show and hide internals                                                          -->
+<!--    28-Jul-2020 - add option to display texts collected                                                          -->
+<!--    29-Jul=2020 - make both number fields required with numeric ranges                                           -->
+<!--    03-Sep-2020 - add lang="en" to <HTML> tab and uppercase the tags                                             -->
+<!--    03-Sep-2020 - cleanup up comments style to remove double dashes                                              -->
+<!--    05-Sep-2020 - add navbar links and reformat                                                                  -->
+<!--    05-Sep-2020 - run through validator.w3.org                                                                   -->
+<!--    12-Oct-2020 - change internals button to summary/detail tab                                                  -->
+<!--    24-Oct-2020 - center the body of the webpage in the browser                                                  -->
+<!--    22-Sep-2021 - migrate to grid layout                                                                         -->
+<!--    23-Sep-2021 - move js to external file multiply.js                                                           -->
+<!--    23-Sep-2021 - ix GET parameter string passing values to CGI                                                  -->
+<!--    23-Sep-2021 - add a clear button and js function                                                             -->
+<!--    30-Sep-2021 - change footer text to match filename                                                           -->
+<!--    10-Oct-2021 - add 'f' prefix to function names                                                               -->
+<!--    16-Oct-2021 - change reset button to 'Clear'                                                                 -->
+<!--    16-Oct-2021 - align help and internal text                                                                   -->
+<!--    11-May-2022 - add <ASIDE3> for corner image caption                                                          -->
+<!--    15-May-2022 - add common.js script                                                                           -->
+<!--    18-May-2022 - extend clear function                                                                          -->
+<!--    23-May-2022 - lowercae html tags                                                                             -->
+<!--    01-Jun-2022 - add cornerimage rotation                                                                       -->
+<!--    27-Jun-2022 - add footer options                                                                             -->
+<!--    22-Jul-2022 - add session div, secured div and authentication link                                           -->
 
 <!-- <BODY> region for all content including header and footer ..................................................... -->
 
-<body onload="fcSetCornerImage(), fcSetFooterOptions()">
+<body onload="fcSetCornerImage(), fcSetFooterOptions()i fcCheckAuthentication()">
     <div id="WRAPPER1">
         <div id="WRAPPER2">
             <header id="HEADER1">
@@ -71,8 +72,17 @@
                     <li class="NAV1LI"><a HREF="http://www.risingfast.com/email.html">Email</a></li>
                     <li class="NAV1LI"><a HREF="http://www.risingfast.com/about.html">About</a></li>
                     <li class="NAV1LI"><a HREF="http://www.risingfast.com/options.html">Options</a></li>
+                    <li class="NAV1LI"><a href="http://www.risingfast.com/authenticateUser.html">Authenticate</a></li>
                 </ul>
             </nav>
+
+<!-- <SESSION1> region for session information .................................................................... -->
+
+            <aside id="SESSION1">
+                    <h3 id=SESSION1H3>Current Session</h3>
+                    <p id="SESSION1PARA">
+                    </p>
+            </aside>
 
 <!-- <main> region for main content and background image ........................................................... -->
 
@@ -83,29 +93,35 @@
                 <p>Multiply two numbers through Javascript or a CGI call and return the result</p>
            </div>
 
+           <div id="unsecured-div">
+               <p>Authentication is required for this page (via: Home >> Utilities >> Authenticate)</p>
+           </div>
+
 <!-- data entry area  .............................................................................................. -->
 
-            <div id="dataEntry-div">
-                <div id="number1-div">
-                    <label FOR="number1">Integer 1:</label>
-                    <input id="number1" type="number" min="-32768" max="32767" required name="m">
+           <div id="secured-div">
+                <div id="dataEntry-div">
+                    <div id="number1-div">
+                        <label FOR="number1">Integer 1:</label>
+                        <input id="number1" type="number" min="-32768" max="32767" required name="m">
+                    </div>
+                    <div id="number2-div">
+                        <label FOR="number2">Integer 2:</label>
+                        <input id="number2" type="number" name="n" min="-32768" max="332767" required>
+                    </div>
                 </div>
-                <div id="number2-div">
-                    <label FOR="number2">Integer 2:</label>
-                    <input id="number2" type="number" name="n" min="-32768" max="332767" required>
+                <div id="multiply-buttons-div">
+                    <div id="multiplyJS-div">
+                        <button onclick="fMultiplyJS()">MultiplyJS</button>
+                    </div>
+                    <div id="multiplyCGI-div">
+                        <button onclick="fMultiplyCGI()">MultiplyCGI</button>
+                    </div>
                 </div>
-            </div>
-            <div id="multiply-buttons-div">
-                <div id="multiplyJS-div">
-                    <button onclick="fMultiplyJS()">MultiplyJS</button>
+                <div id="results-div">
+                    <label for="ResultArea">Result:</label>
+                    <input id="ResultArea" type="number" min="-32768" max="332767" readonly>
                 </div>
-                <div id="multiplyCGI-div">
-                    <button onclick="fMultiplyCGI()">MultiplyCGI</button>
-                </div>
-            </div>
-            <div id="results-div">
-                <label for="ResultArea">Result:</label>
-                <input id="ResultArea" type="number" min="-32768" max="332767" readonly>
             </div>
 
 <!-- buttons to show and hide help and clear help and internals .................................................... -->
@@ -152,6 +168,8 @@
             <aside id="ASIDE1">
                     <h3 id=ASIDE1H3>Changes 2021-22</h3>
                 <ul id="ASIDE1UL">
+                    <li class="ASIDE1LI">22-Jul: add authenticate link</li>
+                    <li class="ASIDE1LI">22-Jul: show session block</li>
                     <li class="ASIDE1LI">27-Jun: add footer options</li>
                     <li class="ASIDE1LI">01-Jun: add cornerimage rotation</li>
                     <li class="ASIDE1LI">23-May: lowercase html tags</li>

@@ -13,7 +13,6 @@
 //    18-Jun-2022 move fSetCornerImage() to common.js
   
 const uri1 = "http://www.risingfast.com/cgi-bin/simplest.cgi";
-const uri2 = "http://www.risingfast.com/cgi-bin/checkAuthentication.cgi";
 
 function fClearSimplestPage() {
     var x = document.getElementById("HELPDIV");
@@ -36,19 +35,3 @@ async function fGetResults() {
     }
 }
 
-async function fCheckAuthentication() {
-    let response = await fetch(uri2);
-    if (response.ok) {
-        let text = await response.text();
-        let text1 = text.split("\n");
-        if (text1[0] === "Success") {
-            document.getElementById("unsecured-div").style.display="none";
-            document.getElementById("secured-div").style.display="block";
-            document.getElementById("SESSION1PARA").innerHTML="Session: " + text1[1] + "<BR>User: " + text1[2] + "<BR>Name: " + text1[3] + "<BR>" + text1[4] + "<BR>At: " + text1[5];
-        } else {
-            document.getElementById("secured-div").style.display="none";
-            document.getElementById("unsecured-div").style.display="block";
-            document.getElementById("SESSION1PARA").innerHTML='No authenticated user';
-        }
-    }
-}
