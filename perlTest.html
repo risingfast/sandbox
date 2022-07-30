@@ -29,10 +29,12 @@
 <!-- Log:                                                                                                            -->
 <!--    15-Jul-2022 - start by copying helloWorld.html                                                               -->
 <!--    16-Jul-2022 - modify text and title to reflect cookie function                                               -->
+<!--    16-Jul-2022 - add cookie4 as an HttpOnly cookie in the ajax results                                          -->
+<!--    22-Jul-2022 - add session div, secured div and authentication link                                           -->
 <!--                                                                                                                 -->
 <!-- <BODY> region for all content including header and footer ..................................................... -->
 
-<body onload="fcSetCornerImage(), fcSetFooterOptions()">
+<body onload="fcSetCornerImage(), fcSetFooterOptions(), fcCheckAuthentication()">
     <div id="WRAPPER1">
         <div id="WRAPPER2">
             <header id="HEADER1">
@@ -50,8 +52,17 @@
                     <li class="NAV1LI"><a HREF="http://www.risingfast.com/email.html">Email</a></li>
                     <li class="NAV1LI"><a HREF="http://www.risingfast.com/about.html">About</a></li>
                     <li class="NAV1LI"><a HREF="http://www.risingfast.com/options.html">Options</a></li>
+                    <li class="NAV1LI"><a href="http://www.risingfast.com/authenticateUser.html">Authenticate</a></li>
                 </ul>
             </nav>
+
+<!-- <SESSION1> region for session information .................................................................... -->
+
+            <aside id="SESSION1">
+                    <h3 id=SESSION1H3>Current Session</h3>
+                    <p id="SESSION1PARA">
+                    </p>
+            </aside>
 
 <!-- <MAIN> region for main content and background image ........................................................... -->
 
@@ -59,16 +70,21 @@
 
                 <div id="heading-div">
                     <h2>Perl Cookie Test!</h2>
-                    <p>A simple HTML template and Ajax call to create session cookies using a Perl CGI scipt</p>
+                    <p>A simple HTML template and Ajax call to create cookies using a Perl CGI scipt</p>
                 </div>
 
-
-                <div id="fGetResults-div">
-                    <button onclick="fGetResults()">Create Cookies</button>
+                <div id="unsecured-div">
+                    <p>Authentication is required for this page (via: Home >> Utilities >> Authenticate)</p>
                 </div>
 
-                <div id="results-div">
-                    <textarea id="ResultArea" rows="15"></textarea>
+                <div id="secured-div">
+                    <div id="fGetResults-div">
+                        <button onclick="fGetResults()">Create Cookies</button>
+                    </div>
+
+                    <div id="results-div">
+                        <textarea id="ResultArea" rows="15"></textarea>
+                    </div>
                 </div>
 
 <!-- buttons to show and hide help and clear help and internals..................................................... -->
@@ -83,7 +99,7 @@
 
                 <div id="HELPDIV">
                     <p>
-                        There is no help applicable to 'Perl Cookie Test'<br>
+                        Click 'Create Cookies' to create 4 cookies<br>
                     </p>
                 </div>
 
@@ -118,6 +134,9 @@
             <aside id="ASIDE1">
                     <h3 id=ASIDE1H3>Changes 2022</h3>
                 <ul id="ASIDE1UL">
+                    <li class="ASIDE1LI">22-Jul: add authenticate link</li>
+                    <li class="ASIDE1LI">22-Jul: show session block</li>
+                    <li class="ASIDE1LI">16-Jul: add HttpOnly cookie</li>
                     <li class="ASIDE1LI">16-Jul: add cookie logic</li>
                     <li class="ASIDE1LI">15-Jul: started</li>
                 </ul>
@@ -159,5 +178,4 @@
 </body>
 
 </html>
-
 
