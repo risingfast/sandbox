@@ -41,7 +41,7 @@
 <!--                                                                                                                 -->
 <!-- <BODY> region for all content including header and footer ..................................................... -->
 
-<body onload="fcSetCornerImage(), fcSetFooterOptions()">
+<body onload="fcSetCornerImage(), fcSetFooterOptions(), fcCheckAuthentication()">
     <div id="WRAPPER1">
         <div id="WRAPPER2">
             <header id="HEADER1">
@@ -78,8 +78,8 @@
                     <p>A simple HTML template and Ajax call to print server text</p>
                 </div>
 
-                <div id="unsecured-div">$
-                    <p>Authentication is required for this page (via: Home >> Utilities >> Authent 91                 </div>$
+                <div id="unsecured-div">
+                    <p>Authentication is required for this page (via: Home >> Utilities >> Authenticate)
                 </div>
 
                 <div id="fGetResults-div">
