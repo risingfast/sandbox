@@ -20,7 +20,6 @@ CC=gcc
 CFLAGS=-Wall -g -o
 SQL1FLAGS=-I/usr/include/mysql
 SQL2FLAGS=-L/usr/lib/x86_64-linux-gnu -lmysqlclient -lpthread -lz -lm -lrt -lssl -lcrypto -ldl -lresolv
-#SQL2FLAGS=-L/usr/lib/x86_64-linux-gnu -lmysqlclient -lpthread -lz -lm -lrt -lssl -lcrypto -ldl -lresolv
 
 all: collectText d_AjaxFetch1 d_AjaxFetch2 d_ajaxPost helloWorld multiply simplest setCornerImage checkAuthentication
 
