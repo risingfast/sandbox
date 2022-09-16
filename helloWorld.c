@@ -12,12 +12,20 @@
 //      04-Jan-2021 webcode
 //      26-Mar-2021 reviewed all
 //      30-Sep-2021 remove HTML formatting to migrate to Grid layout
+//      15-Sep-2022 add Access-Control-Allow-Origin: * http CORS header
 //  Enhancements(0):
 //
 
 #include <stdio.h>
 
 int main(void) {
-    printf("Hello World!");
+
+// print the html page content type and <head> block
+
+    printf("Content-type: text/html\n");
+    printf("Access-Control-Allow-Origin: *\n\n");
+
+    printf("Hello World!\n");
+
     return 0;
 }

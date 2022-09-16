@@ -10,7 +10,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void main(void) {
-    printf("Content-type: text/html\n\n");
+int main(void) {
+    printf("Content-type: text/html\n");
+    printf("Access-Control-Allow-Origin: *\n\n");
+
     printf("This text is generated from the webServer program d_AjaxFetch1.cgi\n");
+    return 0;
 }

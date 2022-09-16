@@ -16,6 +16,7 @@
 //      04-Jan-2021 webcode
 //      26-Mar-2021 reviewed all
 //      30-Sep-2021 remove HTML markeup and move to GRID layout
+//      15-Sep-2022 add Access-Control-Allow-Origin: * CORS http header
 //  Enhancements:
 //
 
@@ -34,18 +35,19 @@ void unencode(char *, char *, char *);
 
 int main(void) {
     int    ilenstr;
-    char   input[MAXINPUT], data[MAXINPUT];
+    char   input[MAXINPUT];
     char   *sData = NULL;
     char   tsData[MAXINPUT + 40] = {'\0'};
-    long   len;
     time_t tmeCurrTime;
     int    length = 0;
+    bool   bShowAudit = false;
 
 //    setenv("QUERY_STRING", "?data=this%20is%20more%20text", 1);
 
-// print the html page content type and <head> block
+// print the html page content type header and CORS header> block
 
-    printf("Content-type: text/html\n\n");
+    printf("Content-type: text/html\n");
+    printf("Access-Control-Allow-Origin: *\n\n");
 
 // test for valid string input before writing to the file
 
@@ -56,7 +58,7 @@ int main(void) {
     else {
         FILE *f;
         strcpy(input, getenv("QUERY_STRING"));
-        sData = fUrlDecode(input+EXTRA);
+        sData = fUrlDecodeSpaces(input+EXTRA, bShowAudit);
         f = fopen(DATAFILE, "a");
         if(f == NULL) {
             printf("Sorry, cannot store your data.");

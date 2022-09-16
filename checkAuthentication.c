@@ -1,4 +1,4 @@
-//  checkAuthentication.c -  CGI to check authenticatiin of a session user via their session cookie
+//  checkAuthentication.c -  CGI to check authentication of a session user via their session cookie
 //  Author: Geoff Jarman
 //  Started: 07/18/2022
 //  References: 
@@ -51,6 +51,10 @@ int main(void) {
 //    setenv("HTTP_COOKIE", "cookie2=28afes7a8; cookie4=48afes710; gj2020InstanceID=b471bfac-122b-4053-84e3-dddb374619ff; G_ENABLED_IDPS=google; cookie1=18afes7a7", 1);
 //    setenv("HTTP_COOKIE", "cookie2=28afes7a8; cookie4=48afes710; G_ENABLED_IDPS=google; cookie1=18afes7a7", 1);
 
+// print the html content type and <head> block -----------------------------------------------------------------------
+
+   printf("Content-type: text/html\n");
+   printf("Access-Control-Allow-Origin: *\n\n");
 
 // check for and fetch any existing oookie named 'gj2020InstanceID' ----------------------------------------------------
 
@@ -144,7 +148,7 @@ int main(void) {
 // print the html page content type and <head> block -------------------------------------------------------------------
 
     if (bCookieExists) {
-        printf("Content-type: text/html\n\n");
+//        printf("Content-type: text/html\n\n");
         printf("Success\n");
         printf("%s\n", caSessionID);
         printf("%s\n", caUserShortName);
@@ -153,7 +157,7 @@ int main(void) {
         printf("%s\n", caDateTime);
         printf("%s\n", caCookieVal);
     } else {
-        printf("Content-type: text/html\n\n");
+//        printf("Content-type: text/html\n\n");
         printf("Failure\n");
         printf("%s\n", "Unknown");
         printf("%s\n", "Unknown");

@@ -8,6 +8,7 @@
 //      27-Mar-2021 reviewed all
 //      01-Oct-2021 print confirmation back to HTML page
 //      01-Oct-2021 add a newline to the file output for each string
+//      15-Sep-2022 add Access-Control-Allow-Origin: * CORS http header
 
 // includes and defines
 
@@ -22,6 +23,7 @@ int main(int argc, char** argv) {
     char arrWords[100] = {'\0'};
 
     printf("Content-Type: text/html\n\n");
+    printf("Access-Control-Allow-Origin: *\n\n");
 
     while (fgets(arrWords, 100, stdin) != NULL) {
         fputs(arrWords, fp1);

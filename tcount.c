@@ -14,7 +14,6 @@
 //      26-Mar-2021 reviewed all
 //      30-Sep-2021 remove HTML layouts to migrate to GRID and Ajax
 //      30-Sep-2021 change the message when the counter displays
-//      21-Mar-2022 add fclose();
 //  Enhancements(0):
 
 #include <stdio.h>
@@ -54,8 +53,6 @@ int main(void) {
             fprintf(fptrFile,"%i\n",count);
         }
     }
-
-    fclose(fptrFile);
 
    return 0;
 }
