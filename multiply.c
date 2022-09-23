@@ -13,6 +13,7 @@
 //      26-Mar-2021 reviewed all
 //      22-Sep-2021 renamed from multVars.c to multiply.c
 //      23-Sep-2021 changed to return a simple product without a prefix
+//      16-Sep-2022 add Access-Control-Allow-Origin: * http header for CORS
 //  Enhancements(0):
 
 #include <stdio.h>
@@ -22,12 +23,12 @@ int main(void) {
     char *data;
     long m, n, p;
 
-//    setenv("QUERY_STRING","m=3&n=2", 1);
+    printf("Content-type: text/javascript\n");
+    printf("Access-Control-Allow-Origin: *\n\n");
+
+// setenv("QUERY_STRING","m=3&n=2", 1);
 
 // fetch the query string and process the contents
-
-    printf("Content-type: text/javascript");
-    printf("\n\n");
 
     data = getenv("QUERY_STRING");
 

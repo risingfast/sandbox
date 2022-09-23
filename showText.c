@@ -10,6 +10,7 @@
 //      10-Feb-2021 webcode
 //      26-Mar-2021 reviewed all
 //      30-Sep-2021 remove HTML markeup and migrate to grid layout
+//      16-Sep-2022 add Access-Control-Allow-Origin: * http CORS header
 //  Enhancements(0):
 
 // includes and defines
@@ -25,9 +26,10 @@ int main() {
     f = fopen (DATAFILE, "r");
     char cyText[MAXLEN];
 
-// print the html content type and <head> block
+// print the html content-type header and CORS header block
 
-    printf("Content-type: text/html\n\n");
+    printf("Content-type: text/html\n");
+    printf("Access-Control-Allow-Origin: *\n\n");
 
 // read text from the file and print it
 

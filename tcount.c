@@ -14,6 +14,7 @@
 //      26-Mar-2021 reviewed all
 //      30-Sep-2021 remove HTML layouts to migrate to GRID and Ajax
 //      30-Sep-2021 change the message when the counter displays
+//      16-Sep-2021 add Access-Control-Allow-Origin: * CORS http header
 //  Enhancements(0):
 
 #include <stdio.h>
@@ -23,9 +24,11 @@ int main(void) {
     FILE *fptrFile;
     int count;
 
-// print the html page content type and <head> block
+// print the html page content-type header and CORS http header
 
-    printf("Content-type: text/html\n\n");
+    printf("Content-type: text/html\n");
+    printf("Access-Control-Allow-Origin: *\n\n");
+
 // open the data file and throw an error if it can't be opened
 
     if (!(fptrFile=fopen("tcount.dat","r"))) {
