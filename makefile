@@ -8,6 +8,7 @@
 #       10-Dec-2021 add bookDelSeries
 #       10-Dec-2021 add bookDetails2
 #       20-Sep-2022 add .cgi targets for all source
+#       27-Oct-2000 add json4Ajax
 # $@ Target file
 # $^ Dependency files
 # $(CC) Compiler executable
@@ -22,7 +23,7 @@ CFLAGS=-Wall -g -o
 SQL1FLAGS=-I/usr/include/mysql
 SQL2FLAGS=-L/usr/lib/x86_64-linux-gnu -lmysqlclient -lpthread -lz -lm -lrt -lssl -lcrypto -ldl -lresolv
 
-all: showText showText.cgi collectText collectText.cgi d_AjaxFetch1 d_AjaxFetch1.cgi d_AjaxFetch2 d_AjaxFetch2.cgi d_ajaxPost  d_ajaxPost.cgi helloWorld helloWorld.cgi multiply multiply.cgi simplest simplest.cgi tcount tcount.cgi setCornerImage setCornerImage.cgi checkAuthentication checkAuthentication.cgi
+all: showText showText.cgi collectText collectText.cgi d_AjaxFetch1 d_AjaxFetch1.cgi d_AjaxFetch2 d_AjaxFetch2.cgi d_ajaxPost  d_ajaxPost.cgi helloWorld helloWorld.cgi multiply multiply.cgi simplest simplest.cgi tcount tcount.cgi setCornerImage setCornerImage.cgi checkAuthentication checkAuthentication.cgi jsontest json4Ajax json4Ajax.cgi
 
 showText: showText.c ../shared/rf50.c
 	$(CC) $(CFLAGS) $@ $^ $(SQL2FLAGS)
@@ -90,5 +91,14 @@ checkAuthentication: checkAuthentication.c
 checkAuthentication.cgi: checkAuthentication.c
 	$(CC) $(CFLAGS) $@ $(SQL1FLAGS) $^ $(SQL2FLAGS) -luuid
 
+jsontest: jsontest.c
+	$(CC) $(CFLAGS) $@ $^ -ljson-c
+
+json4Ajax: json4Ajax.c
+	$(CC) $(CFLAGS) $@ $^ -ljson-c
+
+json4Ajax.cgi: json4Ajax.c
+	$(CC) $(CFLAGS) $@ $^ -ljson-c
+
 clean:
-	rm -f *.o *.s *.i showText showText.cgi collectText collectText.cgi d_AjaxFetch1 d_AjaxFetch1.cgi d_AjaxFetch2 d_AjaxFetch2.cgi d_ajaxPost d_ajaxPost.cgi helloWorld helloWorld.cgi multiply multiply.cgi simplest Simplest.cgi tcount tcount.cgi setCornerImage setCornerImage.cgi checkAuthentication checkAuthentication.cgi
+	rm -f *.o *.s *.i showText showText.cgi collectText collectText.cgi d_AjaxFetch1 d_AjaxFetch1.cgi d_AjaxFetch2 d_AjaxFetch2.cgi d_ajaxPost d_ajaxPost.cgi helloWorld helloWorld.cgi multiply multiply.cgi simplest Simplest.cgi tcount tcount.cgi setCornerImage setCornerImage.cgi checkAuthentication checkAuthentication.cgi jsontest json4Ajax json4Ajax.cgi
