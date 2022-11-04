@@ -101,4 +101,4 @@ json4Ajax.cgi: json4Ajax.c
 	$(CC) $(CFLAGS) $@ $^ -ljson-c
 
 clean:
-	rm -f *.o *.s *.i showText showText.cgi collectText collectText.cgi d_AjaxFetch1 d_AjaxFetch1.cgi d_AjaxFetch2 d_AjaxFetch2.cgi d_ajaxPost d_ajaxPost.cgi helloWorld helloWorld.cgi multiply multiply.cgi simplest Simplest.cgi tcount tcount.cgi setCornerImage setCornerImage.cgi checkAuthentication checkAuthentication.cgi jsontest json4Ajax json4Ajax.cgi
+	rm -f *.o *.s *.i showText showText.cgi collectText collectText.cgi d_AjaxFetch1 d_AjaxFetch1.cgi d_AjaxFetch2 d_AjaxFetch2.cgi d_ajaxPost d_ajaxPost.cgi helloWorld helloWorld.cgi multiply multiply.cgi simplest Simplest.cgi tcount tcount.cgi setCornerImage setCornerImage.cgi checkAuthentication checkAuthentication.cgi jsontest json4Ajax json4Ajax.cgi 
