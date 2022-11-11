@@ -1,4 +1,4 @@
-/* d_template.css - a css template                                                                                     */
+/* d_template.css - a css template                                                                                   */
 /* started - 17-May-2022                                                                                             */
 /* References:                                                                                                       */
 /*         HTML & CSS for Beginners Part 22: How to create a basic layout - the CSS                                  */
@@ -23,6 +23,10 @@
     text-align: left;
 }
 
+#OL1 {
+    text-align: left;
+}
+
 #section2-div {
     width: 80%;
     margin: auto; 
@@ -31,3 +35,8 @@
     max-width: 800px;
     text-align: left;
 }
+
+#OL2 {
+    text-align: left;
+}
+
