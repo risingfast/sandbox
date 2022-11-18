@@ -17,8 +17,6 @@
 //      26-Mar-2021 reviewed all
 //      30-Sep-2021 remove HTML markeup and move to GRID layout
 //      15-Sep-2022 add Access-Control-Allow-Origin: * CORS http header
-//      16-Nov-2022 change strcpy() to strncpy()
-//      16-Nov-2022 change urlDecodeSpaces() to urlDecode()
 //  Enhancements:
 //
 
@@ -37,11 +35,12 @@ void unencode(char *, char *, char *);
 
 int main(void) {
     int    ilenstr;
-    char   input[MAXINPUT + 1];
+    char   input[MAXINPUT];
     char   *sData = NULL;
     char   tsData[MAXINPUT + 40] = {'\0'};
     time_t tmeCurrTime;
     int    length = 0;
+    bool   bShowAudit = false;
 
 //    setenv("QUERY_STRING", "?data=this%20is%20more%20text", 1);
 
@@ -58,8 +57,8 @@ int main(void) {
     }
     else {
         FILE *f;
-        strncpy(input, getenv("QUERY_STRING"), MAXINPUT);
-        sData = fUrlDecode(input+EXTRA);
+        strcpy(input, getenv("QUERY_STRING"));
+        sData = fUrlDecodeSpaces(input+EXTRA, bShowAudit);
         f = fopen(DATAFILE, "a");
         if(f == NULL) {
             printf("Sorry, cannot store your data.");
