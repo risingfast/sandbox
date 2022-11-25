@@ -28,7 +28,7 @@
 #include <string.h>
 #include <stdbool.h>
 #include "../shared/rf50.h"
-#define MAXLEN 80                                      // Max length of input string from html form
+#define MAXLEN 120             // Max length of input string from html form plus space for encoding
 #define EXTRA 5                                               // 4 for field name "data", 1 for "="
 #define MAXINPUT MAXLEN+EXTRA+2                      // 1 for added line break, 1 for trailing NULL
 #define DATAFILE "data.txt"
