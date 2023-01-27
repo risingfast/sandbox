@@ -9,6 +9,7 @@
 //    28-Oct-2022 -- started
 //    29-Oct-2022 -- add exception traps for invalid QUERY_STRING parameters
 //    31-Oct-2022 -- replace caInstruction fixed array with sInstruction string for dynamic sizing
+//    22-Jan-2023 -- set freed pointers to NULL
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -57,6 +58,7 @@ int main() {
         printf("QUERY_STRING is \"%s\". Expecting QUERY_STRING=\"Instruction=<instruction>\". Ending json4Ajax.cgi", sQueryString);
         printf("\n\n");
         free(sInstruction);
+        sInstruction = NULL;
         return EXIT_FAILURE;
     }
 
@@ -66,6 +68,7 @@ int main() {
         printf("Invalid instruction: QUERY_STRING=\"%s\" (not \"Instruction=Success\" or \"Failure\" or \"Unknown\"). Ending json4Ajax.cgi", sQueryString);
         printf("\n\n");
         free(sInstruction);
+        sInstruction = NULL;
         return EXIT_FAILURE;
     }
 
@@ -120,6 +123,7 @@ int main() {
 
     json_object_put(jsonCgiResp);
     free(sInstruction);
+    sInstruction = NULL;
     return EXIT_SUCCESS;
 }
 
