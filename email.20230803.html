@@ -25,7 +25,6 @@
 <!-- References:                                                                                                     -->
 <!--      https://www.youtube.com/watch?v=qTGbWfEEnKI                                                                -->
 <!--          Easily Structure your Layout with CSS Grid's 'grid-template-areas'                                     -->
-<!--     https://www.youtube.com/watch?v=r4RQ38EoLds -- Ania Kubow Send Emails from an HTML Contact Form             -->
 <!-- Log:                                                                                                            -->
 <!--    07-Sep-2020 start                                                                                            -->
 <!--    08-Oct-2020 - make horizontally expandable and add Internals Summary/Detail dropdown                         -->
@@ -44,7 +43,6 @@
 <!--    15-Aug-2022 - add long links                                                                                 -->
 <!--    16-Sep-2022 - change www.risingfast.com to gjarman2020.com                                                   -->
 <!--    26-Jul-2023 - add JSON Options link                                                                          -->
-<!--    03-Aug-2023 - connect to formsubmit.co for email forwarding                                                  -->
 <!--                                                                                                                 -->
 <!-- <BODY> region for all content including header and footer ..................................................... -->
 
@@ -125,15 +123,14 @@
 
                 <div id="secured-div">
                     <div id="form-div">
-<!--                        <form action="mailto:gjarman2020@gmail.com" method="GET" enctype="text/plain">             -->
-                        <form action="https://formsubmit.co/gjarman2020@gmail.com" method="POST">
+                        <form action="mailto:gjarman2020@gmail.com" method="GET" enctype="text/plain">
                             <div id="name-div">
                                 <labeL class="emailLbl" for="Name" value="name:" style="margin-right: 10px">Name:</label>
                                 <input id="emailName" type="text" name="name"/>
                             </div>
                             <div id="mailto-div">
                                 <label class="emailLbl" for="email" value="email:" style="margin-right: 10px">Email:</label>
-                                <input id="emailAddress" type="text" name="email" required/>
+                                <input id="emailAddress" type="text" name="email"/>
                             </div>
                             <div id="subject-div">
                                 <label class="emailLbl" for="emailSub" value="email:">Subject:</label>
@@ -143,7 +140,7 @@
                                 <textarea id="emailBody" name="text" rows="20">Your message:</textarea>
                             </div>
                             <div id="submit-div">
-                                <button type="submit">Send</button>
+                                <input id="submit-input" type="submit" name="emailSubmit" value="Submit"/>
                             </div>
                         </form>
                     </div>
@@ -196,7 +193,6 @@
             <aside id="ASIDE1">
                     <h3 id=ASIDE1H3>Changes 2021-23</h3>
                 <ul id="ASIDE1UL">
-                    <li CLASS="ASIDE1LI">03-Aug: enable formsubmit.io</li>
                     <li CLASS="ASIDE1LI">26-Jul: add JSON options link</li>
                     <li CLASS="ASIDE1LI">01-Jan: happy new year 2023</li>
                     <li class="ASIDE1LI">15-Aug: add long links</li>
