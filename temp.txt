@@ -1,0 +1,3 @@
+<!--    09-Nov-2023 - add canvas link                                                                                -->
+                    <li class="NAV1LI"><a href="http://gjarman2020.com/canvas.html">Canvas</a></li>
+                    <li class="ASIDE1LI">09-Nov: add canvas link</li>

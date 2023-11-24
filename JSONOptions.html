@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+
+<!-- <HEAD> region for meta tags ................................................................................... -->
+
+<HTML lang="en">
+
+<HEAD>
+    <META charset="UTF-8">
+    <META name="viewport" content="width=device-width, initial-scale=1.0">
+    <META http-equiv="X-UA-Compatible" content="ie=edge">
+    <META name="description" content="Options page on the gjarman2020.com website">
+    <META name="keywords" content="html, css, cgi">
+    <META name="generator" content="vim">
+    <META name="author" content="gjarman2020.com">
+    <TITLE>JSON Options</TITLE>
+    <LINK rel="stylesheet" type="text/css" href="common.css">
+    <LINK rel="stylesheet" type="text/css" href="JSONOptions.css">
+    <link rel="shortcut icon" href="GeoffreyJarman6.png" type="image/png">
+    <script src="JSONOptions.js" defer></script>
+    <script src="common.js" defer></script>
+
+</HEAD>
+
+<!-- Comments region ............................................................................................... -->
+<!--                                                                                                                 -->
+<!-- JSONOptions.html -  JSON options for gjarman2020.com website pages                                              -->
+<!-- References:                                                                                                     -->
+<!--      https://www.youtube.com/watch?v=qTGbWfEEnKI                                                                -->
+<!--          Easily Structure your Layout with CSS Grid's 'grid-template-areas'                                     -->
+<!-- Templates:                                                                                                      -->
+<!--      none                                                                                                       -->
+<!-- Log:                                                                                                            -->
+<!--    24-Jul-2023 - start by copying options.html and modifying                                                    -->
+<!--    25-Jul-2023 - add JSON Options link                                                                          -->
+<!--    22-Aug-2023 - add forex                                                                                      -->
+<!--    23-Aug-2023 - add a link to here                                                                             -->
+<!--    11-Sep-2023 - add video link                                                                                 -->
+<!--    16-Sep-2023 - add logo and icon                                                                              -->
+<!--    20-Sep-2023 - add link to rps.html page                                                                      -->
+<!--    29-Sep-2023 - add Animations link                                                                            -->
+<!--    17-Oct-2023 - add link to snake.html page                                                                    -->
+<!--    17-Oct-2023 - add links to buttons                                                                           -->
+<!--    28-Oct-2023 - add upload link                                                                                -->
+<!--    28-Oct-2023 - change template link                                                                           -->
+<!--    09-Nov-2023 - add canvas link                                                                                -->
+<!--                                                                                                                 -->
+<!-- <body> region for all content including header and footer ..................................................... -->
+
+<body onload="fSetOptions(), fcCheckAuthentication(), fcFetchForexRate(), fcSetCornerImage()">
+    <div id="WRAPPER1">
+        <div id="WRAPPER2">
+            <header id="HEADER1">
+                <div id="HEADER1DIV" style="display: grid; align-items: center; grid-template-columns: 2fr 10fr 2fr ; column-gap: 5px;">
+                    <img src="GeoffreyJarman3.png" alt="No GeoffreyJarman3.png available" style="margin-left: 60px"; width=75px; height=75px>
+                     <H2>gjarman2020.com</H2>
+                    <img src="GeoffreyJarman4.png" alt="No GeoffreyJarman4.png available" style="margin-left: 40px; margin-top: 10px"; width=80px; height=80;px>
+                </div>
+            </header>
+            <nav id="NAV1">
+                <H3 id="NAV1H3">Links</h3>
+                <ul id="NAV1UL">
+                    <li class="NAV1LI"><a class="active" href="http://gjarman2020.com">Home</a></li>
+                    <li class="NAV1LI"><a href="http://gjarman2020.com/mcaListPeople.html">Ancestry</a></li>
+                    <li class="NAV1LI"><a href="http://gjarman2020.com/bookInquiry.html">Library</a></li>
+                    <li class="NAV1LI"><a href="http://gjarman2020.com/cheatsheets.html">Cheatsheets</a></li>
+                    <li class="NAV1LI"><a href="http://gjarman2020.com/authenticateUser.html">Authenticate</a></li>
+                    <li class="NAV1LI"><a href="http://gjarman2020.com/options.html">Options</a></li>
+                </ul>
+                <ul id="NAV1UL2" hidden>
+                    <li class="NAV1LI"><a class="active" href="http://gjarman2020.com">Home</a></li>
+                    <br>
+                    <li class="NAV1LI"><a href="http://gjarman2020.com/mcaListPeople.html">Ancestry</a></li>
+                    <li class="NAV1LI"><a href="http://gjarman2020.com/bookInquiry.html">Library</a></li>
+                    <li class="NAV1LI"><a href="http://gjarman2020.com/cheatsheets.html">Cheatsheets</a></li>
+                    <br>
+                    <li class="NAV1LI"><a href="http://gjarman2020.com/guessAnIdiom.html">Guess an Idiom</a></li>
+                    <li class="NAV1LI"><a href="http://gjarman2020.com/battleShips.html">Battleships</a></li>
+                    <li class="NAV1LI"><a href="http://gjarman2020.com/d_regexWords.html">Crossword Helper</a></li>
+                    <li class="NAV1LI"><a href="http://gjarman2020.com/rRoulette.html">Russian Roulette</a></li>
+                    <li class="NAV1LI"><a href="http://gjarman2020.com/rps.html">Rock Paper Scissors</a></li>
+                    <li class="NAV1LI"><a href="http://gjarman2020.com/snake.html">Snake</a></li>
+                    <br>
+                    <li class="NAV1LI"><a href="http://gjarman2020.com/environment.html">Environment</a></li>
+                    <li class="NAV1LI"><a href="http://gjarman2020.com/serverProfile.html">Server Profile</a></li>
+                    <li class="NAV1LI"><a href="http://gjarman2020.com/authenticateUser.html">Authenticate</a></li>
+                    <li class="NAV1LI"><a href="http://gjarman2020.com/options.html">Options</a></li>
+                    <li class="NAV1LI"><a href="http://gjarman2020.com/about.html">About</a></li>
+                    <li class="NAV1LI"><a href="http://gjarman2020.com/here.html">Here</a></li>
+                    <li class="NAV1LI"><a href="http://gjarman2020.com/logo.html">Logo</a></li>
+                    <br>
+                    <li class="NAV1LI"><a href="http://gjarman2020.com/simplest.html">Text Fetcher</a></li>
+                    <li class="NAV1LI"><a href="http://gjarman2020.com/helloWorld.html">Hello World!</a></li>
+                    <li class="NAV1LI"><a href="http://gjarman2020.com/tcount.html">Counter</a></li>
+                    <li class="NAV1LI"><a href="http://gjarman2020.com/multiply.html">Multiplier</a></li>
+                    <li class="NAV1LI"><a href="http://gjarman2020.com/collectText.html">Collect Text</a></li>
+                    <li class="NAV1LI"><a href="http://gjarman2020.com/d_ajaxFetch.html">Ajax Fetch</a></li>
+                    <li class="NAV1LI"><a href="http://gjarman2020.com/d_ajaxPost.html">Post Text to Server</a></li>
+                    <li class="NAV1LI"><a href="http://gjarman2020.com/template.html">Template</a></li>
+                    <li class="NAV1LI"><a href="http://gjarman2020.com/dogAPI.html">Dog API</a></li>
+                    <li class="NAV1LI"><a href="http://gjarman2020.com/APIDrills.html">API Drills</a></li>
+                    <li class="NAV1LI"><a href="http://gjarman2020.com/email.html">Email</a></li>
+                    <li class="NAV1LI"><a href="http://gjarman2020.com/perlTest.html">Cookies</a></li>
+                    <li class="NAV1LI"><a href="http://gjarman2020.com/DOM_Drills.html">DOM Drills</a></li>
+                    <li class="NAV1LI"><a href="http://gjarman2020.com/json4Ajax.html">JSON for Ajax</a></li>
+                    <li class="NAV1LI"><a href="http://gjarman2020.com/JSONOptions.html">JSON Options</a></li>
+                    <li class="NAV1LI"><a href="http://gjarman2020.com/videoDrill.html">Video Drill</a></li>
+                    <li class="NAV1LI"><a href="http://gjarman2020.com/animations.html">Animations</a></li>
+                    <li class="NAV1LI"><a href="http://gjarman2020.com/upload.html">Upload</a></li>
+                    <li class="NAV1LI"><a href="http://gjarman2020.com/canvas.html">Canvas</a></li>
+                </ul>
+            </nav>
+
+<!-- <SESSION1> region for session information .................................................................... -->
+
+            <aside id="SESSION1">
+                    <h3 id=SESSION1H3>Current Session</h3>
+                    <p id="SESSION1PARA">
+                    </p>
+            </aside>
+
+<!-- <FOREX1> region for USD AUD exchange rate ..................................................................... -->
+
+            <aside id="FOREX1">
+                    <h3 id=FOREX1H3>Exchange Rate</h3>
+                    <p id="FOREX1PARA">
+                    </p>
+            </aside>
+
+<!-- <MAIN> region for main content and background image ........................................................... -->
+
+            <main id="MAIN1">
+
+                <div id="heading-div">
+                    <h2>JSON Options</h2>
+                    <p>JSN Option settings for gjarman2020.com</p>
+                </div>
+
+<!-- corner-image choice div ....................................................................................... -->
+
+                <div id="unsecured-div">
+                    <p><a href="http://gjarman2020.com/authenticateUser.html">Authentication</a> is required for this page (or via: Links >> Authenticate)</p>
+                </div>
+
+                <div id="secured-div">
+                        <div id="cornerimagechoice-div">
+                            <span id="cornerimagechoice-label">Corner Image Behaviour:</span>
+                            <select id="cornerimagechoice-select" onchange="fSetCornerImageBehaviourButton()">
+                                <option value="Randomized">Randomized</option>
+                                <option value="Sequenced">Sequenced</option>
+                                <option value="Locked">Locked</option>
+                            </select>
+                        </div>
+    
+<!-- corner-image policy div ....................................................................................... -->
+    
+                    <div id="cornerimagepolicy-div">
+                        <span id="cornerimagepolicy-label">Change Corner Image:</span>
+                        <button title="Get the first corner image" id="cornerimagepolicyfirst-button" disabled onclick="fcFirstCornerImage()">Get First</button>
+                        <button title="Get the prior corner image" id="cornerimagepolicydecremented-button" disabled onclick="fcDecrementCornerImage()">Get Prior</button>
+                        <button title="Get the next corner image" id="cornerimagepolicysequenced-button" disabled onclick="fcIncrementCornerImage()">Get Next</button>
+                        <button title="Get a random corner image" id="cornerimagepolicyrandom-button" onclick="fcSetRandomCornerImage()">Get Random</button>
+                    </div>
+    
+<!-- background-image choice div ................................................................................... -->
+    
+                    <div id="backgroundimagechoice-div">
+                        <span id="backgroundimagechoice-label" for="backgroundimagechoice-select">Background Choice:</span>
+                            <select id="backgroundimagechoice-select" onchange="fSetBackgroundImageChoice()">
+                                <option value="background">Default</option>
+                                <option value="backgroundSeashore">Seashore</option>
+                                <option value="backgroundPinkCotton">Pink Cotton</option>
+                                <option value="backgroundPineTrees">Pine Trees</option>
+                                <option value="backgroundDryGrass">Dry Grass</option>
+                                <option value="backgroundBananas">Bananas</option>
+                                <option value="backgroundBeKind">Be Kind</option>
+                                <option value="backgroundBicycle">Bicycle</option>
+                                <option value="backgroundBlackChair">Black Chair</option>
+                                <option value="backgroundBlackTaxi">Black Taxi</option>
+                                <option value="backgroundBlueWaterSwimmer">Blue Water and Swimmer</option>
+                                <option value="backgroundCompassAndClock">Compass and Clock</option>
+                                <option value="backgroundConTrailPlane">Condensation Trails and Plane</option>
+                                <option value="backgroundCorridor">Corridor</option>
+                                <option value="backgroundCupOfCoffee">Cup of Coffee</option>
+                                <option value="backgroundDogAsDunce">Dog in a Dunce Cap</option>
+                                <option value="backgroundDryGrass">Dry Grass</option>
+                                <option value="backgroundDuckAtDusk">Duck at Dusk</option>
+                                <option value="backgroundFamilyFaces">Family Faces</option>
+                                <option value="backgroundFernLimb">Fern Limb</option>
+                                <option value="backgroundFishingSanFrancisco">Fishing in San Francisco</option>
+                                <option value="backgroundFloralWallPattern">Floral Wall Pattern</option>
+                                <option value="backgroundFlowersOnFabric">Flowers on Fabric</option>
+                                <option value="backgroundGraduationDay">Graduation Day</option>
+                                <option value="backgroundGreekIsland">Greek Island</option>
+                                <option value="backgroundGreenlandHut">Greenland Hut</option>
+                                <option value="backgroundHalloweenBalloon">Halloween Balloon</option>
+                                <option value="backgroundHatOnSideTable">Hat on a Side Table</option>
+                                <option value="backgroundHotAirBalloons">Hot Air Balloons</option>
+                                <option value="backgroundHouseAndTrees">House and Trees</option>
+                                <option value="backgroundIncenseSticks">Incense Sticks</option>
+                                <option value="backgroundIndoorPlant">Indoor Plant</option>
+                                <option value="backgroundLampshade">Lampshade</option>
+                                <option value="backgroundLifeGuardStation">Lifeguard Station</option>
+                                <option value="backgroundMountainAndMoon">Mountain and Moon</option>
+                                <option value="backgroundMountainBalloon">Mountain Balloon</option>
+                                <option value="backgroundRockyRoad">Rocky Road</option>
+                                <option value="backgroundOilOnWater">Oil on Water</option>
+                                <option value="backgroundOnePersonTwoTrees">One Person and Two Trees</option>
+                                <option value="backgroundPaddleBoarder">Paddle Boarder</option>
+                                <option value="backgroundPalace">Palace</option>
+                                <option value="backgroundParisIntersection">Paris Intersection</option>
+                                <option value="backgroundPheasant">Pheasant</option>
+                                <option value="backgroundPineTrees">Pine Trees</option>
+                                <option value="backgroundPinkCotton">Pink Cotton</option>
+                                <option value="backgroundPlasterSwirls">Plaster Swirls</option>
+                                <option value="backgroundPumpkinsAndCandu">Pumpkins and Candy</option>
+                                <option value="backgroundRabbit">Rabbit</option>
+                                <option value="backgroundRoughCoast">Rough Coast</option>
+                                <option value="backgroundSeagulls">Seagulls</option>
+                                <option value="backgroundSeashore">Seashore</option>
+                                <option value="backgroundShirt">Shirt</option>
+                                <option value="backgroundSpire">Spire</option>
+                                <option value="backgroundTakingAPicture">Taking a Picture</option>
+                                <option value="backgroundTwoCamels">Two Camels</option>
+                                <option value="backgroundTwoKids">Two Kids</option>
+                                <option value="backgroundTwoRedPoppeys">Two Red Poppies</option>
+                                <option value="backgroundVinyard">Vineyard</option>
+                                <option value="backgroundWhiteFlower">White Flower</option>
+                                <option value="backgroundWhitePumpkin">White Pumpkin</option>
+                                <option value="backgroundWhiteSands">White Sands</option>
+                            </select>
+                    </div>
+    
+<!-- showserverlog div ............................................................................................ -->
+    
+                    <div id="showserverlog-div">
+                        <span id="showserverlog-label" for="showserverlog-select">Show Webserver Log</span>
+                            <select id="showserverlog-select" onchange="fSetShowServerLog()">
+                                <option value="No">No</option>
+                                <option value="Yes">Yes</option>
+                            </select>
+                    </div>
+    
+<!-- showsessionlog div ............................................................................................ -->
+    
+                    <div id="showsessionlog-div">
+                        <label id="showsessionlog-label" for="showsessionlog-select">Show Session Log</label>
+                            <select id="showsessionlog-select" onchange="fSetShowSessionLog()">
+                                <option value="No">No</option>
+                                <option value="Yes">Yes</option>
+                            </select>
+                    </div>
+
+<!-- showleftlinks div ............................................................................................ -->
+    
+                    <div id="showleftlinks-div">
+                        <label id="showleftlinks-label" for="showleftlinks-select">Left Links Style</label>
+                            <select id="showleftlinks-select" onchange="fcSetLeftLinks(), fSetLeftLinks()">
+                                <option value="Short">Short List</option>
+                                <option value="Long">Long List</option>
+                            </select>
+                    </div>
+
+<!-- server:log div ................................................................................................. -->
+
+                    <div id="serverlog-div">
+                        <h3>
+                            Webserver Log:<br>
+                        </h3>
+                        <textarea id="serverlog-textarea" rows="20"></textarea>
+                    </div>
+
+<!-- sessionlog div ................................................................................................ -->
+
+                    <div id="sessionlog-div">
+                        <h3>
+                            Session Log:<br>
+                        </h3>
+                        <textarea id="sessionlog-textarea" rows="20"></textarea>
+                    </div>
+
+<!-- message box div ............................................................................................... -->
+
+                    <div id="message-div">
+                        <label id="message-label" FOR="message-input">Message:</label>
+                        <input id="message-input" TYPE="text" NAME="message" onclick="fShowMessageReadOnly()" readonly><BR>
+                    </div>
+
+                </div>
+
+<!-- buttons to submit option settings and show and hide help and clear the page ................................... -->
+
+                    <div id="MOREBTTNS">
+                        <button title="Save options" onclick="fSaveOptions()">Submit</button>
+                        <button title="Save options using a JSON structure" onclick="fSaveJSONOptions()">Save as JSON</button>
+                        <button title="Show or hide help text" onclick="fcShowHelp()">Help</button>
+                        <button title="Clear help and internals text" onclick="fClearOptionsFields()">Clear</button>
+                        <br>
+                    </div>
+
+<!-- help text controlled by button ................................................................................ -->
+
+                <div id="HELPDIV">
+                    <p>
+                    click 'Submit' to save any changes to these option settings<br>
+                    changes to options are not saved if 'Submit' is not clicked<br>
+                    options displayed in the footer region are updated on 'Submit'<br>
+                    changes to the current corner image are only saved on 'Submit'<br>
+                    the current corner image is changed (unless locked) with every new page or page refresh<br>
+                    the corner image behaviour option determines if and how the corner image changes<br>
+                    options set on this page are visible in the footer region of every page<br>
+                    options can only be set and changed on this page
+                    access log entries are updated every minute in the background and not in real time
+                    </p>
+                </div>
+
+<!-- internals text ................................................................................................ -->
+
+               <div id="INTERNALS">
+                    <details id="internals-details">
+                        <summary>
+                            Internals
+                        </summary>
+                        <p>
+                            html file: /var/www.html/JSONOptions.html<br>
+                            css file: /var/www/html/css/JSONOptions.css<br>
+                            css file: /var/www/html/css/common.css<br>
+                            js file: /var/www/html/css/JSONOptions.js<br>
+                            js file: /var/www/html/css/common.js<br>
+                            cgi directory: /usr/lib/cgi-bin/<br>
+                            corner image: /var/www/html/cornerImage.png<br>
+                            background image: /var/www/html/background.jpg<br>
+                            CGI source code: c<br>
+                        </p>
+                    </details>
+               </div>
+
+            </main>
+
+<!-- <aside1> region for change log ................................................................................ -->
+
+            <aside id="ASIDE1">
+                    <h3 id=ASIDE1H3>Changes 2022-24</h3>
+                <ul ID="ASIDE1UL">
+                    <li class="ASIDE1LI">01-Jan: happy new year 2024</li>
+                    <li class="ASIDE1LI">09-Nov: add canvas link</li>
+                    <li class="ASIDE1LI">28-Oct: change template link</li>
+                    <li class="ASIDE1LI">28-Oct: add upload link</li>
+                    <li class="ASIDE1LI">22-Oct: add titles to buttons</li>
+                    <li class="ASIDE1LI">17-Oct: add link to snake</li>
+                    <li class="ASIDE1LI">29-Sep: add Animations link</li>
+                    <li class="ASIDE1LI">20-Sep: add rps link</li>
+                    <li class="ASIDE1LI">16-Sep: add logo and icon</li>
+                    <li class="ASIDE1LI">11-Sep: add link to video</li>
+                    <li class="ASIDE1LI">22-Aug: add forex</li>
+                    <li class="ASIDE1LI">25-Jul: add JSON options link</li>
+                    <li class="ASIDE1LI">01-Jan: happy new year 2023</li>
+                    <li class="ASIDE1LI">22-Nov: new message on change</li>
+                    <li class="ASIDE1LI">22-Nov: fetch with JSON</li>
+                    <li class="ASIDE1LI">18-Nov: add message</li>
+                    <li class="ASIDE1LI">03-Oct: extend secure div</li>
+                    <li class="ASIDE1LI">14-Aug: add left links option</li>
+                    <li class="ASIDE1LI">25-Jul: add authentication anchor</li>
+                    <li class="ASIDE1LI">24-Jul: add a session log</li>
+                    <li class="ASIDE1LI">22-Jul: add authenticate link</li>
+                    <li class="ASIDE1LI">22-Jul: show session block</li>
+                    <li class="ASIDE1LI">01-Jul: implement access log</li>
+                    <li class="ASIDE1LI">23-Jun: add image buttons</li>
+                    <li class="ASIDE1LI">22-Jun: add image modes</li>
+                    <li class="ASIDE1LI">22-Jun: add options footer</li>
+                    <li class="ASIDE1LI">18-Jun: add options</li>
+                    <li class="ASIDE1LI">16-Jun: start</li>
+                    <li class="ASIDE1LI">01-Jan: happy new year 2022</li>
+                </ul>
+            </aside>
+
+<!-- <aside2> region for corner image .............................................................................. -->
+
+            <aside id="ASIDE2">
+                <div id="ASIDE2DIV">
+                    <h3 style="display:none">Corner Image</h3>                 <!-- screen reader sectioning element -->
+                     <img id="ASIDE2IMG" src="cornerImage.png" alt="Cannot Load cornerImage.png">
+                </div>
+            </aside>
+
+<!-- <aside3> region for corner image caption ...................................................................... -->
+
+            <aside id="ASIDE3">
+                <div id="ASIDE3DIV">
+                    <h3 style="display:none">Corner Image Caption</h3>         <!-- screen reader sectioning element -->
+                    <p id="ASIDE3-PARA">
+                    Matilda Cook in Magpies uniform before her next netball game 2022
+                    </p>
+                </div>
+            </aside>
+
+<!-- <footer> region for page footer ............................................................................... -->
+
+            <footer id="FOOTER1">
+                <div id="FOOTER1OPTIONS-DIV">
+                    Corner Image Behaviour: <span id="footeroptionscichoice"></span>;
+                    Background Image: <span id="footeroptionsbackgroundimage"></span>;
+                    Show Webserver Log: <span id="footeroptionsshowserverlog"></span>;
+                    Show Session Log: <span id="footeroptionsshowsession"></span>;
+                    Left Links: <span id="footeroptionsleftlinks"><span>
+                </div>
+                <div id="FOOTER1DIV">
+                    &copy; 2020 gjarman2020.com ... /var/www/html/options.html
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -8,38 +8,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description" content="JSON and Ajax test">
+    <meta name="description" content="An HTML document for p5.js animation">
     <meta name="keywords" content="html, css, cgi">
     <meta name="generator" content="vim">
     <meta name="author" content="gjarman2020">
-    <link rel="stylesheet" type="text/css" href="json4Ajax.css">
+    <link rel="stylesheet" type="text/css" href="animations.css">
     <link rel="stylesheet" type="text/css" href="common.css">
-    <title>JSON for Ajax</title>
+    <title>Animations</title>
     <link rel="shortcut icon" href="GeoffreyJarman6.png" type="image/png">
 </head>
 
 <!-- Comments region ............................................................................................... -->
 <!--                                                                                                                 -->
-<!-- json4Ajax.html -  a test of using JSON and Ajsx                                                                 -->
+<!-- animations.html -  animations page for gjarman2020.com website                                                  -->
 <!-- References:                                                                                                     -->
-<!--      https://www.youtube.com/watch?v=qTGbWfEEnKI                                                                -->
-<!--          Easily Structure your Layout with CSS Grid's 'grid-template-areas'                                     -->
 <!-- Templates:                                                                                                      -->
-<!--      none                                                                                                       -->
+<!--     https://p5js.org/get-started/                                                                               -->
 <!-- Log:                                                                                                            -->
-<!--    27-Oct-2022 - start                                                                                          -->
-<!--    28-Oct-2022 - fix the footer references                                                                      -->
-<!--    29-Oct-2022 - add a <select> for an instruction                                                              -->
-<!--    26-Jul-2023 - add JSON Options link                                                                          -->
-<!--    08-Aug-2023 - add a link to a new API Drills page                                                            -->
-<!--    22-Aug-2023 - add forex                                                                                      -->
-<!--    23-Aug-2023 - add a link to here                                                                             -->
-<!--    31-Aug-2023 move styles to css                                                                               -->
-<!--    11-Sep-2023 - add video link                                                                                 -->
-<!--    16-Sep-2023 - add logo and icon                                                                              -->
-<!--    20-Sep-2023 - add link to rps.html page                                                                      -->
+<!--    26-Sep-2023 - start                                                                                          -->
+<!--    27-Sep-2023 - add a Freeze button                                                                            -->
 <!--    29-Sep-2023 - add Animations link                                                                            -->
-<!--    02-Oct-2023 - add message-div                                                                                -->
+<!--    03-Oct-2023 - recolor readonly fields                                                                        -->
 <!--    17-Oct-2023 - add link to snake.html page                                                                    -->
 <!--    22-Oct-2023 - add titles to buttons                                                                          -->
 <!--    28-Oct-2023 - add upload link                                                                                -->
@@ -72,7 +61,7 @@
                 <ul id="NAV1UL2" hidden>
                     <li class="NAV1LI"><a class="active" href="http://gjarman2020.com">Home</a></li>
                     <br>
-                    <li class="NAV1LI"><a href="http://gjarman2020.com/mcaListPeople.html">Ancestry</a></li>
+                    <li class="NAV1LI"><a href="http://gjarman2020.com/mcaListPeople.html">Ancestry</a></li> 
                     <li class="NAV1LI"><a href="http://gjarman2020.com/bookInquiry.html">Library</a></li>
                     <li class="NAV1LI"><a href="http://gjarman2020.com/cheatsheets.html">Cheatsheets</a></li>
                     <br>
@@ -113,7 +102,7 @@
                 </ul>
             </nav>
 
-<!-- <SESSION1> region for session information .................................................................... -->
+<!-- <SESSION1> region for session information ..................................................................... -->
 
             <aside id="SESSION1">
                     <h3 id=SESSION1H3>Current Session</h3>
@@ -134,34 +123,40 @@
             <main id="MAIN1">
 
                 <div id="heading-div">
-                    <h2>JSON for Ajax</h2>
-                    <p>A test using JSON with Ajax</p>
+                    <h2>Animations</h2>
+                    <p>An HTML animations exercise using the p5.js library</p>
                 </div>
 
                 <div id="unsecured-div">
-                    <p><a href="http://gjarman2020.com/authenticateUser.html?caller=http://gjarman2020.com/json4Ajax.html">Authentication</a> is required for this page (or via: Links >> Authenticate)</p>
+                    <p><a href="http://gjarman2020.com/authenticateUser.html?caller=http://gjarman2020.com/animations.html">Authentication</a> is required for this page (or via: Links >> Authenticate)</p>
                 </div>
 
                 <div id="secured-div">
-                    <div id="results-div">
-                        <h3>Results:</H3>
-                        <span id="instruction-label" for="instruction-select">Instruction:</span>
-                        <select id="instruction-select" name="Instruction" onchange="fEnableDisableFetchButton()";>
-                            <option value="Choose" selected>Choose</option>
-                            <option value="Success">Success</option>
-                            <option value="Failure">Failure</option>
-                        </select>
-                        <button title="Fetch JSON success or failure message from the server" id="fetch-button" disabled="disabled" onclick="fFetchJSON()">Fetch JSON</button>
-                    </div>
-                    <div id="resultsText-div">
-                        <textarea id="results-textarea" rows="15" onclick="fShowMessageReadOnly()" readonly></textarea>
+                    <div id="animations-div" =>
                     </div>
 
-<!-- messages area .................................................................................................. -->
+<!-- Message section for messages .................................................................................. -->
 
-                    <div id="message-div">
-                        <label id="message-label" for="message-input">Message</label>
-                        <input id="message-input" onclick="fShowMessageReadOnly()" readonly>
+                    <section id="message-section">
+                        <div id="message-div">
+                            <br>
+                            <label id="message-label" for="message-input">Messages</input>
+                            <input id="message-input" type="text" name="message-input" onclick="fShowMessageReadOnly()" readonly>
+                            <label id="tries-label" for="tries-input">Tries</input>
+                            <input id="tries-input" type="text" name="tries-input" onclick="fShowMessageReadOnly()" readonly>
+                            <label id="scores-label" for="scores-input">Scores</input>
+                            <input id="scores-input" type="text" name="scores-input" onclick="fShowMessageReadOnly()" readonly>
+                        </div>
+
+<!-- options buttons ............................................................................................... -->
+
+                    <div id="optionsbuttons-div">
+                        <button title="Show or hide lines on the animation" id="togglelines-bttn" onclick="fToggleLines()">Lines</button>
+                        <button title="Change the animation speed" id="togglespeed-bttn" onclick="fToggleSpeed()">Speed</button>
+                        <button title="Change the fill color on the animated shape" id="togglefiller-bttn" onclick="fToggleFiller()">Filler</button>
+                        <button title="Change the animated shape" id="toggleshape-bttn" onclick="fToggleShape()">Shape</button>
+                        <button title="Freeze or unfreeze the animation" onclick="fFreeze()">Freeze</button>
+                        <br>
                     </div>
 
                 </div>
@@ -170,7 +165,7 @@
 
                 <div id="MOREBTTNS">
                     <button title="Show or hide help text" onclick="fcShowHelp()">Help</button>
-                    <button title="Clear help and internals text" onclick="fClearTemplateFields()">Clear</button>
+                    <button title="Clear help and internals text" onclick="fClearAnimationsFields()">Clear</button>
                     <br>
                 </div>
 
@@ -178,7 +173,7 @@
 
                 <div id="HELPDIV">
                     <p>
-                    Choose an instruction and click 'Fetch JSON' to fetch a JSON formatted string for this page<br>
+                    Click inside the moving shape to score a point<br>
                     </p>
                 </div>
 
@@ -190,57 +185,42 @@
                             Internals
                         </summary>
                         <p>
-                            html file: /var/www.html/jsone4Ajax.html<br>
-                            css file: /var/www/html/json4Ajax.css<br>
-                            js file: /var/www/html/json4Ajax.js<br>
-                            js file: /var/www/html/common.js<br>
+                            html file: /var/www.html/animations.html<br>
+                            css file: /var/www/html/css/animations.css<br>
+                            js file: /var/www/html/css/animations.js<br>
+                            js file: /var/www/html/css/common.js<br>
                             cgi directory: /usr/lib/cgi-bin/<br>
                             corner image: /var/www/html/cornerImage.png<br>
                             background image: /var/www/html/background.jpg<br>
                             CGI source code: c<br>
+                            libraries: p5.js CDN
                         </p>
                     </details>
                </div>
 
                 <script src="common.js"></script>
-                <script src="json4Ajax.js"></script>
+                <script src="animations.js"></script>
+                <script src="https://cdn.jsdelivr.net/npm/p5@1.7.0/lib/p5.js"></script>       <!-- p5.js library CDN -->
 
             </main>
 
 <!-- <ASIDE1> region for change log ................................................................................ -->
 
             <aside id="ASIDE1">
-                    <h3 id=ASIDE1H3>Changes 2021-24</h3>
+                    <h3 id=ASIDE1H3>Changes 2023-24</h3>
                 <ul ID="ASIDE1UL">
                     <li class="ASIDE1LI">01-Jan: happy new year 2024</li>
                     <li class="ASIDE1LI">09-Nov: add canvas link</li>
                     <li class="ASIDE1LI">29-Oct: authenticate and return</li>
-                    <li class="ASIDE1LI">28-Oct: add upload link</li>
                     <li class="ASIDE1LI">28-Oct: change template link</li>
+                    <li class="ASIDE1LI">28-Oct: add upload link</li>
                     <li class="ASIDE1LI">22-Oct: add titles to buttons</li>
                     <li class="ASIDE1LI">17-Oct: add link to snake</li>
-                    <li class="ASIDE1LI">03-Oct: add message region</li>
+                    <li class="ASIDE1LI">01-Jan: recolour read only fields</li>
                     <li class="ASIDE1LI">29-Sep: add Animations link</li>
-                    <li class="ASIDE1LI">20-Sep: add rps link</li>
-                    <li class="ASIDE1LI">16-Sep: add logo and icon</li>
-                    <li class="ASIDE1LI">11-Sep: add link to video</li>
-                    <li class="ASIDE1LI">31-Aug: move styles to css</li>
-                    <li class="ASIDE1LI">22-Aug: add forex</li>
-                    <li class="ASIDE1LI">26-Jul: add JSON options link</li>
+                    <li class="ASIDE1LI">27-Sep: add a Freeze button</li>
+                    <li class="ASIDE1LI">26-Sep: started</li>
                     <li class="ASIDE1LI">01-Jan: happy new year 2023</li>
-                    <li class="ASIDE1LI">15-Aug: add long links</li>
-                    <li class="ASIDE1LI">25-Jul: add authentication anchor</li>
-                    <li class="ASIDE1LI">22-Jul: add authenticate link</li>
-                    <li class="ASIDE1LI">22-Jul: show session block</li>
-                    <li class="ASIDE1LI">27-Jun: add footer options</li>
-                    <li class="ASIDE1LI">20-Jun: rotate corner image</li>
-                    <li class="ASIDE1LI">16-May: expand clear button</li>
-                    <li class="ASIDE1LI">12-May: add corner image caption</li>
-                    <li class="ASIDE1LI">01-Jan: happy new year 2022</li>
-                    <li class="ASIDE1LI">09-Oct: 'f' prefix functions</li>
-                    <li class="ASIDE1LI">19-Sep: add Help button</li>
-                    <li class="ASIDE1LI">18-Sep: add Internals</li>
-                    <li class="ASIDE1LI">16-Sep: create template as grid</li>
                 </ul>
             </aside>
 
@@ -249,7 +229,7 @@
             <aside id="ASIDE2">
                 <div id="ASIDE2DIV">
                     <h3 style="display:none">Corner Image</h3>                 <!-- screen reader sectioning element -->
-                     <img id="ASIDE2IMG" src="cornerImage.png" alt="Cannot Load cornerImage.png">
+                    <img id="ASIDE2IMG" src="cornerImage.png" alt="Cannot Load cornerImage.png">
                 </div>
             </aside>
 
@@ -257,7 +237,7 @@
 
             <aside id="ASIDE3">
                 <div id="ASIDE3DIV">
-                    <h3 style="display:none">Corner Image Caption</h3>         <!-- screen reader sectioning element -->
+                    <h3 style="display:none">Corner Image Caption</h3>        <!--  screen reader sectioning element -->
                     <p id="ASIDE3-PARA">
                     Matilda Cook in Magpies uniform before her next netball game 2022
                     </p>
